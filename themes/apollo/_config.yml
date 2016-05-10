@@ -1,0 +1,27 @@
+menu:
+    About: /about/
+    Blog: /
+    Archive: /archives/
+    GitHub: https://github.com/rajabishek
+    Linkedin: https://www.linkedin.com/in/rajabishek
+    Rss: /atom.xml
+
+favicon: /logo.png
+logo: /logo.png
+
+# Comment
+# e.g disqus: seansun
+disqus:
+duoshuo: 
+
+# Analytics
+# google-analytics:
+ga:
+
+# Copyright Infomation
+startyear: 2015
+
+# Font CDN
+#true : use google fonts api, not stable for chinese visitor sometimes, caused by force majeure factor
+#false: use useso fonts api instead of google's, great response speed for chinese visitor
+googlefonts: false
