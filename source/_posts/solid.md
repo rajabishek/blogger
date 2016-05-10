@@ -160,7 +160,6 @@ This principle states that if S is a subtype of T, then objects of type T may be
 In essence if a program module is using a base class, then the reference to the base class can be replaced with a derived class without affecting the functionality of the program module. Let’s look at an example of some code that isn’t following the principle:
 ```swift
 class Rectangle
-class Rectangle
 {
     var width: Int = 0
     var height: Int = 0
