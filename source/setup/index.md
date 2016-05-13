@@ -66,3 +66,31 @@ A5 ruled notebook and Stabilo fine tip pens for sketching when I am working on a
 - [Pixate](http://www.pixate.com/) to change ideas into reality. Powerful prototyping.
 - [Boostnote](https://b00st.io/) open-sourced note app for programmers.
 
+**One Plus X**: I do a lot on my mobile now a days. Some apps that I use multiple times a day:
+
+Photos:
+
+- [Instagram](http://instagram.com/therajabishek) for sharing photos
+- [CandyCam](https://play.google.com/store/apps/details?id=com.joeware.android.gpulumera&hl=en) for times when I need more than Instagram filters
+
+Reading:
+
+- [Hacker news](https://play.google.com/store/apps/details?id=com.premii.hn&hl=en) reader for latest tech updates.
+- [Flipboard](https://flipboard.com/) I take time to completely go through the technology section.
+- [Pocket](https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en) for offline reading
+- Feedly for rss feeds of must read blogs
+
+Social:
+
+- Twitter to find inspiration about things I love.
+- Whatsapp for staying in touch
+
+Productivity:
+
+- [Google Keep](https://keep.google.com) for short notes and reminders
+- [Wunderlist](https://www.wunderlist.com/) to keep life in sync
+
+Tools:
+
+- [Camscanner](https://www.camscanner.com/)for creating soft copies. Highly recommended for students.
+- [Filedrop](http://www.filedropme.com/) for moving files over WiFi
