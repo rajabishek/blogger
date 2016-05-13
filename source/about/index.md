@@ -11,6 +11,8 @@ I have also worked as an independent contractor for a few months with [Zorioo](h
 
 When not working, you can usually find me sketching designs, reorganizing my workspace or hanging out with my friends.
 
+I maintain a post on my Setup at [/setup](/setup).
+
 I push most of my code to [GitHub](http://github.com/rajabishek).
 
 I have been a member of CodeYGEN (Software Development Section of VIT Chennai) since my first year in college.
