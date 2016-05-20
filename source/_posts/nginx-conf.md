@@ -44,3 +44,39 @@ which means either serve the ﬁle or serve a 404 error, you can't use only $uri
 location /images { try_files $uri =403; }
 ```
 This will show a forbidden error if the image doesn't exist, or if you use 500 it will show server error, etc ..
+
+## SERVER_BLOCK
+Consider the following ﬁle /etc/nginx/sites-available/default Nginx can have diﬀerent server blocks. Each server block is wrapped within server	```sh
+{	}
+server	{					... }
+server	{					... }
+server	{					... }
+```
+The above ﬁle for example contains 3 server blocks. Diﬀerent server blocks is what allows nginx to server diﬀerent sites from the same server. When a HTTP request comes to nginx it ﬁrst identiﬁes the host and the port from the request headers. One of the headers in the request usually contains the host information. If a header is  ‘Host: example.com:8080’ then it means that the value of the Host header is example.com:8080. Therefore the host is example.com and the port is 8080. Once the host and port is identiﬁed by nginx it ﬁnds a matching  server block for the conﬁgurations. If there is not port then the implicit port 80 is used.
+```sh
+server	{	
+	listen	80;				
+	listen	[::]:80;				
+	server_name	example.com	
+	www.example.com;				
+	... } 
+
+server	{
+	listen	80	default_server;
+	listen	[::]:80	default_server;
+	server_name	example.net;				
+... }
+
+server	{
+	listen	80;				
+	listen	[::]:80;
+	server_name	example.app;
+... }
+
+server	{				
+	listen	80;
+	listen	[::]:80;
+	server_name	"";
+	return	444;
+... }
+```
