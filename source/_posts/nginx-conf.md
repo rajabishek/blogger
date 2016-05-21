@@ -80,3 +80,8 @@ server	{
 	return	444;
 ... }
 ```
+Now with the above conﬁguration a request with Host header as ‘Host: example.com’. The host is example.com and port is 80. Now to serve this request the ﬁrst server block is used since that is the matching one. Now there can be possibilities where there is no matching server block, for example if the host header is ‘Host: example.org’, in these cases the server block having the default_server directive is used to process the request. So here in the above case the second server block would be used to serve the request. 
+
+Now if there is no host header present at all in the request the matching server name is "". In the above case the 4th server block is used as it has the the server_name as "". If the fourth server_block was not deﬁned above then in that case the server block having the default_server directive would be used.
+
+Essentially whenever for a given host the matching server block is not found the server block having the default_server directive is used. And as you can see above a server block can have multiple server names, the ﬁrst server block would be used to serve the request from both example.com and www.example.com on port 80. When we type http://example.com in our browser we are actually making a get request to the server with request header as ‘Host: example.com’ i.e host is example.com and port is 80.
