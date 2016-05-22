@@ -4,6 +4,10 @@ date: 2016-05-21 22:28:13
 tags:
 ---
 ## TRY_FILES
+When it comes to configuring servers and provisioning them it really becomes a pain in the ass if we don't understand what's happening under the hood. Sometimes a configuration would work and sometimes it wouldn't. The reason for all these problems boils down to poor understanding of the directives that are used for configuration and not taking effort to read the documentation and researching on some of the best practices that need to be used. So lets dive a little deeper and experiment with Nginx configuration.
+
+<!-- more -->
+
 A very common try_files line which can be applied on your condition is
 ```sh
 location / {
@@ -11,8 +15,7 @@ location / {
 }
 ```
 
-You probably understand the first part, location	/ matches all locations, unless
-it's matched by a more specific location, like location	/test for example. The second part ( the try_files ) means when you receive a URI that's matched by this block try $uri first, for example http://example.com/images/image.jpg nginx will try to check if there's a file inside /images called image.jpg if found it will serve it first.
+You probably understand the first part, location / matches all locations, unless it's matched by a more specific location, like location	/test for example. The second part ( the try_files ) means when you receive a URI that's matched by this block try $uri first, for example http://example.com/images/image.jpg nginx will try to check if there's a file inside /images called image.jpg if found it will serve it first.
 
 Second condition is $uri/ which means if you didn't find the first condition $uri try the URI as a directory, for example http://example.com/images/ , ngixn will first check if a file called images exists then it wont find it, then goes to second check $uri/ and see if there's a directory called images exists then it will try serving it. If there is no images directory it will retort to the third fallback option.
 
@@ -58,7 +61,7 @@ server	{
 server	{
 ... }
 ```
-The above ﬁle for example contains 3 server blocks. Diﬀerent server blocks is what allows nginx to server diﬀerent sites from the same server. When a HTTP request comes to nginx it ﬁrst identiﬁes the host and the port from the request headers. One of the headers in the request usually contains the host information. If a header is  ‘Host: example.com:8080’ then it means that the value of the Host header is example.com:8080. Therefore the host is example.com and the port is 8080. Once the host and port is identiﬁed by nginx it ﬁnds a matching  server block for the conﬁgurations. If there is not port then the implicit port 80 is used.
+The above file for example contains 3 server blocks. Different server blocks is what allows nginx to server different sites from the same server. When a HTTP request comes to nginx it first identifies the host and the port from the request headers. One of the headers in the request usually contains the host information. If a header is  ‘Host: example.com:8080’ then it means that the value of the Host header is example.com:8080. Therefore the host is example.com and the port is 8080. Once the host and port is identified by nginx it finds a matching  server block for the configurations. If there is not port then the implicit port 80 is used.
 ```sh
 server	{	
 	listen	80;				
@@ -86,11 +89,11 @@ server	{
 	return	444;
 ... }
 ```
-Now with the above conﬁguration a request with Host header as ‘Host: example.com’. The host is example.com and port is 80. Now to serve this request the ﬁrst server block is used since that is the matching one. Now there can be possibilities where there is no matching server block, for example if the host header is ‘Host: example.org’, in these cases the server block having the default_server directive is used to process the request. So here in the above case the second server block would be used to serve the request. 
+Now with the above configuration a request with Host header as ‘Host: example.com’. The host is example.com and port is 80. Now to serve this request the first server block is used since that is the matching one. Now there can be possibilities where there is no matching server block, for example if the host header is ‘Host: example.org’, in these cases the server block having the default_server directive is used to process the request. So here in the above case the second server block would be used to serve the request. 
 
-Now if there is no host header present at all in the request the matching server name is "". In the above case the 4th server block is used as it has the the server_name as "". If the fourth server_block was not deﬁned above then in that case the server block having the default_server directive would be used.
+Now if there is no host header present at all in the request the matching server name is "". In the above case the 4th server block is used as it has the the server_name as "". If the fourth server_block was not defined above then in that case the server block having the default_server directive would be used.
 
-Essentially whenever for a given host the matching server block is not found the server block having the default_server directive is used. And as you can see above a server block can have multiple server names, the ﬁrst server block would be used to serve the request from both example.com and www.example.com on port 80. When we type http://example.com in our browser we are actually making a get request to the server with request header as ‘Host: example.com’ i.e host is example.com and port is 80.
+Essentially whenever for a given host the matching server block is not found the server block having the default_server directive is used. And as you can see above a server block can have multiple server names, the first server block would be used to serve the request from both example.com and www.example.com on port 80. When we type http://example.com in our browser we are actually making a get request to the server with request header as ‘Host: example.com’ i.e host is example.com and port is 80.
 ```sh
 server	{			
 	listen	80	default_server;
@@ -104,4 +107,4 @@ server	{
 	} 
 }
 ```
-If there is no default_server set on any server block then the ﬁrst server block is used a the default server by nginx. Here there is only one server block and thus it automatically becomes the default one. But it is a good practise to state the default server block explicitly and thus we have use the default_server to indicate that this server block must be used incase there is no matching host found or in case there is no host header in the incoming request.
+If there is no default_server set on any server block then the first server block is used a the default server by nginx. Here there is only one server block and thus it automatically becomes the default one. But it is a good practice to state the default server block explicitly and thus we have use the default_server to indicate that this server block must be used in case there is no matching host found or in case there is no host header in the incoming request.
