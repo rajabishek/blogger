@@ -7,7 +7,7 @@ tags:
 A very common try_files line which can be applied on your condition is
 ```sh
 location / {
-	try_files	$uri	$uri/	/test/index.html;
+	try_files $uri $uri/ /test/index.html;
 }
 ```
 
@@ -30,10 +30,11 @@ So the basic ﬂow is as follows
 
 Also there's something called named locations, like this
 ```sh
-location	@error	{ }
+location @error	{ }
 ```
 You can call it with try_files like this
-```sh try_files	$uri	$uri/	@error;
+```sh 
+try_files $uri $uri/ @error;
 ```
 TIP: If you only have 1 condition you want to serve, like for example inside folder images you only want to either serve the image or go to 404 error, you can write a line like this
 ```sh
@@ -46,11 +47,16 @@ location /images { try_files $uri =403; }
 This will show a forbidden error if the image doesn't exist, or if you use 500 it will show server error, etc ..
 
 ## SERVER_BLOCK
-Consider the following ﬁle /etc/nginx/sites-available/default Nginx can have diﬀerent server blocks. Each server block is wrapped within server	```sh
-{	}
-server	{					... }
-server	{					... }
-server	{					... }
+Consider the following ﬁle /etc/nginx/sites-available/default Nginx can have diﬀerent server blocks. Each server block is wrapped within server { }
+```sh
+server	{
+... }
+
+server	{
+... }
+
+server	{
+... }
 ```
 The above ﬁle for example contains 3 server blocks. Diﬀerent server blocks is what allows nginx to server diﬀerent sites from the same server. When a HTTP request comes to nginx it ﬁrst identiﬁes the host and the port from the request headers. One of the headers in the request usually contains the host information. If a header is  ‘Host: example.com:8080’ then it means that the value of the Host header is example.com:8080. Therefore the host is example.com and the port is 8080. Once the host and port is identiﬁed by nginx it ﬁnds a matching  server block for the conﬁgurations. If there is not port then the implicit port 80 is used.
 ```sh
