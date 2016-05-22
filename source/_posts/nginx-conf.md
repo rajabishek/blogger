@@ -85,3 +85,17 @@ Now with the above conﬁguration a request with Host header as ‘Host: example
 Now if there is no host header present at all in the request the matching server name is "". In the above case the 4th server block is used as it has the the server_name as "". If the fourth server_block was not deﬁned above then in that case the server block having the default_server directive would be used.
 
 Essentially whenever for a given host the matching server block is not found the server block having the default_server directive is used. And as you can see above a server block can have multiple server names, the ﬁrst server block would be used to serve the request from both example.com and www.example.com on port 80. When we type http://example.com in our browser we are actually making a get request to the server with request header as ‘Host: example.com’ i.e host is example.com and port is 80.
+```sh
+server	{			
+	listen	80	default_server;
+	listen	[::]:80	default_server;
+	root	/var/www/html;
+	# Add index.php	to the list	if you are using PHP				
+	index index.html index.htm index.nginx-debian.html;
+	server_name	192.168.33.11;
+	location / {
+	try_files $uri $uri/ /cool/bro/file.txt;
+	} 
+}
+```
+If there is no default_server set on any server block then the ﬁrst server block is used a the default server by nginx. Here there is only one server block and thus it automatically becomes the default one. But it is a good practise to state the default server block explicitly and thus we have use the default_server to indicate that this server block must be used incase there is no matching host found or in case there is no host header in the incoming request.
