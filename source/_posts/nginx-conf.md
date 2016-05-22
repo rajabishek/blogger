@@ -1,6 +1,6 @@
 ---
 title: Getting started with Nginx configuration
-date: 2016-05-21 22:28:13
+date: 2016-05-17 22:28:13
 tags:
 ---
 ## Lets dive a little deeper
