@@ -3,10 +3,13 @@ title: Getting started with Nginx configuration
 date: 2016-05-21 22:28:13
 tags:
 ---
-## TRY_FILES
+## Lets dive a little deeper
+
 When it comes to configuring servers and provisioning them it really becomes a pain in the ass if we don't understand what's happening under the hood. Sometimes a configuration would work and sometimes it wouldn't. The reason for all these problems boils down to poor understanding of the directives that are used for configuration and not taking effort to read the documentation and researching on some of the best practices that need to be used. So lets dive a little deeper and experiment with Nginx configuration.
 
 <!-- more -->
+
+## TRY_FILES
 
 A very common try_files line which can be applied on your condition is
 ```sh
