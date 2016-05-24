@@ -92,5 +92,5 @@ Productivity:
 
 Tools:
 
-- [Camscanner](https://www.camscanner.com/)for creating soft copies. Highly recommended for students.
+- [Camscanner](https://www.camscanner.com/) for creating soft copies. Highly recommended for students.
 - [Filedrop](http://www.filedropme.com/) for moving files over WiFi
