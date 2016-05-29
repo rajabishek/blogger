@@ -79,3 +79,34 @@ let name = array.removeAtIndex(0)
 print("The removed element is: \(name)") // The removed element is: iPhone
 print(array.count) //Prints 2
 ```
+
+To remove the last element from the array we can do `array.removeAtIndex(array.count - 1)` but we have another useful method for this. It is the `removeLast(_:)` method. It removes the last element in array and returns it, if the array is empty then a call to this method results in a run time error.
+```swift
+var array = ["iPhone", "iPad", "Mac book Pro"]
+let last = array.removeLast(_:)
+print("The last element that was removed is: \(last)")
+```
+
+To check whether an element is present in an array or not we use the `contains(_:)` method. It returns a boolean response, if the element is present in the array it returns `true` otherwise `false`.
+```swift
+var array = ["iPhone", "iPad", "Mac book Pro"]
+let last = array.contains("Mac book Pro") //Prints true
+```
+
+To get the index of a particular element from the array we use the `indexOf(_:)` method.
+It gets the index of the given element in the array, if the element is not found or if the array is empty then it returns nil, therefore return type is essentially `Int?` (Optional Int).
+```swift
+var array = ["iPhone", "iPad", "Mac book Pro"]
+let index = array.indexOf("Mac book Pro")
+print("The index of the element Mac book Pro is: \(index)")
+```
+
+We can also get the minimum and the maximum element in the array according to the < operator.
+The `maxElement` method returns the maximum element in the array, if the array is empty it returns nil. The `minElement` method returns the minimum element in the array, if the array is empty it returns nil.
+```swift
+var array = ["iPhone", "iPad", "Mac book Pro"]
+let min = array.minElement(_:)
+let max = array.maxElement(_:)
+print("The minimum element in the array is: \(min)")
+print("The maximum element in the array is: \(max)")
+```
