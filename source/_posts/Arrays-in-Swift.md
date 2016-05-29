@@ -3,7 +3,7 @@ title: Arrays in Swift
 date: 2016-05-25 09:00:00
 tags:
 ---
-# Arrays
+## Powerful Data Structure
 Arrays are one of the most powerful data structures in the Swift programming language. An array stores values of the same type in an ordered list. The same value can appear in an array multiple times at different positions. Arrays in Swift are implemented as generic collections. Every value that is stored in an array is called as an element and the position of the element in the array (0 based) is called the index of the element. If you do not want to have repeated elements then you should have a look at the `Set` data structure. Sets are unordered collection of unique values.
 
 <!-- more -->

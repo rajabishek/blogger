@@ -1,5 +1,5 @@
 ---
-title: SOLID
+title: SOLID Principles
 date: 2016-05-5 22:00:00
 ---
 ## Introduction
