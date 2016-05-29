@@ -110,3 +110,35 @@ let max = array.maxElement(_:)
 print("The minimum element in the array is: \(min)")
 print("The maximum element in the array is: \(max)")
 ```
+
+We can also remove the first n elements or the last n elements from the array. The `removeFirst(_:)` method removes the first n elements from the array. Similarly the `removeLast(_:)` method removes the last n elements from the array. In both the methods n cannot exceed array.count. If n is larger than the number of elements in the array then we get a runtime error.  
+```swift
+var array = ["iPhone", "iPad", "Mac book Pro"]
+array.removeFirst(1)
+array.removeLast(2)
+print(array.count) //Prints 0
+```
+
+We can also sort the elements of the array according to the < operator. The `sort(_:)` method returns a new array with the elements in the sorted order.
+```swift
+var array = [2, 1, 7, 3, 6]
+for number in array.sort(_:) {
+	print(number)
+}
+```
+
+Instead of returning a new array with the elements in sorted order, if we would like to sort the elements of the array in place then we can use the `sortInPlace(_:)` method.
+```swift
+var array = [2, 1, 7, 3, 6]
+array.sortInPlace(_:)
+for number in array {
+	print(number)
+}
+```
+
+We can also remove all the elements in the array with a single method call. We use the `removeAll` method for this purpose. It removes all the elements and has no effect on an empty array.
+```swift
+var array = [2, 1, 7, 3, 6]
+array.removeAll(_:)
+print(array.count) //Prints 0
+```
