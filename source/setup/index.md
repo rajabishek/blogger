@@ -8,12 +8,10 @@ date: 2016-05-13 18:35:02
 **Laptop Setup**:
 
 1. MacBook Pro Retina 15-inch, Mid 2015, 512GB SSD, 16GB RAM.
-1. [Dell U2715H](http://accessories.us.dell.com/sna/productdetail.aspx?c=us&cs=19&l=en&sku=210-ADKB) monitor (In the list - coming soon)
 1. [Apple Magic Mouse 2](http://www.apple.com/shop/product/MLA02LL/A/magic-mouse-2)
 1. [Apple External Keyboard](http://www.apple.com/shop/mac/mac-accessories/mice-keyboards). The chicklet keys are just amazing.
 1. Seagate Backup Plus 1 TB External Hard Disk.
-
-**E-Reader**: Amazon Kindle Paperwhite 2015 edition
+1. [Dell U2715H](http://accessories.us.dell.com/sna/productdetail.aspx?c=us&cs=19&l=en&sku=210-ADKB) monitor (In the list - coming soon)
 
 **Mobile**:
 
@@ -35,7 +33,6 @@ For listening to music I use iTunes on desktop and Google Music on mobile/tablet
 - Git for version controlling. I put nearly everything in a git repo
 - [SCM Breeze](https://github.com/ndbroadbent/scm_breeze) for easy git
 - Whole lot of custom scripts
-- My dotfiles are on [GitHub](http://github.com/rajabishek/dotfiles)
 
 A5 ruled notebook and Stabilo fine tip pens for sketching when I am working on a user interface
 
