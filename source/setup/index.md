@@ -1,6 +1,6 @@
 ---
 title: setup
-date: 2016-05-13 18:35:02
+date: 2016-08-1 21:34:02
 ---
 
 ![Hardware](/img/hardware.png)
