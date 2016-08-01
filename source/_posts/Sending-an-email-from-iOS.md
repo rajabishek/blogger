@@ -9,8 +9,8 @@ A simple task of sending an email is also achieved in iOS through the delegation
 <!-- more -->
 ## Procedure Breakdown
 * 1st step would be to design the mail form on the storyboard scene and add the subject,body fields as outlets and connect the send mail button as an a action
-* Now we need to import the MessageUI framework to send a mail from the view controller, the MessageUI framework en composes all the email related classes and protocols
-* Also make the view controller to conform to the MFMailComposeViewControllerDelegate, what we are actually doing is we will be presenting a view controller that will be responsible for sending the email and that controller will respond back to its delegate with information such as mail was sent successfully, mail was canceled, error in sending email etc, so we are essentially conforming to the delegate protocol as we want our view controller to be the delegate of that mail controller which we present eventually
+* Now we need to import the `MessageUI` framework to send a mail from the view controller, the MessageUI framework en composes all the email related classes and protocols
+* Also make the view controller to conform to the `MFMailComposeViewControllerDelegate`, what we are actually doing is we will be presenting a view controller that will be responsible for sending the email and that controller will respond back to its delegate with information such as mail was sent successfully, mail was canceled, error in sending email etc, so we are essentially conforming to the delegate protocol as we want our view controller to be the delegate of that mail controller which we present eventually
 * Now the next step would be to create the mail view controller will the subject, recipients, body
 * Next we set the delegate of this newly created mail controller to be the view controller itself
 * Now we present the mail controller on the screen
@@ -21,7 +21,7 @@ import Foundation
 import UIKit
 import MessageUI
  
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +53,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
         sendMailErrorAlert.show()
     }
-    
-    // MARK: MFMailComposeViewControllerDelegate Method
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+}
+
+//Conform to the MFMailComposeViewControllerDelegate protocol
+extension ViewController: MFMailComposeViewControllerDelegate {
+	func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
     	switch (result) {
 	        
 	        case MFMailComposeResultSent:
