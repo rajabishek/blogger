@@ -8,6 +8,10 @@ Arrays are one of the most powerful data structures in the Swift programming lan
 
 <!-- more -->
 
+Arrays are value types. They are not reference types like class instances. However it is important here to note that if the elements of the array are instances of classes, changing the class does affect other copies, because classes have reference semantics. 
+
+If the array Element type is not a class or @objc protocol type then definitely we know for sure that the storage area for the array is a contiguous block of memory, otherwise we just know that it can be a contiguous block of memory but its not for sure. Why should we know all this ? Thats because, in Swift when array storage is full, it allocates a larger region and copies its elements to the new storage. The size of the new storage allocated is a multiple of the old storage size, an exponential growth strategy is followed here that means that appending a element to the end of the array happens in constant time, averaging the performance of many appending operations. Appending operations that trigger reallocation have a performance cost, but their occurrence decreases as the array size becomes larger as larger, because every time the array size is a multiple of the previous size, do its grows exponentially, can thus the chances of needing a reallocation again during appending is negligible.
+
 An array in Swift is declared as follows.
 ```swift
 var data: Array<String> //declare data as an array of strings - Longer form of type annotation
