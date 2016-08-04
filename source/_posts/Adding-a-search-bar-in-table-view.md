@@ -5,19 +5,19 @@ tags:
 ---
 
 ## Filtering & Searching information
-If you have a large dataset to present, scrolling through a large list becomes slow and frustrating. In that case, it’s essential that we allow users to search for specific items. UISearchController which seamlessly integrates with UITableView allows for quick, responsive filtering of information and solves the very same problem.
+If you have a large dataset to present, scrolling through a large list becomes slow and frustrating. In that case, it’s essential that we allow users to search for specific items. `UISearchController` which seamlessly integrates with `UITableView` allows for quick, responsive filtering of information and solves the very same problem.
 
 <!-- more -->
 
-* Create a UISearchController instance as an instance of the view controller, give the searchResultsController while creating as nil meaning we would like to use the same table for search results also
+* Create a `UISearchController` instance as an instance of the view controller, give the searchResultsController while creating as nil meaning we would like to use the same table for search results also
 * Set the searchResultsUpdater property of search controller as self(view controller), meaning view controller would be responsible for updating the search results for the search controller. View controller has to conform to UISearchResultsUpdating protocol.
-* Set the dimsBackgroundDuringPresentation property on search controller to false, usually the search controller will dim the background while showing the search results, but since we are using the same table view to show the results we would not want this behavior.
-* On the view controller set the definesPresentationContext property to true, it means that the search bar must be hidden when navigating away from the view controller even though it is currently active.
+* Set the `dimsBackgroundDuringPresentation` property on search controller to false, usually the search controller will dim the background while showing the search results, but since we are using the same table view to show the results we would not want this behavior.
+* On the view controller set the `definesPresentationContext` property to true, it means that the search bar must be hidden when navigating away from the view controller even though it is currently active.
 * Set the scope button titles for the search bar
-* Set the delegate of the search bar to the view controller. View controller has to conform to UISearchBarDelegate protocol.
+* Set the delegate of the search bar to the view controller. View controller has to conform to `UISearchBarDelegate` protocol.
 * Add the search bar as the header of the table view
-* updateSearchResultsForSearchController method is called every time a user changes the contents if the search bar text. It is method of the UISearchResultsUpdating protocol, it is the only compulsory method of the protocol.
-* selectedScopeButtonIndexDidChange method is called every time a different scope button is pressed. This method is from the UISearchBarDelegate protocol, however it is not a compulsory method.
+* updateSearchResultsForSearchController method is called every time a user changes the contents if the search bar text. It is method of the `UISearchResultsUpdating` protocol, it is the only compulsory method of the protocol.
+* selectedScopeButtonIndexDidChange method is called every time a different scope button is pressed. This method is from the `UISearchBarDelegate` protocol, however it is not a compulsory method.
 ```swift
 import UIKit
 
