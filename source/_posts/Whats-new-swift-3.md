@@ -9,10 +9,10 @@ To be honest Swift 3 has lot of changes. If you compile in Xcode 8, it will comp
 <!-- more -->
 
 ## Getting hands on
-So where do we run Swift 3 and experiment with it ? Swift 3 preview is available in Xcode 8 beta which developer can download and try now. As Swift 3 is not yet officially released by Apple yet, developer have to wait till the year's end before they can publish an app to the store written in Swift 3.
+So where do we run Swift 3 and experiment with it ? Swift 3 preview is available in Xcode 8 beta which developers can download and try now. As Swift 3 is not officially released by Apple yet, developers have to wait till the year's end before they can publish an app to the store that is written in Swift 3.
 
-As of now along with Xcode 8 beta apple has included Swift 2.3 & Swift 3. Swift 2.3 is the same as Swift 2.2 but with support for many of the new SDKs and Xcode features announced at WWDC. Once Xcode 8 comes out of beta, you will be able to submit apps using Swift 2.3 if you have not yet migrated your code to Swift 3.
+As of now along with Xcode 8 beta Apple has included Swift 2.3 & Swift 3. Swift 2.3 is the same as Swift 2.2 but with support for many of the new SDKs and Xcode features announced at WWDC 2016. Once Xcode 8 comes out of beta, you will be able to submit apps using Swift 2.3 if you have not yet migrated your code to Swift 3.
 
-So its not a problem if you aren't learning Swift 3 yet, apple will include Swift 2.3 also in Xcode 8 stable release. Apple has also included Migration Assistant in Xcode to port the application to Swift 3. I highly recommend you to use that to get a feel of what has changed. But since you can’t release an app to the App Store until Xcode 8 is out of beta and Swift 3 is officially released, you may want to consider waiting to port your code to Swift 3 until things settle down.
+Its a good thing that Apple will include Swift 2.3 also in Xcode 8 stable release not creating problems for people who aren't learning Swift 3 yet. Apple has also included a Migration Assistant in Xcode to port the application to Swift 3. I highly recommend you to create a new branch in git and use that to get a feel of what has changed. But since you can’t release an app to the App Store until Xcode 8 is out of beta and Swift 3 is officially released, it is better to wait porting the codebase to Swift 3 until things calm down a bit.
 
 
