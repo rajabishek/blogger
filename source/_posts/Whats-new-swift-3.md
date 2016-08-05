@@ -96,7 +96,9 @@ func primeNumbersInRange(var n1: Int, n2: Int) {
 }
 primeNumbersInRange(4, n2: 20)
 ```
-The above is a simple program to find the prime numbers within a given range. In Swift 3 the above code would be a lot different the ++ operators would be removed, the for loop style will be different and most importantly the var key word cannot be used while declaring function parameters.
+The above is a simple program to find the prime numbers within a given range. In Swift 3 the above code would be a lot different the ++ operators would be removed, the for loop style will be different and most importantly the var key word cannot be used while declaring function parameters. 
+
+Swift 3 no longer allows developers to set function parameters as variables as Swift developers may get confused between `var` and `inout`. So the latest version of Swift simply removes var from function parameters. Therefore, to write the same primeNumbersInRange function in Swift 3, it requires a different approach. You’ll need to save the values of the function parameters to local variables before you proceed.
 ```swift
 func primeNumbersInRange(n1: Int, n2: Int) {
     
@@ -125,3 +127,4 @@ func primeNumbersInRange(n1: Int, n2: Int) {
 primeNumbersInRange(n1: 4, n2: 20)
 ```
 
+If you would like to know more about the motivation behind this change, check out the [proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0003-remove-var-parameters.md) on the removal of var keyword while declaring function parameters.
