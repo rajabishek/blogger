@@ -59,7 +59,7 @@ A5 ruled notebook and Stabilo fine tip pens for sketching when I am working on a
 - [Sublime](https://www.sublimetext.com/) for those few times when I feel like moving out of vim
 - VLC. Because if not this then what else
 - [Irvue](https://itunes.apple.com/in/app/irvue-unsplash-wallpapers/id1039633667?mt=12) for stunning photos in high resolution for desktop wallpapers.
-- [Pixate](http://www.pixate.com/) to change ideas into reality. Powerful prototyping.
+- [Principle](http://principleformac.com/) to change ideas into reality. Powerful prototyping.
 - [Boostnote](https://b00st.io/) open-sourced note app for programmers.
 
 **One Plus X**: I do a lot on my mobile now a days. Some apps that I use multiple times a day:
