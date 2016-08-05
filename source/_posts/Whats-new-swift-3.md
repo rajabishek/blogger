@@ -64,9 +64,7 @@ print(sum)
 Alternatively, you can also use the for-each loop style with closures and shorthand arguments.
 ```swift
 var sum = 0
-(1...10).forEach {
-  sum += $0
-}
+(1...10).forEach { sum += $0 }
 //Sum of the first 10 numbers
 print(sum)
 ```
