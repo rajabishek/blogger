@@ -43,5 +43,22 @@ print(count) //0
 > If you would like to know more about the motivation behind this change, check out [Chris Lattner’s proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0004-remove-pre-post-inc-decrement.md) on the removal of ++ and — operators.
 
 ## C style for loops
-
+If you remember, while programming the frequent place where you would use the decrement and increment operator would be in for loops. 
+```swift
+var sum = 0
+for (i = 1; i <= 10; i++) {
+  sum += i
+}
+//Sum of the first 10 numbers
+print(sum)
+```
+But now with the removal of the operators, it means that we need a change in how we write loops also. And yes, you we correct, we write for loops in a different way now. The ... is called as closed range operator. It includes all the number from start to end, unlike the half open range operator ..< that does not include the end value.
+```swift
+var sum = 0
+for i in 1...10 {
+  sum += i
+}
+//Sum of the first 10 numbers
+print(sum)
+```
 
