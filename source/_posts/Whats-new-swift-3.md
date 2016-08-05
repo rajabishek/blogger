@@ -70,4 +70,5 @@ var sum = 0
 //Sum of the first 10 numbers
 print(sum)
 ```
+> If you want to learn more about the motivation behind this change, check out [Erica Sadun’s proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0007-remove-c-style-for-loops.md) on the removal of C-style for loop.
 
