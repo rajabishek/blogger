@@ -71,4 +71,57 @@ print(sum)
 > If you would like to know more about the motivation behind this change, check out [Erica Sadun’s proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0007-remove-c-style-for-loops.md) on the removal of C-style for loop.
 
 ## No more var in function parameters
+Function parameters are by default constants in Swift, since you don’t need to modify them in its body. However, there are certain cases when you need to modify the parameters inside the function and Swift 2 allowed for declaring them as variables with the `var` keyword. You can mark a function parameter as variable with the var keyword. Once the parameter is marked as var, it creates a local copy of the value so you can modify its value in the body of the function.
+```swift
+func primeNumbersInRange(var n1: Int, n2: Int) {
+    
+    while(n1 < n2){
+        
+        var flag = false
+        
+        for(var i=2; i<=n1/2; ++i)
+        {
+            if(n1%i == 0) {
+                flag = true
+                break
+            }
+        }
+        
+        if (!flag) {
+            print(n1)
+        }
+        
+        ++n1
+    }
+}
+primeNumbersInRange(4, n2: 20)
+```
+The above is a simple program to find the prime numbers within a given range. In Swift 3 the above code would be a lot different the ++ operators would be removed, the for loop style will be different and most importantly the var key word cannot be used while declaring function parameters.
+```swift
+func primeNumbersInRange(n1: Int, n2: Int) {
+    
+    //We have to make a local copy explicity, n1 & n2 will always remain as constants
+    var start = n1;
+    
+    while(start < n2){
+        
+        var flag = false
+        for i in 2...start/2 {
+            
+            if(start%i == 0) {
+                flag = true
+                break
+            }
+        }
+        
+        if (!flag) {
+            print(start)
+        }
+        
+        start += 1
+    }
+}
+
+primeNumbersInRange(n1: 4, n2: 20)
+```
 
