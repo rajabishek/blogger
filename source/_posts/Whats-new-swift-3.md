@@ -130,5 +130,23 @@ primeNumbersInRange(n1: 4, n2: 20)
 If you would like to know more about the motivation behind this change, check out the [proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0003-remove-var-parameters.md) on the removal of var keyword while declaring function parameters.
 
 ## Consistent label behavior for function parameters
+In Swift 2 we would call the above function that we defined like this.
+```swift
+primeNumbersInRange(4, n2: 20)
+```
+Under the scenes function parameter lists are tuples, so you can also create a tuple and pass it as an argument. The tuple's structure needs to match the function prototype.
+```swift
+let argument = (4, n2: 20)
+primeNumbersInRange(argument)
+```
+As you can see, you do not need to specify the label of the first parameter in Swift 2. However, you have to specify the label of the second (and the rest of the parameters) when calling the function. This syntax is confusing for beginners, so it is designed to standardize the label behavior. In Swift 3 you would call the function like this.
+```swift
+primeNumbersInRange(n1: 4, n2: 20)
+```
+But what if you don't want to pass the first parameter label during a function call. Then in Swift 3 while declaring the function you have to be explicit.
+```swift
+func primeNumbersInRange(_ n1: Int, n2: Int) { ... }
+```
+By doing this, you can invoke the function using the old way i.e without specifying the first label. This would also initially be helpful in making you code migration process to Swift 3 easier.
 
 
