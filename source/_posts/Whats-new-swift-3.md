@@ -143,10 +143,12 @@ As you can see, you do not need to specify the label of the first parameter in S
 ```swift
 primeNumbersInRange(n1: 4, n2: 20)
 ```
-But what if you don't want to pass the first parameter label during a function call. Then in Swift 3 while declaring the function you have to be explicit.
+But what if you don't want to pass the first parameter label during a function call. Then in Swift 3 while declaring the function itself you have to be explicitly state that the first parameter doesn't require a label while calling the function.
 ```swift
 func primeNumbersInRange(_ n1: Int, n2: Int) { ... }
 ```
 By doing this, you can invoke the function using the old way i.e without specifying the first label. This would also initially be helpful in making you code migration process to Swift 3 easier.
+
+> If you would like to know more about the motivation behind this change, check out the [proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0046-first-label.md).
 
 
