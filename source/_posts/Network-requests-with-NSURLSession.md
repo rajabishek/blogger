@@ -4,7 +4,7 @@ date: 2016-07-20 15:17:32
 tags:
 ---
 ## HTTP Requests
-We are living in world today where information is being rapidly exchanged between every device that we use. Almost every application on the market these days consume content through a web service. While Alamofire is a rich networking library that can be used to access APIs, you can also use NSURLSessions’s asynchronous data task requests for quick and dirty REST calls. Infact Alamofire library is nothing but a wrapper around NSURLSession written in Swift that simplifies making HTTP requests.
+We are living in world today where information is being rapidly exchanged between every device that we use. Almost every application on the market these days consume content through a web service. While Alamofire is a rich networking library that can be used to access APIs, you can also use NSURLSessions’s asynchronous data task requests for quick and dirty REST calls. Infact Alamofire library is nothing but a wrapper around `NSURLSession` written in Swift that simplifies making HTTP requests.
 
 <!-- more -->
 
