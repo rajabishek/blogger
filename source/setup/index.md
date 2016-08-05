@@ -58,7 +58,6 @@ A5 ruled notebook and Stabilo fine tip pens for sketching when I am working on a
 - [Flux](https://justgetflux.com/) for it slowly warms the colors of your screen based on the time of day. This helps me work late in the nights without straining my eyes.
 - [Sublime](https://www.sublimetext.com/) for those few times when I feel like moving out of vim
 - VLC. Because if not this then what else
-- Adobe Illustrator and Sketch for creating mockups
 - [Irvue](https://itunes.apple.com/in/app/irvue-unsplash-wallpapers/id1039633667?mt=12) for stunning photos in high resolution for desktop wallpapers.
 - [Pixate](http://www.pixate.com/) to change ideas into reality. Powerful prototyping.
 - [Boostnote](https://b00st.io/) open-sourced note app for programmers.
