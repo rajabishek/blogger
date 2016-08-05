@@ -17,4 +17,29 @@ Its a good thing that Apple will include Swift 2.3 also in Xcode 8 stable releas
 
 Or if you would just like to experiment and try out the language now, I highly recommend the [IBM Sandbox](https://swiftlang.ng.bluemix.net/#/repl). Its a REPL that is available online in cloud to experiment with Swift 3.
 
+The best news of all is that Swift 3 aims to be the last release with breaking source changes. So looking forward, you should be able to keep your Swift code from version to version. Swift core team has promised that if they do need to break source compatibility, they will offer long deprecation cycles. That means the language has achieved source stability that will encourage more conservative companies to adopt it.
+
+## The changes
+As I said earlier they are 2 broad categories of changes that have been made. The things that are gone as of Swift 2.3 & things that are new in Swift 3. Let’s start with the removed ones, since they are easier to understand and you may have encountered them before as warnings in Xcode 7.3.
+
+## ++ & -- operators
+The increment and decrement operator are there in almost many programming languages that allow to quickly increase or decrease a value by one.
+```swift
+var count = 0
+++count
+print(count) //1
+--count
+print(count) //0
+```
+However, things get a bit complicated for beginner's when deciding which one to choose. Each of them comes in two possible variations prefix and postfix. Under the hood its operator overloading in action, they are all functions that return values which you may use or neglect. Its easy for a programmer who has already worked with a C style language, but if you think about it, it's a bit overwhelming for the rookies, because ultimately the goal of writing neat code is that it must be simple and understandable to all. The Swift community felt that removing these operators and by encouraging the compound assignment operators instead of these, Swift can feel more natural and intuitive in nature.
+```swift
+//Same code written using compound assignment operators
+var count = 0
+count += 1
+print(count) //1
+count -= 1
+print(count) //0
+```
+> If you would like to know more about the motivation behind this change, check out [Chris Lattner’s proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0004-remove-pre-post-inc-decrement.md) on the removal of ++ and — operators.
+
 
