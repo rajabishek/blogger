@@ -48,7 +48,7 @@ A5 ruled notebook and Stabilo fine tip pens for sketching when I am working on a
 **Web Apps**:
 
 - Most of Google stuff
-- Google Drive for document management. Special mention because it helped me move away from Windows environment. Linux still doesn't have a half decent document suite
+- Dropbox for document management. Special mention because I nearly put all of my design stuff here.
 - [Twitter](http://twitter.com/therajabishek) for bite sized updates
 - [Feedly](http://feedly.com) for RSS
 
