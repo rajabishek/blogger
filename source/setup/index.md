@@ -25,7 +25,7 @@ For listening to music I use iTunes on desktop and Google Music on mobile/tablet
 
 ![Software](/img/software.png)
 
-**OS**: OSX El Captain
+**OS**: OSX El Captain(10.11.6)
 
 **Development**: I use iTerm2 for command line. I spend most of my time on either terminal or browser. Some of the terminal tools that I use daily:
 
