@@ -42,4 +42,6 @@ print(count) //0
 ```
 > If you would like to know more about the motivation behind this change, check out [Chris Lattner’s proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0004-remove-pre-post-inc-decrement.md) on the removal of ++ and — operators.
 
+## C style for loops
+
 
