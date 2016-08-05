@@ -128,3 +128,7 @@ primeNumbersInRange(n1: 4, n2: 20)
 ```
 
 If you would like to know more about the motivation behind this change, check out the [proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0003-remove-var-parameters.md) on the removal of var keyword while declaring function parameters.
+
+## Consistent label behavior for function parameters
+
+
