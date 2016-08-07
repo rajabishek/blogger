@@ -102,7 +102,7 @@ Swift 3 no longer allows developers to set function parameters as variables as S
 ```swift
 func primeNumbersInRange(n1: Int, n2: Int) {
     
-    //We have to make a local copy explicity, n1 & n2 will always remain as constants
+    //We have to make a local copy explicitly, n1 & n2 will always remain as constants
     var start = n1;
     
     while(start < n2){
