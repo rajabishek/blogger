@@ -34,3 +34,8 @@ git config --global user.email //Show's the email address
 
 ## Getting help from git
 You can use the `git help` command to get help from git. This will list all the commonly used commands that git provides along with a short note on each one of them. To know more about how to use a specific command we can do `git help <command>` to get details about using that git command, it actually brings out the git manual page for that command, the page has the description about that command and the options that we can use along with it. Use can use f key to move forward and b to move backward while reading the documentation in the git man page. When you are finally done you can hot q to quit out. Unix users will recognize that the manual page that was opened was a typical Unix man page.  In fact its was the very same thing, you could have also opened it using `man git-log`. Git help just gives you an easier way to look at those manual pages through its command line tool.
+
+## Initializing a repository
+Before we start using git for a project we need to initialize a repository, what I mean is that we need to tell git which is the folder that it needs to keep track of. The first step that we do is we navigation to the project's root folder and run the `git init` command there. This tell git to do the initialization process, i.e start doing what you need to do, to track this folder. What git internally does is that it create a .git folder in the project's root where it store all the git related information. Since this is the only place where git stores all of the git related information for the project, if we needed to remove verstion control from the project, all that we need to do is remove this folder `sudo rm -rf .git`.
+
+##
