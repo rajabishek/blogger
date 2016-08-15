@@ -31,3 +31,6 @@ git config --global --list //Show all the configurations
 git config --global user.name //Show's the name
 git config --global user.email //Show's the email address
 ```
+
+## Getting help from git
+You can use the `git help` command to get help from git. This will list all the commonly used commands that git provides along with a short note on each one of them. To know more about how to use a specific command we can do `git help <command>` to get details about using that git command, it actually brings out the git manual page for that command, the page has the description about that command and the options that we can use along with it. Use can use f key to move forward and b to move backward while reading the documentation in the git man page. When you are finally done you can hot q to quit out. Unix users will recognize that the manual page that was opened was a typical Unix man page.  In fact its was the very same thing, you could have also opened it using `man git-log`. Git help just gives you an easier way to look at those manual pages through its command line tool.
