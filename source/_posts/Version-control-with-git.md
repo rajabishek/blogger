@@ -1,9 +1,7 @@
 ---
 title: Version control with git
-date: 2016-08-15 17:30:56
 tags:
 ---
-
 
 ## Why do I need version control?
 Thinks about the day when we used to have folder names like project, project-final, project-final2, project-last-final etc.
@@ -16,16 +14,16 @@ Git is the most popular version control tool used today, so we will be taking a 
 
 ## Initial Configuration
 Before we start using git for our projects, we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code.Its important to note her that git allows us to provide configuration at 3 different levels.
-> System - Configurations at this level apply to all the users of the system
-> User - Configurations at this level apply to a specific users of the system
-> Project - Configurations at this level apply to the project alone
+- System - Configurations at this level apply to all the users of the system
+- User - Configurations at this level apply to a specific users of the system
+- Project - Configurations at this level apply to the project alone
 
 The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig`, the project level configurations are stored at `project_root_folder/.git/config`. These are just plain text files, to change the configurations at any particular level we could very well just go and edit these file manually, but the issue here is that we have to also understand the format in which we must write the configuration in these file. Git simplifies this process by providing us some commands to edit these configurations.
 
-Using the git command we edit the configuration like this. `git config --system #the configuartion goes here` for a system wide configuration, or `git config --global #the configuartion goes here` for a user level configuration, and `git config #the configuartion goes here` for a project level configuration.
+Using the git command we edit the configuration like this. `git config --system <configuration>` for a system wide configuration, or `git config --global <configuration>` for a user level configuration, and `git config <configuration>` for a project level configuration.
 
 Lets add a few user level configurations to get us started with git. The first thing is, you need to tell git about yourself i.e your name and email address. Because when you are working on a project with multiple team members and when you make a change with git, it marks that change with your identity so that others can know the person who was responsible behind writing that piece of code. You can also tell git the default text editor that you want it to use. Git uses that text editor to open files when it wants you to enter some message. Along with the text editor we also provide it with 2 options `w` meaning telling unix to wait till we complete entering the message(if we don't do this unix will not wait till we complete writing the message and it will keep going with what it needs to do) and `l1` means put the cursor at line number 1. Another configuration that we can add is to tell git to use colors when outputing things to the command line, if we don't add this configuration it will just give us monochromatic text. 
-```
+```shell
 git config --global user.name "Raj Abishek"
 git config --global user.email "rajabishek@hotmail.com"
 git config --global core.editor "sublime -wl1"
@@ -42,9 +40,9 @@ You can use the `git help` command to get help from git. This will list all the 
 Before we start using git for a project we need to initialize a repository, what I mean is that we need to tell git which is the folder that it needs to keep track of. The first step that we do is we navigation to the project's root folder and run the `git init` command there. This tell git to do the initialization process, i.e start doing what you need to do, to track this folder. What git internally does is that it create a .git folder in the project's root where it store all the git related information. Its important to note here that this .git folder is that only place where git stores all the information, unlike other version control systems like SVN it doesn't include a tracking file in every single directory down the line ( To remove SVN you will have to go through all pull out all the tracking file present in every directory). Since this is the only place where git stores all of the git related information for the project, if we needed to remove version control from the project, all that we need to do is remove this folder `sudo rm -rf .git`.
 
 ## Basic git workflow
-> Make the changes
-> Add the changes ( Adds the files to the staging area - more on this later )
-> Commit changes to the repository with a message
+1. Make the changes
+1. Add the changes ( Adds the files to the staging area - more on this later )
+1. Commit changes to the repository with a message
 
 ## Looking through the commit made
 `git log` command allows us to see the commits that have been made so far. For example to see the recent 5 commits what we do `git log -n 5` to get the last 5 commits that have been made. `git log --since=2016-08-1` will should the commits that have been made after 1st of August 2016.(This is exclusive doesn't include commits made on 1st of August). Similarly the command `git log --until=2016-08-1` will show commits that have been made before 1st August 2016.( This is inclusive, includes the commits made on 1st of August). You also look for commits that have been made by a specific author, you need not search by the full name, you can just provide git a part of the author's name and git will search for you. `git log --author="Raj"` will search for all commits that have been made by authors who's name has the word "Raj". We can also search the commits by the commit message, `git log --grep="hello"` will bring out all commits that have the word hello in the commit message. `grep` stands for gllbalk regular expression.
@@ -55,7 +53,7 @@ Git uses a three tree architecture, i.e we have 3 trees the working copy, stagin
 ## How git refers to the change sets ?
 Git generates a checksum for each change set. Checksum algorithms convert data into a simple number called as the checksum. How many ever times you feed the same data the checksum algorithm always generates the same checksum. Changing the data would change the checksum. Git uses SHA-1 hash algorithm to generate the checksum. Its a 40 character hexadecimal string. We have seen this checksum before if you remember, when we do a git log we see this checksum that is generated for each commit there. Therefore every commit has this meta information the checksum, the author details and a reference to the checksum of the previous commit called as parent. In fact we can use these checksums to search for the commits also. 
 
-## Demystifying the HEAD pointer ?
+## Demystifying the HEAD pointer
 We also have something called as the HEAD pointer in git. HEAD always points to the tip of the current branch in the repository, it's the last state of the repository, what was last checkout out. Or you can visualize as HEAD pointing to the parent of the next commit, i.e where the writing will start taking place. Its the place where we left off, its the place from where we are going to make any further changes.
 
 Lets take a look at how git keep track of HEAD. Inside the .git folder there is a file called HEAD and that what git uses to know where the head is pointing. If you see the contents of the file you find a path, if you follow that path, you would actually lead to the SHA value of the most recent commit made in the current branch. When we are doing `git log` its the same thing as `git log HEAD` starting from the HEAD go backwards and show me the log.
@@ -76,4 +74,3 @@ Lets say your working copy is in sync with the repository. Now lets say you are 
 
 ## Moving or Renaming a file
 Renaming is essentially moving a file if you think about it. Its like deleting the old file and adding the new file. So when you move a file in the working copy you have to do this `git rm/add <old-path>` and then `git add <new-path>`.Now if you do git status it shows that a file has be moved. Next to commit this change you can do a git commit as usual. Instead of doing these work there is another way also in which git can help you in this process. You can do `git mv <old-path> <new-path>` and git will move the file on disk and add the changes to the staging area. Now to can just git commit to complete the process.
-
