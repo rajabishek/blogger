@@ -4,15 +4,16 @@ tags:
 ---
 
 ## Why do I need version control?
-Version control is a system which records and stores every change made to a set of files, so that you can go back to a previous state at any time. Developers have been using this method for a long time (the first kind of version control system was developed in the 70s) and it is now unthinkable to seriously write software without one.
+Thinks about the day when we used to have folder names like project, project-final, project-final2, project-last-final etc.
+We used to duplicate project every time to backup a previous version for safety. Version control solves this problem. It is a system which records and stores every changes made to a project, with the flexibility of allowing you to go back to a previous state at any time. Developers have been using this method for a long time (trust me it exists from the 70s) and it is now unthinkable to seriously write software without one.
 
 <!-- more -->
 
 ## Installation
-Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git. If you don't have git installed, then you can head over to the downloads section of the official git [website](https://git-scm.com/downloads) and download the git installer based on your operating system to install git on your computer.
+Git is the most popular version control tool used today, so we will be taking a look at how we can make use of this powerful tool to make our lives easier. Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git. If you don't have git installed, then you can head over to the downloads section of the official git [website](https://git-scm.com/downloads) and download the git installer based on your operating system to install it on your computer. The installation process is pretty simple and the installer will guide you through.
 
 ## Initial Configuration
-Before we configure git to suit our needs we need to know that git allows us to provide configuration at 3 different levels.
+Before we start using git for our projects, we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code.Its important to note her that git allows us to provide configuration at 3 different levels.
 > System - Configurations at this level apply to all the users of the system
 > User - Configurations at this level apply to a specific users of the system
 > Project - Configurations at this level apply to the project alone
