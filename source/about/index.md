@@ -3,7 +3,8 @@ title: About Me
 date: 2016-05-10 12:43:23
 ---
 ## Design, Code & Things in Between
-Hi, I am Raj Abishek. I am an experimental programmer designing code since 2013 aspiring to make a name in the technology space by developing cutting edge products. I am currently pursuing Bachelor's degree in Computer Science & Engineering at [VIT University](http://www.vit.ac.in).
+Hi, I am Raj Abishek. I am an experimental programmer designing code since 2013 aspiring to make a name in the technology space by developing cutting edge products. Earlier I used to be a Computer Science & Engineering undergrad at [VIT University](http://www.vit.ac.in).
+
 My goal is to combine craft functionality with fine art integrity and the exacting principles of design.
 
 I interned at [Razorpay](http://razorpay.com) during the winter of 2015 and at [Skcript](http://skcript.com) in summer of 2015. 
