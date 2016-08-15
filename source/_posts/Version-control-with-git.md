@@ -1,7 +1,9 @@
 ---
 title: Version control with git
+date: 2016-08-15 17:30:56
 tags:
 ---
+
 
 ## Why do I need version control?
 Thinks about the day when we used to have folder names like project, project-final, project-final2, project-last-final etc.
