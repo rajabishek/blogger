@@ -73,5 +73,5 @@ Lets say your working copy is in sync with the repository. Now lets say you are 
 
 
 ## Moving or Renaming a file
-Renaming is essentially moving a file if you think about it. Its like deleting the old file and adding the new file. So when you move a file in the working copy you have to do this `git rm/add <old-path>` and then `git add <new-path>`.Now if you do git status it shows that a file has be moved. Next to commit this change you can do a git commit as usual. Instead of doing these work there is another way also in which git can help you in this process. You can do `git mv <old-path> <new-path>` and git will move the file on disk and add the changes to the staging area. Now to can just git commit to complete the
+Renaming is essentially moving a file if you think about it. Its like deleting the old file and adding the new file. So when you move a file in the working copy you have to do this `git rm/add <old-path>` and then `git add <new-path>`.Now if you do git status it shows that a file has be moved. Next to commit this change you can do a git commit as usual. Instead of doing these work there is another way also in which git can help you in this process. You can do `git mv <old-path> <new-path>` and git will move the file on disk and add the changes to the staging area. Now to can just git commit to complete the process.
 
