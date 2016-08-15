@@ -96,15 +96,17 @@ Git also has a revert command that make it easy for us to revert a particular co
 
 ## Undoing many commits
 Git reset command is a very powerful tool to undo multiple commits. Always remember that more powerful a tool is the more careful and responsible we have to be while using it. With great power comes great responsibility. Git reset always moves the HEAD pointer. But there are 3 different options that we can use with git reset.
-- --soft - Doesn't change the staging area or the working directory
-- --mixed(default) - Changes staging index to match repository, doesn't change the working directory
-- --hard - Changes the staging index and the working directory to match the repository
+- **soft** - Doesn't change the staging area or the working directory
+- **mixed**(default) - Changes staging index to match repository, doesn't change the working directory
+- **hard** - Changes the staging index and the working directory to match the repository
 
 ## Soft reset
 Whenever you are working with git reset, its a good idea to take a screen shot of the git log before you proceed any further. Noting down the SHA values can be helpful if you mess up with anything. Lets say we have b as the most recent commit and commit c was made before commit b. Now the HEAD points to the SHA value of commit b. You can check that with `cat .git/refs/heads/master`. Now if you do `git reset --soft <part-of-sha-value-of-commit-c>`, then HEAD will point to the commit c. You can check that with `cat .git/refs/heads/master`, that the value would have changed. Now in fact if you do `git log` you won't find commit b. c will be like the last commit that was made. The working directory will have the changes that we made after commit c. The changes will be ready in the staging area for us to make a commit.
 
-## Mixed reset
+## Mixed reset(Default)
 With this type of git reset the staging area will match the repository after the HEAD pointer was made to point to a different one. Just like the previous example lets say we have b as the most recent commit and commit c was made before commit b. Now the HEAD points to the SHA value of commit b. You can check that with `cat .git/refs/heads/master`. Now if you do `git reset --mixed <part-of-sha-value-of-commit-c>`, then HEAD will point to the commit c. You can check that with `cat .git/refs/heads/master`, that the value would have changed. Now in fact if you do `git log` you won't find commit b. c will be like the last commit that was made. The working directory alone will have the changes that we made after commit c. The staging index will not have the changes, it will be identical to the repository. The changes will be ready in the working area for us to stage and make a commit.
+
+In fact if you remember when you need to unstage a file from the staging index you do `git reset HEAD <filename>`, what is essentially happening here is a mixed reset. Since mixed is the default reset you don't actually need the --mixed option if you want to do a mixed reset. Here we are reseting the HEAD pointer to HEAD itself and making the staging area's file match with the repository's version of the file. This is what happens when we additionally give a filename. Not the entire staging area is made to match the repository, only that particular file that was provided is checked out from the repository to the staging index.
 
 ## Hard reset
 With this type of git reset the staging area and the working directory will match the repository after the HEAD pointer was made to point to a different one. Just like the previous example lets say we have b as the most recent commit and commit c was made before commit b. Now the HEAD points to the SHA value of commit b. You can check that with `cat .git/refs/heads/master`. Now if you do `git reset --hard <part-of-sha-value-of-commit-c>`, then HEAD will point to the commit c. You can check that with `cat .git/refs/heads/master`, that the value would have changed. Now in fact if you do `git log` you won't find commit b. c will be like the last commit that was made. Use this with caution because you will loose all the changes that you made after commit c, there is no place in which we will have the changes that we made after commit c.
