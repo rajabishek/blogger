@@ -96,6 +96,9 @@ Git also has a revert command that make it easy for us to revert a particular co
 
 ## Undoing many commits
 Git reset command is a very powerful tool to undo multiple commits. Always remember that more powerful a tool is the more careful and responsible we have to be while using it. With great power comes great responsibility. Git reset always moves the HEAD pointer. But there are 3 different options that we can use with git reset.
-> --soft - Doesn't change the staging area or the working directory
-> --mixed(default) - Changes staging index to match repository, doesn't change the working directory
-> --hard - Changes the staging index and the working directory to match the repository
+- --soft - Doesn't change the staging area or the working directory
+- --mixed(default) - Changes staging index to match repository, doesn't change the working directory
+- --hard - Changes the staging index and the working directory to match the repository
+
+## Soft reset
+Whenever you are working with git reset, its a good idea to take a screen shot of the git log before you proceed any further. Noting down the SHA values can be helpful if you mess up with anything. Lets say we have b as the most recent commit and commit c was made before commit b. Now the HEAD points to the SHA value of commit b. You can check that with `cat .git/refs/heads/master`. Now if you do `git reset --soft <part-of-sha-value-of-commit-c>`, then HEAD will point to the commit c. You can check that with `cat .git/refs/heads/master`, that the value would have changed. Now infact if you do `git log` you won't find commit b. c will be like the last commit that was made. The working directory will have the changes that we made after commit c. The changes will be ready in the staging area for us to make a commit.
