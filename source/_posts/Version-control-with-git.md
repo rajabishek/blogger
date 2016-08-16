@@ -113,3 +113,19 @@ With this type of git reset the staging area and the working directory will matc
 
 ## Removing untracked files
 This is where the git clean command comes in handy. Lets say you have a bunch of new files that you have added to the project and you would like to remove them, then you could do it manually, but git clean simplifies this process. You cannot use the git clean option as such you have to use it with either the `-n` or the `-f` option. When you do `git clean -n` it will show you the list of new files that git will remove. When you do `git clean -f` git would actually remove the new file from the working copy. Its important to note here that git clean only removes the untracked files, i.e lets say you have added 3 new files sample1.txt, sample2.txt and sample3.txt then let says you add sample3.txt to the staging area. Now when you run `git clean -f` git will remove only the sample1.txt and the sample2.txt file. So git clean removes the untracked files that are there in your working directory.
+
+## Ignoring files
+Lets say we are working on a project and we don't want git to track a particular file or a folder. It may be a log file thats constantly changing, or a temporary file, or a folder that contains the project dependencies which is something that we don't wanna be a part of version control. We need a way to tell git to ignore certain files all together. To tell the list of these files and folders that we want git ignore we create a `.gitignore` file in the project root. We can even use very basic regular expressions in the gitignore file. We can negate expression using the `!` character. The following rules means that ignore all php files except the index.php file. The order of writing the rules is important. Git reads the file from top to bottom and keeps overwriting the rules which are already there. To start writing gitignore files for your project you can visit [this website](https://www.gitignore.io/) and type a programming language, or operating system as tags to get started with some boilerplate code. They even have a consistent endpoint naming system allowing developers to even access it via APIs.
+```
+*.php
+!index.php
+```
+You can also tell git to ignore all files in a directory by just having a trailing slash. The following rules says git to ignore all files in the photos directory, which is inside of the assets directory.
+```
+assets/photos/
+```
+In the gitignore file comments should start with # character, and blank lines in the gitignore files are skipped. Make sure that you commit the gitignore file to the repository. This is a file that we want got to track and maintain, it is as important as any other project files or folders.
+```
+assets/*.png
+```
+The above rules will only ignore the png files in the assets folder, if the assets folder has a folder that contains some other png files, those png files will not be ignored, i.e * only applies to the filenames.
