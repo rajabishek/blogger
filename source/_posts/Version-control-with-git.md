@@ -230,7 +230,24 @@ Its good to make branches and try out new ideas, but now its time to learn how t
 
 Now in this case merging was easy actually, but merging can be a bit complicated and we should know how to deal with them. Because of this always make sure that you run git merge in a clean working directory, make sure you don't have any uncommitted changes before you run git merge, you can even stash them (we will see this a bit later), but always make sure you have a clean working directory which will give you a good clean workplace where you can sort out any problems which you might have while merging.
 
-## Different merge types
+## Fast-forward merge
 Before we proceed any further we need to understand the difference between a fast forward merge and a real merge. In the last example we looked at when we did a merge what actually happened was a fast forward merge. When merging the new branch back to master, the master branch did not have any commits after the point from where we branched out to the new branch. Master branch was just idle, we did not commit any changes to the master branch at all, as a result what we ended up with a fast forward merge. What git does is that when we merge a new branch into the current branch git starts from the tip of the new branch and goes up the ancestor chain to see if anywhere it can find the HEAD pointer. If it finds the HEAD pointer along the way the merge that happens is called as a fast forward merge, it is the safest of all, there are no problems that we need to deal with. In a fast forward merge what happens that the commit object in the new branch are duplicated and the HEAD pointer now is just made to point to the tip of last commit of the duplicated copy. In other type of merges this is not actually the case, what actually happens is that git uses a set of merging rules and makes a commit called as the merge commit. In a fast forward merge there is no need to make a new commit.
 
 When you know that a fast forward merge is what is going to happen, you can pass a couple of options to the git merge command. The `--no-ff` option meaning no fast forward tells forces git to make a merge commit anyway. You would run it like `git merge --no-ff <branch-name>`, which prevents a fast forward and make a merge commit anyway. The main reason why you wanna do is that if needed some kind of documentation in the git history that you in fact did do a merge. You have another `--ff-only` which means that do the merge only if you are able to do a fast forward merge. So if you are unsure whether or not a fast forward will happen or not and you want the merge to happen only if fast forwarding is possible then you can use this option.
+
+## Real merge
+A real merge is that kind of merge that happens when git is not able to find the HEAD pointer when it looks up the ancestor chain from the tip of the branch that we are trying to merge. In these cases git creates a new commit called as a merge commit and it does a really good job on choosing the best strategy for merging the changes. But sometimes in spite of its best efforts git fails. In these cases we will have to help git out to resolve the merge conflicts. Lets say we have a master branh from which we branched out to a branch called as x. Now in branch x we make a change to the index.html file at the top and commit this change, now we checkout to the master branch and change the index.html file somewhere at the bottom and then commit this change, now if we try to merge the branch x into master branch git will not have any problems in merging them and it will do the real merge by itself. Conflicts only occurs when the code has changed in two branches in the same line numbers, because in this case git can't decide which one to use and we will have to help it. This is called as resolving a merge conflict. This is one issue that we have to take care when merging branches.
+
+## Resolving merge conflicts
+Whenever you trying merging and there is a merge conflict git reports the files in which the merge conflict occurred. Now when you run `git status` it will show you the unmerged paths. We are now in the middle of a merge, the merge is not yet completed, git needs some help to complete this real merge. So we need to open the file and fix the problem. Lets say you are trying to merge the sample branch into the master branch and there was a merge conflict in the index.html file. Now in the index.html file the contents would look like this after you run `git merge sample` from the master branch.
+```sh
+<<<<<<< HEAD
+<p>This is the content that was there in the master branch
+=======
+<p>This is the content that was there in the sample branch.
+>>>>>>> sample
+```
+There are choices that you have when you need to resolve a merge
+- Abort the merge (I don't want the merge to happen, I wasn't not anticipating these problems get me out of here)
+- Resolve the conflicts manually (Initially when  you are learning I suggest you to start out with this)
+- Use a merge tool to resolve the conflicts
