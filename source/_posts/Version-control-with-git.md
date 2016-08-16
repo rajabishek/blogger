@@ -162,9 +162,10 @@ Before we proceed lets look at the ways in which we can reference commits in git
 - Branch reference ( to point to the tip of the branch )
 - Tag reference
 - Ancestry
+
 In ancestry we have 2 options. One is that we can use the `^` as a suffix character to refer to a parent of a reference.
 Like `HEAD^`,`master^`,`acf9339^`. To get the parent of parent we can use the `^` symbol twice. Second option is we can use the `~` as suffix with number of generations to go up. Like `HEAD~1`, `master~`. If there is no number after ~ it is assumed to be 1, so we can leave off number 1 i.e `HEAD~` is equivalent to `HEAD~1`.
-```
+```sh
 HEAD^ == HEAD~1 == HEAD~ # refers to the 2nd last commit
 HEAD^ == HEAD~1 == HEAD~ == master^ == master~  == master~1 # if the currently checked out branch is master
 
