@@ -136,6 +136,7 @@ The above rules will only ignore the png files in the assets folder, if the asse
 - Logs & Databases
 - Operating system generated files
 - User uploaded assets (images, PDFs, videos)
+
 To start writing gitignore files for your project you can visit [this website](https://www.gitignore.io/) and type a programming language, or operating system as tags to get started with some boilerplate code. They even have a consistent endpoint naming system allowing developers to even access it via APIs. You way also wanna look at github [article](https://help.github.com/articles/ignoring-files/) on ignoring files and the gitignore [project](https://github.com/github/gitignore) created by github.
 
 ## Ignoring files globally
