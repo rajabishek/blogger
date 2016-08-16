@@ -240,14 +240,21 @@ A real merge is that kind of merge that happens when git is not able to find the
 
 ## Resolving merge conflicts
 Whenever you trying merging and there is a merge conflict git reports the files in which the merge conflict occurred. Now when you run `git status` it will show you the unmerged paths. We are now in the middle of a merge, the merge is not yet completed, git needs some help to complete this real merge. So we need to open the file and fix the problem. Lets say you are trying to merge the sample branch into the master branch and there was a merge conflict in the index.html file. Now in the index.html file the contents would look like this after you run `git merge sample` from the master branch.
-```sh
-<<<<<<< HEAD
-<p>This is the content that was there in the master branch
-=======
-<p>This is the content that was there in the sample branch.
->>>>>>> sample
-```
+
 There are choices that you have when you need to resolve a merge
 - Abort the merge (I don't want the merge to happen, I wasn't not anticipating these problems get me out of here)
 - Resolve the conflicts manually (Initially when  you are learning I suggest you to start out with this)
 - Use a merge tool to resolve the conflicts
+ 
+To abort the merge you just run the command `git merge --abort`. You will go back to the state before you ran the git merge command, the merge will be aborted. You can resolve the conflicts manually by opening the index.html file and the editing the way it needs to look. Now save the file and add index.html file to the staging index `git add index.html`. If you have 10 files with merge conflict then you have to manually change all the 10 files and then add all of them to the staging area before you make a commit. Normally when you commit you give it a message, here also you can give a message but you don't need to, when you are in the middle of a merge git has a standard default message that it would use. So just run `git commit`, it might pop up the default text editor and ask give you an option if you would like to change the commit message, you can just click save and close for the merge to complete. The merge was successful you can check that by running `git branch --merged` and see that the sample branch is there in the list. Now you can remove the sample branch if you want to.
+
+You could also use a merge tool to resolve conflicts instead of doing it manually. To see the list of merge tools available you can run `git mergetool` to see the list of merge tools available. When you are in the middle o a merge and you want to use the merge tool for the merge you can run `git mergetool --tool=<tool-name>`. You can also add a merge toll to your git config file if you want to always use a certain tool.
+
+## Strategies to reduce conflicts
+The following strategies can be helpful to reduce the possibility of a merge conflict and also make it easier to resolve a merge conflict.
+1. Keep lines short
+1. Keep commits small and focused
+1. Beware stray edits to white space
+1. Merge often
+1. Track changes to master - as changes happen in master, keep bringing those changes into your branch
+The last technique is very important when you are working with a lot of team members. When you are working in a new branch and other are changing the master branch, its a good idea to merge the master branch into the new branch and keep in in sync with the master branch, this will help to reduce the merge conflicts when you merge the new branch into the master branch. Since the new branch has most of the changes that are incorporated in the master already and it will reduce the number of conflicts you when you merge back the new branch in master.
