@@ -174,3 +174,4 @@ HEAD^ == HEAD~2 == master^^  == master~1 # if the currently checked out branch i
 ```
 
 ## Exploring the commit tree
+We can use the git ls-tree command to look at a tree-ish. We use the command like this `git ls-tree <tree-ish>`. So when we do `git ls-tree HEAD`, since HEAD points to the tip of the currently checked out branch, it will return the list of files at that point. In the left you can see that we see blob or tree. A blob is a simple file wheres a tree is nothing but a folder. If were we to checkout these are the files that we would get from the repository. We also just say git to get us the file structure inside a particular path alone, we can do `git ls-tree HEAD^ assets/`, this means that show me the file structure inside the assets folder before making the last commit.
