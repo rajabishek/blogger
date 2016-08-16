@@ -143,6 +143,7 @@ To start writing gitignore files for your project you can visit [this website](h
 If find ignoring certain files over and over for every project, for example like the operating system files. You can configure git globally ignore certain files. Doing this will allow to ignore files in all repositories. The settings that we add for configuring to ignore files globally will not live inside of our project, its gonna be outside. Since it wont be a part of the repository, any other person who is working, when they download our project it will not have this configuration. What we are doing is instead or repository specific ignores we have create user specific ignores. Thats good because having things like .DS_Store in the gitgnore is not good if not every team member is using a mac based operating system. Each person in team can have their own gitignore file specific to their operating system on their machines. There are 2 steps that needs to be done to globally ignore files.
 1. Make a global gitignore file in some location
 1. Tell git where to look for the global gitignore file
+
 Lets say we create a new file in the home folder called as .gitignore_global that represents the global gitignore file. Next to tell git about that we add the following user level configuration `git config --global core.excludesfile ~/.gitignore_global`.
 
 ## Ignoring tracked files
@@ -152,3 +153,21 @@ But what if we do not want to loose the working copy that we had. Well you can d
 
 ## Tracking empty directories
 By default git does not track empty directories. That is because git was designed to be a file tracking system, its purpose is to track files and content in those files. So it tracks files and tracks the directories that it takes to get to those files. But it ignores directories that have no files at all. Now lets say we have an empty folder, but we want git to track that folder, how do we tell git to do that. So the trick that we use here to keep track of empty directories in so put a file in them. So the cheat that everyone uses is to put a little tiny file in the folder. By convention the filename that is used for this purpose is a .gitgnore or a .gitkeep file. .gitkeep is the most widely used conventions, you can think of it has a way of telling git to keep tracking that folder. So all that you have to do now to track an empty folder is navigate to that folder and `touch .gitkeep`. Now you can just add that folder to staging index and commit this change set. There is nothing magical happening here we could have named that file anything we want, we just followed a method that everyone uses. The idea behind doing all this is to add a dummy file in the empty folder which git can track (in turn tracking the folder it takes to read that dummy file).
+
+## Looking through commit history
+Before we proceed lets look at the ways in which we can reference commits in git. In he git documentation you often see the reference to the work tree-ish. What does it mean ? We know that a tree is a structure of file in the git repository. In git tree-ish means something that reference a part of the tree. Its ish because that something can vary widely. In simpler terms a tree-ish is a reference to a commit. Because that commit in turn references the tree, git repository and the files in there at that point. So if you hard time thinking about all the things a tree-ish can be, the simplest version is that its just something that points at a commit. So lets look at the ways in which we can reference a commit.
+- full SHA-1 hash of a commit
+- part of SHA-1 hash of a commit (at least 4 characters)
+- HEAD pointer ( to reference the latest commit )
+- Branch reference ( to point to the tip of the branch )
+- Tag reference
+- Ancestry
+In ancestry we have 2 options. One is that we can use the `^` as a suffix character to refer to a parent of a reference.
+Like `HEAD^`,`master^`,`acf9339^`. To get the parent of parent we can use the `^` symbol twice. Second option is we can use the `~` as suffix with number of generations to go up. Like `HEAD~1`, `master~`. If there is no number after ~ it is assumed to be 1, so we can leave off number 1 i.e `HEAD~` is equivalent to `HEAD~1`.
+```
+HEAD^ == HEAD~1 == HEAD~ # refers to the 2nd last commit
+HEAD^ == HEAD~1 == HEAD~ == master^ == master~  == master~1 # if the currently checked out branch is master
+
+HEAD^^ == HEAD~2 # refers # refers to the 3rd last commit
+HEAD^ == HEAD~2 == master^^  == master~1 # if the currently checked out branch is master
+```
