@@ -1,6 +1,5 @@
 ---
 title: Email iOS app
-date: 2016-08-20 18:27:31
 tags:
 ---
 
