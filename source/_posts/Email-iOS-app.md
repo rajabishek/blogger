@@ -13,9 +13,11 @@ A simple task of sending an email is also achieved in iOS through the delegation
 ![Screenshot 1](/img/inbox-mail-app/onboarding-screens.png)
 ![Screenshot 2](/img/inbox-mail-app/getting-started.png)
 
-
 ## Inbox Screens
 ![Screenshot 1](/img/inbox-mail-app/inbox-screens.png)
 
 ## Inbox Actions
 ![Screenshot 1](/img/inbox-mail-app/inbox-actions.png)
+
+## Compose Mail
+![Screenshot 1](/img/inbox-mail-app/compose-mail.png)
