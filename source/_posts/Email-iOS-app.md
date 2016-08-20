@@ -9,3 +9,6 @@ A simple task of sending an email is also achieved in iOS through the delegation
 
 <!-- more -->
 
+## On boarding Screens
+![Screenshot 1](/img/inbox-mail-app/onboarding-screens.png)
+![Screenshot 2](/img/inbox-mail-app/getting-started.png)
