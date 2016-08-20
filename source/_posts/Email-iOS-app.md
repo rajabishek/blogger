@@ -16,3 +16,6 @@ A simple task of sending an email is also achieved in iOS through the delegation
 
 ## Inbox Screens
 ![Screenshot 1](/img/inbox-mail-app/inbox-screens.png)
+
+## Inbox Actions
+![Screenshot 1](/img/inbox-mail-app/inbox-actions.png)
