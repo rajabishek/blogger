@@ -24,3 +24,6 @@ A simple task of sending an email is also achieved in iOS through the delegation
 
 ## Message
 ![Screenshot 6](/img/inbox-mail-app/message.png)
+
+## Settings
+![Screenshot 6](/img/inbox-mail-app/settings.png)
