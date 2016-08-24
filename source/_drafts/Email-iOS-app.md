@@ -36,3 +36,6 @@ Rather than presenting all the features up-front, its better to provide guidance
 
 ## Settings
 ![Screenshot 6](/img/inbox-mail-app/settings.png)
+
+## Xcode
+![Screenshot 7](/img/inbox-mail-app/xcode-screenshot.png)
