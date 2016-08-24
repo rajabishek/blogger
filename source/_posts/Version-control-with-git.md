@@ -12,16 +12,18 @@ Think about the days when we used to have folder names for our projects like pro
 Git is the most popular version control tool used today. Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git. If you don't have git installed, then you can head over to the downloads section of the [official git website](https://git-scm.com/downloads) and download the git installer based on your operating system. The installation process is pretty simple and the installer will guide you through.
 
 ## Initial Configuration
-Before we start using git for our projects, we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code.Its important to note her that git allows us to provide configuration at 3 different levels.
-- System - Configurations at this level apply to all the users of the system
-- User - Configurations at this level apply to a specific users of the system
-- Project - Configurations at this level apply to the project alone
+Before we start using git for our projects we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code. Its important to note here that git allows us to provide configuration at 3 different levels.
+- **System** - Configurations at this level apply to all the users of the system
+- **User** - Configurations at this level apply to a specific user of the system
+- **Project** - Configurations at this level apply to a specific project alone
 
-The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig`, the project level configurations are stored at `project_root_folder/.git/config`. These are just plain text files, to change the configurations at any particular level we could very well just go and edit these file manually, but the issue here is that we have to also understand the format in which we must write the configuration in these file. Git simplifies this process by providing us some commands to edit these configurations.
+The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig`, the project level configurations are stored at `project-root/.git/config`. These configuration files are just plain text files. To change the configurations at any particular level we could very well just go and edit the corresponding file manually, but the issue here is that we should also know the format in which we must write the configurations in these files. To simplify this process git provides us with some commands to add/remove configurations at any level.
 
-Using the git command we edit the configuration like this. `git config --system <configuration>` for a system wide configuration, or `git config --global <configuration>` for a user level configuration, and `git config <configuration>` for a project level configuration.
+We run the command `git config --system <configuration>` for a system wide configuration, or `git config --global <configuration>` for a user level configuration, and `git config <configuration>` for a project level configuration.
 
-Lets add a few user level configurations to get us started with git. The first thing is, you need to tell git about yourself i.e your name and email address. Because when you are working on a project with multiple team members and when you make a change with git, it marks that change with your identity so that others can know the person who was responsible behind writing that piece of code. You can also tell git the default text editor that you want it to use. Git uses that text editor to open files when it wants you to enter some message. Along with the text editor we also provide it with 2 options `w` meaning telling unix to wait till we complete entering the message(if we don't do this unix will not wait till we complete writing the message and it will keep going with what it needs to do) and `l1` means put the cursor at line number 1. Another configuration that we can add is to tell git to use colors when outputing things to the command line, if we don't add this configuration it will just give us monochromatic text. 
+Lets add a few user level configurations to get us started with git. The first thing is, you need to tell git about yourself i.e your name and email address. Because when you are working on a project with multiple team members and when you make a change, git marks that change with your identity. In this way any team member can know the person who was responsible behind writing a particular piece of code. 
+
+You can also tell git the default text editor that you want it to use. Git uses that text editor to open files when it wants you to enter some message. Along with the text editor we also provide it with 2 options `w` meaning telling unix to wait till we complete entering the message(if we don't do this unix will not wait till we complete writing the message and it will keep going with what it needs to do) and `l1` means put the cursor at line number 1. Another configuration that we can add is to tell git to use colors when outputing things to the command line, if we don't add this configuration it will just give us plain monochromatic text. 
 ```sh
 git config --global user.name "Raj Abishek"
 git config --global user.email "rajabishek@hotmail.com"
@@ -30,6 +32,18 @@ git config --global color.ui true
 git config --global --list #Show all the configurations
 git config --global user.name #Show's the name
 git config --global user.email #Show's the email address
+```
+
+After running the above command git will automatically write these configurations to the `~/.gitconfig` file. If you infact look at the contents of the configuration file by running `cat ~/.gitconfig` we can indeed see the configurations added. The contents of the configuration file are show below.
+
+```
+[user]
+       	email = rajabishek@hotmail.com
+       	name = Raj Abishek
+[core]
+       	editor = sublime -wl1
+[color]
+        ui = true
 ```
 
 ## Getting help from git
