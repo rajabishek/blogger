@@ -57,7 +57,8 @@ Before we start using git for a project we need to initialize a repository, what
 What git internally does is that it creates a .git folder in the project's root where it stores all the information for tracking purpose. Its important to note here that this .git folder is the only place where git stores all the information, unlike other version control systems like SVN it doesn't include a tracking file in every single directory down the line ( To remove SVN we would have to go through every sub directory int the project and pull out the tracking file present in it). Since this is the only place where git stores all the information for tracking, in future if we needed to remove version control from our project, all that we need to do is remove this folder by running `sudo rm -rf .git`.
 
 ## Basic git workflow
-1. Make the changes
+Now that we have initialized git, the basic work flow that we would follow while using git is shown below.
+1. Make the changes in files
 1. Add the changes ( Adds the files to the staging area - more on this later )
 1. Commit changes to the repository with a message
 
