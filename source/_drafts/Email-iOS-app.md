@@ -3,7 +3,7 @@ title: Email iOS app
 tags:
 ---
 
-## Good design = usefulness + simplicity
+## Usefulness + Simplicity
 I was particular in not reinventing the wheel. I wanted to use interface elements that all mobile users are already used to. Because if you think about it, users must be able to recognize what it’s for and how to use it.
 <!-- more -->
 
