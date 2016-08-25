@@ -1,5 +1,5 @@
 ---
-title: Design to Production - iOS Email Client
+title: Design to Production - BoxMail
 tags:
 ---
 
@@ -52,22 +52,35 @@ The inbox screen in the most important screen of all in the mail application. Pe
 - The photo of the sender has to be visible for easy identification
 - The user must be able to differentiate between normal and scheduled emails
 - The emails need to be separated (Primary/Social/Promotions)
+- Navigate to compose mail screen easily.
 
 As you can see above all these information needs to be shown on the inbox screen for every email. Thats a lot of information to deal with and it needs to be presented in a nice way. It should appear natural.
 ![Screenshot 3](/img/inbox-mail-app/inbox-screens.png)
+The users can bring the compose email screen by clicking the pencil icon. This design idea was taken from the principles of material design. A floating action button can be used to represent the primary action in an application. Only one floating action button is recommended per screen to represent the most common action.
 
 ## Inbox Actions
-Users also need to take quick actions to email.
+Users find it useful if they can quickly takes actions for the email. Actions such as archiving and rescheduling and an email are common tasks. Swiping an element in a list is a common action that iOS users are already aware of.
 ![Screenshot 4](/img/inbox-mail-app/inbox-actions.png)
+The users can swipe rightwards to schedule an email and they can swipe leftwards to archive an email. The swiping method is perfectly suitable for scheduling or archiving an email because it is a common task that users would do frequently, but not for a group of emails. If it was a action that is usually performed for a group of emails then the better interface would be to allow them to select the emails first and then perform the action.
 
 ## Compose Mail
+The another important screen in the mail app is the screen that allows users to type out email and send them. As the user types out the recipient's email address the email address would change to a pill that contains the photo and the name of the recipient. By adding the photo of the recipient the user can quickly verify the details and send the email. The right side screen shows the notification message when the email has been successfully sent. By keeping the color translucent the notification can seem to be more pleasant and less annoying in nature.
 ![Screenshot 5](/img/inbox-mail-app/compose-mail.png)
+Its also a good practice to give a reasonable amount of padding on the left and right hand side of the message text box. As you can see above we have a lot of inputs to take in from the user such as email addresses, subject, message, cc, bcc. Adding labels for each elements would occupy a lot of space and would be distracting for the user, placeholder texts can come in handy in such places.
 
-## Message
+## Message & Sidebar
+Reading lengthly emails is hard, lets make the process enjoyable. The email screen needs to show the email and provide an option to download the file. Placing an icon for the type of attachment such as pdf, image, word files cam be useful because in most cases users will be expecting certain files via email. Showing the number of attachments can be helpful especially when there are lot of attachments in the email. The three action icons at the bottom help in replying, replying to all and forwarding the message. These are common actions that a user would take and deserves an explicit place on the screen instead of being hidden somewhere.
 ![Screenshot 6](/img/inbox-mail-app/message.png)
+The sidebar is a common user interface in mobile apps to bring navigation links for the user. The right side screen shows the navigation bar which slides from the left. It helps the user in navigating to the different screens of the app and also show the recent notifications. When presenting any type of navigation element its important that we highlight the current place where the user.
+
+The number inside the small circle can help choose the need for navigation. If there are no mails in drafts why should I bother navigating to that screen. These small little things can make a lot of difference in the user experience. If the small circle was there the user would need to navigate to the drafts screen and then find out that there are no emails there. The small drop down icon near the profile image of the user can be used to switch email accounts.
 
 ## Settings
+The user must be able to customize the app to suit his needs. This is the place where the user would add and remove email accounts. Customize the notifications and get support from the company. Since there are a lot of settings that the user can customize its a good idea to divide into sections as shown below.
 ![Screenshot 6](/img/inbox-mail-app/settings.png)
+Account management in one section, navigation in another and social interaction in another. Similarly the disclosure indicator in the settings can be helpful to the user to let that know that there is more and they will be navigated to another screen. This is a common practice followed in iOS apps in general.
 
 ## Xcode
+Keeping engineering in mind is also an important quality while designing. There is no point in designing something if can't be actually made. No designer would like to work on something only to be told that it can't be practically done. But anyway the designs that we have worked on are very simple and requires only a reasonable amount of effort to bring them to life.
 ![Screenshot 7](/img/inbox-mail-app/xcode-screenshot.png)
+The above image shows the screenshot taken after writing code in Xcode and running the app in iPhone 6 simulator. Since the design that we created is a lot different from what a typical boilerplate that Apple would give for iOS apps, every little user interface element like a button, or navigation bar or the placement of icons needs to be completely customized. 
