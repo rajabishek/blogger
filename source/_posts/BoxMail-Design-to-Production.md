@@ -1,7 +1,9 @@
 ---
 title: BoxMail - Design to Production
+date: 2016-08-25 14:05:03
 tags:
 ---
+
 ## Usefulness + Simplicity
 I was very particular in not reinventing the wheel. I wanted to use interface elements that all mobile users are already used to. Users must be able to recognize what it’s for and how to use it.
 <!-- more -->
