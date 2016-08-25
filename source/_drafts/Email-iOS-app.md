@@ -11,7 +11,21 @@ Usefulness and simplicity is the key. If the application is not useful, there is
 
 Before staring out with the UI design for the screens I had a few ideas in mind. Not that I am unhappy with the current email clients for iOS, I wanted the app to be very intuitive and at the same time aesthetically appealing in nature. The user shouldn't be navigating screens for the commonly used tasks and at the same time we can't clutter all the options on the main screen also, there has to be a balance.
 
+## Typical workflow
+Engineering time is precious. After a week of programming an application we can't ask the developer to change the elements suddenly and rework on what they have done. This is why designing and prototyping is so essential is a software development life cycle. Its makes everyones life easier. The typical work flow that I would carry out while building a project is:
 
+1. Ideation and brainstorming 
+1. Listing out the functional & non-functional requirements
+1. Wire framing and deciding user flows
+1. User experience & designing interfaces
+1. Giving visual finesse & Pixel perfecting the designs
+1. Prototyping interactions
+1. Programming & Implementation
+
+> If a picture is worth 1000 words, a prototype is worth 1000 meetings.
+-- **@ideo**
+
+Rightly said, there is no point in showing the design screens alone to the client. What if the client can actually touch and use a dummy version of the app to get a feel of it. All this happens even before we write a single line of code. Today's tools and software allows us to make such good prototypes that it becomes hard to different between the prototype and actual app. Developing prototypes and getting approval before staring out can save so many issues, meetings, and can cut down the cost. The final working app would look exactly the same as the prototype but will have all of the functionality built in.
 
 ## On-boarding Screens
 The on boarding process is a critical step in setting your users up for success with your product, but there are a number of considerations and hard decisions to be made when you are designing your on boarding to define how best to get your users familiar with your product and its value.
