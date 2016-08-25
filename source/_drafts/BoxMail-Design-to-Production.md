@@ -1,8 +1,7 @@
 ---
-title: Design to Production - BoxMail
+title: BoxMail - Design to Production
 tags:
 ---
-
 ## Usefulness + Simplicity
 I was very particular in not reinventing the wheel. I wanted to use interface elements that all mobile users are already used to. Users must be able to recognize what it’s for and how to use it.
 <!-- more -->
@@ -32,13 +31,11 @@ The on boarding process is a critical step in setting your users up for success 
 
 ![Screenshot 1](/img/inbox-mail-app/onboarding-screens.png)
 
-**Avoid long tutorials**
-Its not a really good idea to put the user through swiping several screens in the name of getting them started. Its a good practice to keep the number of screens fewer than five.
-
-**On-boarding must be contextual and progressive**
-Rather than presenting all the features up-front, its better to provide guidance as they use. The startup tutorial can be used to explain just the main feature of the app.
+To keep the on boarding process interesting and short its better to provide guidance as the users use the app rather than presenting all the features upfront. The startup tutorial can be used to explain just the main feature of the app. Its a good practice to keep the number of screens fewer than five.
 
 ![Screenshot 2](/img/inbox-mail-app/getting-started.png)
+
+To also help the user identify the current screen we should always highlight the corresponding bottom circle. This gives them information about the number of such screens and also an idea about how much they have progressed. The user may already be familiar with the app, probably they are installing it on their new phone. Therefore there should always be a way for the users to skip through the tutorial and use the app directly.
 
 ## Inbox Screens
 The inbox screen in the most important screen of all in the mail application. People receive hundreds of emails everyday, they have to deal with all this data and be able to take quick actions based on the message. At the very basic the user must have the following options.
