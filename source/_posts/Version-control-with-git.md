@@ -1,5 +1,6 @@
 ---
 title: Version control with git
+date: 2016-05-15 09:00:00
 tags:
 ---
 
