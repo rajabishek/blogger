@@ -4,13 +4,17 @@ tags:
 ---
 
 ## Usefulness + Simplicity
-I was particular in not reinventing the wheel. I wanted to use interface elements that all mobile users are already used to. Because if you think about it, users must be able to recognize what it’s for and how to use it.
+I was very particular in not reinventing the wheel. I wanted to use interface elements that all mobile users are already used to. Users must be able to recognize what it’s for and how to use it.
 <!-- more -->
 
-Usefulness and simplicity is the key. If the application is not useful, there is no reason why the user will want to use it, and at the same time no one would bother spending time learning how to use your app. The app has to be simple and self explanatory.
+Usefulness and simplicity is the key. If the application is not useful, there is no reason why the user will want to use it, and at the same time no one would bother spending time learning how to use your app. The app has to be simple and self explanatory. 
+
+Before staring out with the UI design for the screens I had a few ideas in mind. Not that I am unhappy with the current email clients for iOS, I wanted the app to be very intuitive and at the same time aesthetically appealing in nature. The user shouldn't be navigating screens for the commonly used tasks and at the same time we can't clutter all the options on the main screen also, there has to be a balance.
+
+
 
 ## On-boarding Screens
-The onboarding process is a critical step in setting your users up for success with your product, but there are a number of considerations and hard decisions to be made when you are designing your onboarding to define how best to get your users familiar with your product and its value.
+The on boarding process is a critical step in setting your users up for success with your product, but there are a number of considerations and hard decisions to be made when you are designing your on boarding to define how best to get your users familiar with your product and its value.
 
 ![Screenshot 1](/img/inbox-mail-app/onboarding-screens.png)
 
@@ -23,6 +27,19 @@ Rather than presenting all the features up-front, its better to provide guidance
 ![Screenshot 2](/img/inbox-mail-app/getting-started.png)
 
 ## Inbox Screens
+The inbox screen in the most important of all in the mail application. People receive hundreds of emails everyday, they have to deal with all this data and be able to take quick actions based on the message. At the very basic the user must have the following options.
+
+- User should be able to differentiate between unread and unread emails
+- The sender, subject and the date of the email should be visible
+- It should be also clear whether the mail has any attachments
+- User must be able to see the date of the email
+- The message should also indicate whether its a conversation and if so the number of conversations
+- A part of the body must be visible
+- The photo of the sender has to be visible for easy identification
+- The user must be able to differentiate between normal and scheduled emails
+- The emails need to be separated (Primary/Social/Promotions)
+
+As you can see above all these information needs to be shown on the inbox screen for every email. Thats a lot of information to deal with and it needs to be presented in a nice way. It should appear natural.
 ![Screenshot 3](/img/inbox-mail-app/inbox-screens.png)
 
 ## Inbox Actions
