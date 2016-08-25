@@ -1,5 +1,5 @@
 ---
-title: Email iOS app
+title: Design to Production - iOS Email Client
 tags:
 ---
 
@@ -12,7 +12,7 @@ Usefulness and simplicity is the key. If the application is not useful, there is
 Before staring out with the UI design for the screens I had a few ideas in mind. Not that I am unhappy with the current email clients for iOS, I wanted the app to be very intuitive and at the same time aesthetically appealing in nature. The user shouldn't be navigating screens for the commonly used tasks and at the same time we can't clutter all the options on the main screen also, there has to be a balance.
 
 ## Typical workflow
-Engineering time is precious. After a week of programming an application we can't ask the developer to change the elements suddenly and rework on what they have done. This is why designing and prototyping is so essential is a software development life cycle. Its makes everyones life easier. The typical work flow that I would carry out while building a project is:
+Engineering time is precious. After weeks of programming we can't ask the developer to change the elements suddenly and rework on what they have done. This is why designing and prototyping is so essential is a software development life cycle. Its makes everyones life easier. The typical work flow that I carry out while building a project is:
 
 1. Ideation and brainstorming 
 1. Listing out the functional & non-functional requirements
@@ -25,7 +25,7 @@ Engineering time is precious. After a week of programming an application we can'
 > If a picture is worth 1000 words, a prototype is worth 1000 meetings.
 -- **@ideo**
 
-Rightly said, there is no point in showing the design screens alone to the client. What if the client can actually touch and use a dummy version of the app to get a feel of it. All this happens even before we write a single line of code. Today's tools and software allows us to make such good prototypes that it becomes hard to different between the prototype and actual app. Developing prototypes and getting approval before staring out can save so many issues, meetings, and can cut down the cost. The final working app would look exactly the same as the prototype but will have all of the functionality built in.
+Today its not enough showing the design screens alone to the client. What if the client can actually touch and use a dummy version of the app to get a feel of it. All this happens even before we write even a single line of code. Today's tools and software are so powerful that they allow us to make prototypes that are so close to the original app. Developing prototypes and getting approval before starting can save so much time, effort and money. The final working app would look exactly the same as the prototype but will have all of the functionality built in.
 
 ## On-boarding Screens
 The on boarding process is a critical step in setting your users up for success with your product, but there are a number of considerations and hard decisions to be made when you are designing your on boarding to define how best to get your users familiar with your product and its value.
@@ -36,12 +36,12 @@ The on boarding process is a critical step in setting your users up for success 
 Its not a really good idea to put the user through swiping several screens in the name of getting them started. Its a good practice to keep the number of screens fewer than five.
 
 **On-boarding must be contextual and progressive**
-Rather than presenting all the features up-front, its better to provide guidance as they use.
+Rather than presenting all the features up-front, its better to provide guidance as they use. The startup tutorial can be used to explain just the main feature of the app.
 
 ![Screenshot 2](/img/inbox-mail-app/getting-started.png)
 
 ## Inbox Screens
-The inbox screen in the most important of all in the mail application. People receive hundreds of emails everyday, they have to deal with all this data and be able to take quick actions based on the message. At the very basic the user must have the following options.
+The inbox screen in the most important screen of all in the mail application. People receive hundreds of emails everyday, they have to deal with all this data and be able to take quick actions based on the message. At the very basic the user must have the following options.
 
 - User should be able to differentiate between unread and unread emails
 - The sender, subject and the date of the email should be visible
@@ -57,6 +57,7 @@ As you can see above all these information needs to be shown on the inbox screen
 ![Screenshot 3](/img/inbox-mail-app/inbox-screens.png)
 
 ## Inbox Actions
+Users also need to take quick actions to email.
 ![Screenshot 4](/img/inbox-mail-app/inbox-actions.png)
 
 ## Compose Mail
