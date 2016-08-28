@@ -29,7 +29,7 @@ The view hierarchy is also important for the following reasons:
 - If a view’s size is changed then its subviews can be resized automatically.
 
 ## Properties and helper methods
-Every view has a `superview` property of type `UIView` that is a reference to the instance of super view. And every view has a property called `subviews` of type `[UIView]` that is an immutable array of the subviews in the back to front order. We also have the `isDescendantOfView:` to check whether a view is a child of a subview, i.e is it a subview at any depth. Every view also has a property called `tag` which is a simple numeric value.
+Every view has a `superview` property of type `UIView` that is a reference to the instance of super view. And every view has a property called `subviews` of type `[UIView]` that is an immutable array of the subviews in the back to front order. We also have the `isDescendantOfView:` to check whether a view is a child of a subview, i.e is it a subview at any depth. Every view also has a property called `tag` which is a simple numeric value. Every view has a `backgroundColor` property that sets the background color for the view and if set to nil(default value) then in has a transparent background.
 
 If you need any reference to a view higher up in the hierarchy from a particular view you can use the `viewWithTag:` method. It propagates up the view hierarchy chain and checks the tag to find the correct view. The method `addSubview:` makes one view a subview of another and `removeFromSuperview:` takes a subview out of its superview’s view hierarchy. When `addSubview:` method is called, the view is placed as the last subview, thus it is drawn last, meaning that it appears frontmost. The subviews of a superview are indexed from 0. The first subview i.e the one drawn first has the index 0. Since we have an index for every subview this gives us the flexibility to perform some neat operations. 
 - We can insert a sub view at a specific index using the `insertSubview:atIndex:` method. 
@@ -43,3 +43,10 @@ Removing a subview from its superview releases it. If we intend to reuse that su
 ```swift
 superview.subviews.forEach { (subview: UIView) in subview.removeFromSuperview() }
 ```
+
+## Visibility and Opacity
+A view can be made invisible by setting its `hidden` property to true, and visible again by setting it to false.
+
+When you hide a view, the view and all its sub views are made invisible but they are not removed from the view hierarchy. It is just that they are nor visible on the screen and they will not receive any touch events. For making a view partially transparent we can manipulate the `alpha` property on the view. The alpha value can range from 0.0 to 1.0. 0.0 is perfectly transparent and 1.0 is opaque. The alpha value is inherited by all the subviews. When setting the alpha value to 0.5 for a view the view and all its subview become 50% transparent.
+
+Lets say we have a view b as a subview of view a. Not lets say the alpha value for view a is 0.5 then when you give alpha value of b as 0.5, the view b is actually 25% transparent. Since view b is already inheriting the alpha value of a, any alpha value you assign to be will be relative to the value assigned for its super view. A view’s alpha property value affects both the apparent transparency of its background color and the apparent transparency of its contents.
