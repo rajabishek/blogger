@@ -54,4 +54,11 @@ Lets say we have a view b as a subview of view a. Not lets say the alpha value f
 ## Frame & Bounds
 Both the `frame` and `bounds` property of a view are of type `CGRect`. A `CGRect` essentially represents 4 elements the x and y coordinates i.e the position of the view and the width and height i.e the size of the view. Now the difference between frame and bounds is that the `frame` property give a `CGRect` in which the position of the view is with respect to the superview’s coordinate system and the `bounds` property gives a `CGRect` in which the position of the view is with respect to its own coordinate system. By default the superview’s coordinate system will have the origin at its top left and with the x axis in the rightwards direction and the y axis downwards.
 
-Lets take a look at the frame property in this section. Since CGRect represents the position and size of a view, resetting a views frame will result in resizing and repositioning a view within its parent. When you create a view programatically in iOS you initialize it with a frame using the `init(frame:)` initializer. If you don't provide a frame the default CGRect is CGRectZero which has zero height and width. A view with a zero-size frame is effectively invisible.
+Since CGRect represents the position and size of a view, resetting a views frame will result in resizing and repositioning a view within its parent. When you create a view programatically in iOS you initialize it with a frame using the `init(frame:)` initializer. If you don't provide a frame the default CGRect is CGRectZero which has zero height and width. A view with a zero-size frame is effectively invisible.
+
+## Window coordinates
+The device screen has no frame, but it has bounds, because there is nothing up the device screen. The main window has no superview, but its frame is set with respect to the screen’s bounds.
+```swift
+let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+```
+In iOS 9 you can omit the frame parameter it is automatically set the screen bounds. The window's coordinates is thus essentially the screen coordinates.
