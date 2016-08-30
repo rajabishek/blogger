@@ -45,3 +45,6 @@ There are four integer types - `byte`, `short`, `int`, and `long`. All of these 
 - `byte` - Has a width of 8 bits and values can range from –128 to 127
 
 Width must not be interpreted as the amount of storage consumed. It should be seen as the behavior that is defined for variables and expressions of that type. The Java run-time environment is free to use whatever size it wants, as long as the types behave as you declared them.
+
+## Byte
+This is the smallest integer type with a width of 8 bits and values ranging from -128 to 127. Variables of this type are useful while working with a stream of data from a network or file. While dealing with a stream of data from a network or a file we fetch/write in chunks, with each chunk of a byte size. They are also useful while working with raw binary data that may not be directly compatible with Java’s other built-in types.
