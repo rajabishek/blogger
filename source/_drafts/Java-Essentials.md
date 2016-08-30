@@ -139,3 +139,34 @@ The values of true and false do not convert into any numerical representation. T
 - If one operand is a float, the entire expression is promoted to float.
 - If any of the operands are double, the result is double.
 
+## Arrays
+- In Java all arrays are dynamically allocated.
+- Declare array using `type var-name[ ];` this just declares the array variable. No array actually exists.
+- To create actual array use `array-var = new type [size];`. Only now memory is allocated for the array and linked to the array-var variable.
+- The elements in the array allocated by new will automatically be initialized to zero (for numeric types), false (for boolean), or null (for reference types, which are described in a later chapter).
+- An array initializer is a list of comma-separated expressions surrounded by curly braces. The array will automatically be created large enough to hold the number of elements you specify in the array initializer. There is no need to use new.
+```java
+int month_days[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+```
+- If you try to access elements outside the range of the array (negative numbers or numbers greater than the length of the array), you will cause a run-time error.
+- Multidimensional arrays are actually arrays of arrays. To declare a multidimensional array variable, specify each additional index using another set of square brackets.
+```java
+int twoD[][] = new int[4][5];
+```
+- When you allocate memory for a multidimensional array, you need only specify the memory for the first (leftmost) dimension.
+```java
+int twoD[][] = new int[4][];
+twoD[0] = new int[1];
+twoD[1] = new int[2];
+twoD[2] = new int[4];
+twoD[3] = new int[3];
+```
+- It is possible to initialize multidimensional arrays. To do so, simply enclose each dimension’s initializer within its own set of curly braces.
+```java
+int data[][] = {{1,2,3}, {4,5}};
+```
+- You can also declare array like `type[ ] var-name;`Both syntax are equivalent as shown below. But this syntax is useful while declaring array as a return type from a function.
+```java
+char twod1[][] = new char[3][4]; <=> char[][] twod2 = new char[3][4];
+int[] nums, nums2, nums3; <=> int nums[], nums2[], nums3[];
+```
