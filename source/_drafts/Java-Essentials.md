@@ -130,4 +130,12 @@ The values of true and false do not convert into any numerical representation. T
 - You cannot declare a variable in an inner scope.
 - Simply creating { } creates a new scope in Java.
 
+## Type Conversion and Casting
+- The two types are compatible and if the destination type is larger than the source type then Java does automatic type promotion.
+- Explicit casting is required for conversion between two incompatible types.
+- When there is an overflow during casting the resulting value is remainder of the division of size of destination type.
+- Java automatically promotes each byte, short, or char operand to int when evaluating an expression.
+- If one operand is a long, the whole expression is promoted to long.
+- If one operand is a float, the entire expression is promoted to float.
+- If any of the operands are double, the result is double.
 
