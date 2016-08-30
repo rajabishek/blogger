@@ -1,11 +1,11 @@
----
+===----
 title: Java Essentials
 tags:
 ---
 ## Introduction
 Java is a general-purpose high-level computer programming language originally developed by Sun Microsystems and released in 1995 that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. 
 
-It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.
+It is intended to let application developers "write once, run anywhere", meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.
 
 <!-- more -->
 
@@ -16,7 +16,7 @@ It is intended to let application developers "write once, run anywhere" (WORA), 
 - Secure
 - Architecture neutral & portable
 - High performance
-- Interpreted (Byte code is interpreted at runtime by the Java virtual machine)
+- Interpreted (Byte code is interpreted at runtime by the JVM)
 - Threaded and dynamic 
 
 ## Strongly Typed Language
@@ -32,3 +32,4 @@ In any programming language you need a way to represent these 3 basic values. A 
 1. **Floating point numbers** - This includes `float` and `double`, which represent numbers with fractional precision.
 1. **Characters** - The `char` datatype is used to represent characters that represents symbols in a character set, like letters and numbers.
 1. **Boolean**- The `boolean` datatype is used to represent true/false values.
+Any type that we define are also is built up using these basic primitive types. Thus they form the basis for all other types of data that you can create. Although Java is otherwise completely object-oriented, the primitive types are not. They represent single values and are not object oriented. The reason for not modeling the primitive types as classes is for performance. Making the primitive types into classes would have degraded performance very much.
