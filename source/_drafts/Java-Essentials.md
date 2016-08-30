@@ -122,3 +122,12 @@ The output of the above code is `ch1 and ch2 and ch3: X Y Y`. A literal characte
 The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This is the type returned by all relational operators. This is also the type required by the conditional expressions.
 
 The values of true and false do not convert into any numerical representation. The true literal in Java does not equal 1, nor does the false literal equal 0.
+
+## Variables & Scope
+- A variable cannot be used prior to its declaration.
+- A variable cannot be used after its declaration if its not initialized.
+- Variables are created when their scope is entered, and destroyed when their scope is left. Lifetime of a variable is confined to its scope.
+- You cannot declare a variable in an inner scope.
+- Simply creating { } creates a new scope in Java.
+
+
