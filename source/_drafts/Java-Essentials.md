@@ -7,3 +7,15 @@ Java is a general-purpose high-level computer programming language originally de
 
 It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.
 
+<!-- more -->
+
+## Principles of Java
+- Simple & familiar
+- Object oriented
+- Robust
+- Secure
+- Architecture neutral & portable
+- High performance
+- Interpreted (Byte code is interpreted at runtime by the Java virtual machine)
+- Threaded and dynamic 
+
