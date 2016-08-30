@@ -37,7 +37,7 @@ Any type that we define are also is built up using these basic primitive types. 
 
 The primitive types in Java having an explicit size. In C and C++ the size of an integer varies based upon the platform in the program is compiled, but because of Java’s portability requirement, all data types have a strictly defined range. For example, an `int` is always 32 bits in Java, regardless of the particular platform.
 
-## Integers
+## Integer Values
 There are four integer types - `byte`, `short`, `int`, and `long`. All of these are signed(positive and negative), Java does not support unsigned, positive-only integers. Java’s designers felt that unsigned integers were unnecessary.
 - `long` - Has a width of 64 bits and values can range from -2<sup>63</sup> to 2<sup>63</sup> - 1
 - `int` - Has a width of 32 bits and values can range from –2<sup>31</sup> to 2<sup>31</sup> - 1
@@ -55,16 +55,39 @@ Has a width of 16 bits and values ranging from –32,768 to 32,767. This is the 
 ## Int
 Has a width of 32 bits and values can range from –2<sup>31</sup> to 2<sup>31</sup> - 1. Variables of type `int` are commonly used in control loops and to index arrays. By why not use a `byte` or `short` to be more efficient and save space in cases where larger number is not required. This shouldn't be done because when byte and short values are used in an expression, they are promoted to `int` when the expression is evaluated. This is called as type promotion. There `int` is often the best choice when an integer is needed. Use the `byte` and `short` only when the requirement explicitly demands it.
 
-## Long
-Has a width of 64 bits and values can range from -2<sup>63</sup> to 2<sup>63</sup> - 1. This type is useful in those occasions where an `int` is not large enough to hold the desired value. Since `long` gives a larger range it is suitable for containing bigger whole numbers. Use this data type when you need a range of values wider than those provided by `int`.
+Any whole number value is an integer literal and by default they are all decimal values, meaning they are describing a base 10 number. Octal values are denoted in Java by a leading zero. Hexadecimal values are denoted in Java by a leading zero-x, (0x or 0X). Binary values are denoted in Java by a leading zero-b, (0b or 0B).
 
-## Floating-Point Types
-Floating point values are real numbers. They are used for numbers that require fractional precision. There are two kinds of floating-point types, `float` and `double`, which represent single and double precision floating point values, respectively.
+If all integer literals create a `int` value then how it is possible to assign an integer literal to one of Java’s other integer types, such as byte or long, without causing a type mismatch error. That's because in Java when a literal value is assigned to a `byte` or `short` variable, no error is generated if the literal value is within the range of the target type.
+
+Beginning with JDK 7, you can embed one or more underscores in an integer literal. Doing so makes it easier to read large integer literals. When the literal is compiled, the underscores are discarded. The underscores will be ignored. Underscores can only be used to separate digits. They cannot come at the beginning or the end of a literal. However it is permissible for more than one underscore to be used between two digits.
+```java
+int x = 123_456_789;
+int x = 123___456___789;
+int x = 0b1101_0101_0001_1010;
+```
+
+## Long
+Has a width of 64 bits and values can range from -2<sup>63</sup> to 2<sup>63</sup> - 1. This type is useful in those occasions where an `int` is not large enough to hold the desired value. Since `long` gives a larger range it is suitable for containing bigger whole numbers. Use this data type when you need a range of values wider than those provided by `int`. An integer literal can always be assigned to a long variable. However to specify a long literal, you will need to explicitly tell the compiler that the literal value is of type long. It is done by appending an upper or lowercase L to the literal.
+```java
+long x1 = 12; //OK
+long x2 = 2147483648; // not OK! That's not a valid int literal
+long x3 = 2147483648L; // OK
+```
+Note that while integer literals will be auto-widened to `long` when assigning to a `long` variable but you will need to use an explicit long literal when expressing a value. Here 2147483648 is interpreted as a literal integer but can't fit in a 32-bit int type. It needs to be a literal long value, so it needs an l or L at the end. Use the upper case L always as the upper case L is less easy to confuse with a numeral 1 than the lower case l.
+
+## Floating Point Values
+Floating point values are real numbers. They are used for numbers that require fractional precision. There are two kinds of floating-point types, `float` and `double`, which represent single and double precision floating point values, respectively. Floating point literals can be expresses in Standard notation or Scientific notation.
 
 ## Float
 The `float` data type is a single precision 32 bit IEEE 754 floating point. This type can be used (instead of `double`) if you need to save memory in large arrays of floating point numbers. The advantage of using a `float` type is that they are faster on some processors and takes half as much space as double precision.
 
 Variables of type `float` are useful when you need a fractional component, but don’t require a large degree of precision. This data type should never be used for precise values, such as currency. When dealing with currency values use the the `java.math.BigDecimal` class instead.
+
+Floating-point literals in Java default to double precision. To specify a float literal, you must append an F or f to the constant. Beginning with JDK 7, you can embed one or more underscores in a floating-point literal. This feature works the same as it does for integer literals. The same rules apply here. They cannot come at the beginning or the end of a literal. It is, however, permissible for more than one underscore to be used between two digits. It is also permissible to use underscores in the fractional portion of the number.
+```java
+double num = 9_423_497_862.0;
+double num = 9_423_497.1_0_9;
+```
 
 ## Double
 The double data type is a double-precision 64 bit IEEE 754 floating point. For decimal values, this data type is generally the default choice. This type is useful when you are manipulating large valued numbers and when you need to maintain accuracy over many iterative calculations.
@@ -72,3 +95,30 @@ The double data type is a double-precision 64 bit IEEE 754 floating point. For d
 Again this type must not be used for precise values like currency use the `java.math.BigDecimal` class instead. Double precision is actually faster than single precision on some modern processors that have been optimized for high-speed mathematical calculations.
 
 By default, Java uses `double` to represent its floating point numerals (so a literal 3.14 is typed `double`). It's also the data type that will give you a much larger number range, so I would strongly encourage its use over `float`. Unless you can guarantee that your result will be small enough to fit in float's prescribed range, then it's best to opt with `double`. A `float` gives you approx. 6-7 decimal digits precision while a `double` gives you approx. 15-16.
+
+As mentioned earlier floating-point literals in Java default to double precision. You can also explicitly specify a double literal by appending a D or d. Doing so is, of course, redundant.
+
+## Characters
+Java uses Unicode to represent characters. Java `char` is a 16 bit type. The range of a char is 0 to 65,536. Unicode defines a fully international character set that can represent all of the characters found in all human languages.
+
+Characters in languages such as English, German, Spanish, or French can easily be contained within 8 bits. The use of 16 bits here is inefficient in these cases( as just 8 bits are needed) but such is the price that must be paid for global portability. 
+
+ASCII character set occupies the first 127 values in the Unicode character set. Although char is designed to hold Unicode characters, it can also be used as an integer type on which you can perform arithmetic operations.
+```java
+class Test {
+	public static void main(String args[]) {
+		char ch1, ch2, ch3;
+		ch1 = 88; // code for X
+		ch2 = 'Y';
+		ch3 = ch1 + 1;
+		System.out.print("ch1 and ch2 and ch3: ");
+		System.out.println(ch1 + " " + ch2 + " " + ch3);
+	}
+}
+```
+The output of the above code is `ch1 and ch2 and ch3: X Y Y`. A literal character is represented inside a pair of single quotes. All of the visible ASCII characters can be directly entered inside the quotes, such as 'a', 'z', and '@. String literals in Java are specified like they are in most other languages—by enclosing a sequence of characters between a pair of double quotes.
+
+## Boolean
+The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This is the type returned by all relational operators. This is also the type required by the conditional expressions.
+
+The values of true and false do not convert into any numerical representation. The true literal in Java does not equal 1, nor does the false literal equal 0.
