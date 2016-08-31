@@ -1,0 +1,4 @@
+---
+title: SQL Essentials
+tags:
+---
