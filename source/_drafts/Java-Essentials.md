@@ -165,7 +165,7 @@ twoD[3] = new int[3];
 ```java
 int data[][] = {{1,2,3}, {4,5}};
 ```
-- You can also declare array like `type[ ] var-name;`Both syntax are equivalent as shown below. But this syntax is useful while declaring array as a return type from a function.
+- You can also declare array like `type[ ] var-name;`Both syntax are equivalent as shown below. But this syntax is especially useful while declaring array as a return type from a function.
 ```java
 char twod1[][] = new char[3][4]; <=> char[][] twod2 = new char[3][4];
 int[] nums, nums2, nums3; <=> int nums[], nums2[], nums3[];
