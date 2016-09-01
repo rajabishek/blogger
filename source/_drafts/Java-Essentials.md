@@ -170,3 +170,47 @@ int data[][] = {{1,2,3}, {4,5}};
 char twod1[][] = new char[3][4]; <=> char[][] twod2 = new char[3][4];
 int[] nums, nums2, nums3; <=> int nums[], nums2[], nums3[];
 ```
+
+## Hashtable
+- You declare a hash table instance using `Hashtable<Character, Integer> store = new Hashtable<>();`. 
+- To store the value for a key you use the put method on the instance `store.put(character, count);`. 
+- And to get the value for the key you use the get method `int count  = store.get(character) == null ? 1 : store.get(character) + 1;`, i.e if the value for the key is not there it returns null or else it returns the value.
+- To get the keys in the hash table you can do `Set<Character> keys = store.keySet();`. Now we can loop through the key set using a simple for in loop.
+```java
+package com.rajabishek;
+
+import java.util.Hashtable;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter the input string: ");
+        String input = reader.nextLine();
+
+        Hashtable<Character, Integer> store = new Hashtable<>();
+
+        char[] characters = input.toCharArray();
+        for(char character : characters) {
+            int count  = store.get(character) == null ? 1 : store.get(character) + 1;
+            store.put(character, count);
+        }
+
+        Set<Character> keys = store.keySet();
+        int maxCount = -1;
+        char maxCharacter = 'a';
+        for(Character key: keys) {
+            int count = store.get(key);
+            if(count > maxCount) {
+                maxCount = count;
+                maxCharacter = key;
+            }
+        }
+
+        System.out.println("The maximum occuring character is " + maxCharacter + " and its maximum count is: " + maxCount);
+    }
+}
+```
+The above is the code for getting the maximum occurring character in a string.
