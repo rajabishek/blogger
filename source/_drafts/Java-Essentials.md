@@ -30,8 +30,8 @@ This strongly typed nature of Java is what makes is highly robust and secure. An
 In any programming language you need a way to represent these 3 basic values. A way to represent numbers. A way to represent characters. A way to represent truthy/falsy values. Java has eight primitive types of data: `byte`, `short`, `int`, `long`, `char`, `float`, `double`, and `boolean`. Primitive types are also known as simple types. These can be categorized into 4 groups.
 1. **Integers** - This includes `byte`, `short`, `int`, and `long`, which are for whole valued signed numbers.
 1. **Floating point numbers** - This includes `float` and `double`, which represent numbers with fractional precision.
-1. **Characters** - The `char` datatype is used to represent characters that represents symbols in a character set, like letters and numbers.
-1. **Boolean**- The `boolean` datatype is used to represent true/false values.
+1. **Characters** - The `char` data type is used to represent characters that represents symbols in a character set, like letters and numbers.
+1. **Boolean**- The `boolean` data type is used to represent true/false values.
 
 Any type that we define are also is built up using these basic primitive types. Thus they form the basis for all other types of data that you can create. Although Java is otherwise completely object-oriented, the primitive types are not. They represent single values and are not objects. The reason for not modeling the primitive types as classes is for performance. Making the primitive types into classes would have degraded performance very much.
 
@@ -209,7 +209,7 @@ public class Main {
             }
         }
 
-        System.out.println("The maximum occuring character is " + maxCharacter + " and its maximum count is: " + maxCount);
+        System.out.println("The maximum occurring character is " + maxCharacter + " and its maximum count is: " + maxCount);
     }
 }
 ```
