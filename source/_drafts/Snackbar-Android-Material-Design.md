@@ -18,3 +18,19 @@ Snackbar snackbar = Snackbar.make(coordinatorLayout, "Helloworld from Raj Abishe
 snackbar.show();
 ```
 
+## Snackbar with an action
+You can also mention a callback interaction method using `setAction` method. This allows us to take certain action when user interacts with the snackbar action button. The `setAction` method takes two parameters, first one is the name of the action button and the 2nd parameter is an instance of a class that implements the `OnClickListener` functional interface. Since lambda expressions are not yet supported in android we can make use of anonymous classes instead. As you can see below we are creating an object of an anonymous class that implements the `OnClickListener` and overrides the `onClick` method and passing it as the 2nd parameter.
+```java
+Snackbar deletedMessage = Snackbar
+        .make(coordinatorLayout, "Message is deleted", Snackbar.LENGTH_LONG)
+        .setAction("UNDO", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar restoredMessage = Snackbar.make(coordinatorLayout, "Message is restored!", Snackbar.LENGTH_SHORT);
+                restoredMessage.show();
+            }
+        });
+ 
+deletedMessage.show();
+```
+
