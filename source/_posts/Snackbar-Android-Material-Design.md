@@ -16,6 +16,8 @@ Below is the syntax of a simple snackbar. First step would be to import the `Sna
 
 The view instance passed as the first parameter is the view to find a parent from. Snackbar will try and find a parent view to hold Snackbar's view from the value given to view parameter. Snackbar will walk up the view tree trying to find a suitable parent, which is defined as a `CoordinatorLayout` or the window decor's content view, whichever comes first. If you would like to reduce this work done by android to find the parent you can instead directly pass the reference to the `CoordinatorLayout` as view parameter.
 ```java
+private CoordinatorLayout coordinatorLayout;
+
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -26,7 +28,7 @@ protected void onCreate(Bundle savedInstanceState) {
     setSupportActionBar(toolbar);
 }
 ```
-Once you have set the content view you can get the reference of the coordinator layout. In the XML file on the frontend make sure that the coordinator layout has the xml attribute `android:id="@+id/coordinatorLayout"`. Here the coordinatorLayout field is a variable on the Activity class that is of type `android.support.design.widget.CoordinatorLayout`. You can even make this field as private as it will be used only inside this class.
+Once you have set the content view you can get the reference of the coordinator layout. In the XML file on the frontend make sure that the coordinator layout has the xml attribute `android:id="@+id/coordinatorLayout"`. Here the coordinatorLayout field is a variable on the Activity class that is of type `android.support.design.widget.CoordinatorLayout`. You can even make this field as private as it will be used only inside this class as shown above.
 
 Having a `CoordinatorLayout` in your view hierarchy allows Snackbar to enable certain features, such as swipe-to-dismiss and automatically moving of widgets like `FloatingActionButton`. Therefore always try using a `CoordinatorLayout` view group whenever working with material design components.
 
