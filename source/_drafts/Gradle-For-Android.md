@@ -66,3 +66,4 @@ class Person {
 Person person = new Person(first: 'Raj', last: 'Abishek')
 println person
 ```
+Now we would get the output as `Person(Raj, Abishek)`, because this is the way how groovy provides the toString method internally. We can actually typehint multiple annotations to provide multiple functionalities. @EqualsAndHashCode method will generate an equals method and a hashCode method on the Person class according to the normal condition layed out in the Effective Java book. When you actually compare two instances in groovy using the == operator it is operator overloading in action internally groovy calls the equals method on the first instance and passes the 2nd instance as a parameter. Therefore by typehinting the `@EqualsAndHashCode` annotation above the Person class we can actually use the == operator for comparing two instances of the person class to check whether the values are equal.(Unlike java that compares the references.)
