@@ -34,7 +34,7 @@ void setLast(String last) {
 ```
 then while executing the statement person.last = 'Abishek', the string inside set last will be printed. So when it looks like you are doing property access you are indirectly using the getters and setters. Infact even if you don't have a property called test in the class and you try to access it via an instance the groovy will internally call the instance.getTest method. So it is important to note here that you could get away with just having the the getters and setters and not the property itself and accessing the property will invoke the getters and setters.
 
-In Java if you don't get a constructor you just get one default constructor, but in groovy you get 2 default costrcutor one is like how you have in Java and another one is a default memberwise initialization constructor(Like the default constructor for structures in Swift programming language). Therefore for the person class defined above you could create an instance using `Person person = new Person(first: 'Raj', last: 'Abishek')`. But it is important to note here that when you are using this member wise constructor the values for the property are assigned using the setter methods for the properties. Therefore we would get the inside set last string output. Therefore the member wise initialization constructor uses the setter methods to assign values for the properties.
+In Java if you don't get a constructor you just get one default constructor, but in groovy you get 2 default costrcutor one is like how you have in Java and another one is a default memberwise initialization constructor(Like the default constructor for structures in Swift programming language). But the beauty here is that unlike the swift memberwise constructor you need not provide values for all the fields also. You can just provide the values for those fields that you want and for others groovy will assign default values null for references, 0 for numerics and false for booleans just like Java. Therefore for the person class defined above you could create an instance using `Person person = new Person(first: 'Raj', last: 'Abishek')`. And as I said previously we can also just provide the values for the fields that we want and for others groovy will give a default value `Person person = new Person(first: 'Raj')` will create a person object with first as 'Raj' and the last field will be given a default value of null.But it is important to note here that when you are using this member wise constructor the values for the property are assigned using the setter methods for the properties. Therefore we would get the inside set last string output. Therefore the member wise initialization constructor uses the setter methods to assign values for the properties.
 
 You could also have a toString method on the class that will be automatically called when you pass an instance to the println function.
 ```groovy
@@ -91,4 +91,25 @@ class Person {
 }
 Person person1 = new Person('Raj','Abishek')
 ```
-As you can see in the above code, type hinting `@TupleConstructor` generates a new constructor for providing the values for the fields in the same order in which they were defined without the need for naming the parameters.
+As you can see in the above code, type hinting `@TupleConstructor` generates a new constructor for providing the values for the fields in the same order in which they were defined without the need for naming the parameters. The combination of the @ToString, @EqualsAndHashCode and @TupleConstructor is so popular that there is another transformation called as @Canonical that is functionally equivalents to writing these 3 transformations together.
+```groovy
+import groovy.transform.*
+
+@ToString
+@EqualsAndHashCode
+@TupleConstructor
+class Person {
+	String first
+	String last
+}
+```
+The above code is the same as the below code.
+```groovy
+import groovy.transform.*
+
+@Canonical
+class Person {
+	String first
+	String last
+}
+```
