@@ -13,7 +13,7 @@ When android applications were first created was first created there was no real
 
 So in 2013 Android decided to switch to a real build tool called as gradle and they replaced the IDE to Android Studio which a free version of IntellijIDEA that understands gradle better. In the background Android studio is running the gradle tasks. You can even think the android studio as a UI wrapper around the gradle build tool. The android plugin for gradle runs independent of Android studio, so you could build your app from the command line also or on machines where android studio is not installed (such as CI servers). With gradle we can handle build variants, dependencies, manage manifest entries, deal with signing configurations, run the proguard tool and perform testing.
 
-## Groovy fundamentals
+## Groovy - Classes & Objects
 ```groovy
 class Person {
 	String first
@@ -112,4 +112,34 @@ class Person {
 	String first
 	String last
 }
+```
+
+## Groovy - Closures & Collections
+Lets make a collection of person references.
+```groovy
+import groovy.transform.*
+
+@Canonical
+class Person {
+	String first
+	String last
+}
+
+def people = [
+	new Person('Raj','Abishek'),
+	new Person('Sailesh','Dev'),
+	new Person('Dev','Prakash'),
+	new Person('Kani','Amuthu')
+]
+
+println people.class.name
+```
+As you know by now when accessing properties, internally the methods are called. There it is functionally equivalent to calling people.getClass().getName() which will print `java.util.ArrayList`. So the people above is a collection, its an array list of person objects. But what if we wanted a linkedlist instead, you could use `LinkedList` instead of the def keyword above or you can do.
+```groovy
+def people = [
+	new Person('Raj','Abishek'),
+	new Person('Sailesh','Dev'),
+	new Person('Dev','Prakash'),
+	new Person('Kani','Amuthu')
+] as LinkedList
 ```
