@@ -7,3 +7,14 @@ Material design includes another interesting component called as a snackbar. The
 
 <!-- more -->
 
+## Simple Snackbar
+Below is the syntax of a simple snackbar. First step would be to import the `Snackbar` class from the material design package by placing `import android.support.design.widget.Snackbar` at the top of the java file. The `Snackbar` class has a factory method called as `make` that returns us an instance of `Snackbar`. The make method accepts three parameters. A view instance, message to display and the duration of the message.
+
+Normally passing `CoordinatorLayout` as view param is the best option as it allows Snackbar to be dismissed via swipe and automatically takes care of moving of widgets like `FloatingActionButton` as the snackbar slide in and out. The message parameter is a String object which is the message to be displayed by the snackbar. 
+
+The duration parameter is of type `int` and you can provide either 0 or -1 or -2. 0 for longer time, -1 for shorter time and -2 for a message of indefinite time. But typically for code clarity and to make sure you are providing only either of these 3 values it is a recommended practice that you use one of the static final fields on the `Snackbar` class. The duration should be `Snackbar.LENGTH_SHORT`, `Snackbar.LENGTH_LONG` or `Snackbar.LENGTH_INDEFINITE`. Internally these static final fields on the `Snackbar` class map to these curresponding integer values. When `Snackbar.LENGTH_INDEFINITE` is used, the snackbar will be displayed indefinite time and can be dismissed with swipe off.
+```java
+Snackbar snackbar = Snackbar.make(coordinatorLayout, "Helloworld from Raj Abishek", Snackbar.LENGTH_LONG);
+snackbar.show();
+```
+
