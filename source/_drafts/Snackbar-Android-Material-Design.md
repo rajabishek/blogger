@@ -34,3 +34,24 @@ Snackbar deletedMessage = Snackbar
 deletedMessage.show();
 ```
 
+## Customizing the Snackbar
+Snackbar comes with default white color text and `#323232` background color. You can override these colors as mentioned below.
+```java
+Snackbar snackbar = Snackbar.make(coordinatorLayout, "Helloworld from Raj Abishek", Snackbar.LENGTH_LONG);
+snackbar.setAction("RETRY", new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+    }
+});
+
+// Changing action button text color
+snackbar.setActionTextColor(Color.BLUE);
+
+View snackbarView = snackbar.getView();
+// Changing background color of the snackbar
+snackbarView.setBackgroundColor(Color.GREEN);
+TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+// Changing message text color
+textView.setTextColor(Color.BLACK);
+snackbar.show();
+```
