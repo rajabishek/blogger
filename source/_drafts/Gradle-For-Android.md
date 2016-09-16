@@ -143,3 +143,26 @@ def people = [
 	new Person('Kani','Amuthu')
 ] as LinkedList
 ```
+The people variable above is a instance of `java.util.LinkedList` now. If used as `Set` then we would get an instance of `LinkedHashSet`, which will make sure that we don't have any duplicates, thank to the @Canonical transformation for providing the equals and hashCode method using which the set collection is able to maintain a list of unique elements alone. We could also do `as TreeSet` which will give us a sorted set but we haven't implemented the comparable interface that allows the tree set to decide on how its going to sort. In groovy we needn't manually implement the comparable interface as there is an AST transformation for that too called as @Sortable.
+```groovy
+import groovy.transform.*
+
+@Canonical
+@Sortable
+class Person {
+	String first
+	String last
+}
+
+def people = [
+	new Person('Raj','Abishek'), //#1
+	new Person('Raj','Abishek'), //#2
+	new Person('Raj','Dev'),
+	new Person('Sailesh','Dev'),
+	new Person('Dev','Prakash'),
+	new Person('Kani','Amuthu')
+] as TreeSet
+
+println people
+```
+First of all since its a set we won't have any duplicates so only one of #1 or #2 will be there. Secondly its will make sure that the list is sorted. It will sort the instances based on the first name and then the last name alphabetically.
