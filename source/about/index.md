@@ -13,12 +13,6 @@ I have also worked as an independent contractor for a few months with [Zorioo](h
 
 When not working, you can usually find me sketching designs, reorganizing my workspace or hanging out with my friends.
 
-I maintain a post on my Setup at [/setup](/setup).
-
 I push most of my code to [GitHub](http://github.com/rajabishek).
-
-I am an [HN](http://news.ycombinator.com) addict.
-
-I can be stalked on [Twitter](http://twitter.com/TheRajAbishek) or [Instagram](http://instagram.com/TheRajAbishek).
 
 You can email me on rajabishek@hotmail.com
