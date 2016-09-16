@@ -41,3 +41,5 @@ You could also have a toString method on the class that will be automatically ca
 String toString() { "${first} ${last}" }
 ```
 In groovy if you observer you don't even need the return statement because it will automatically return the last evaluated expression in the block and not only that it will look at the return type of the method and try to convert the last evaluated expression to the return type if the types are not matching.
+
+Now lets take a look at AST transformation i.e Abstract syntax tree transformation. To look at this concept first we need to look at import statements. Its important to understand here is that by default groovy imports a couple of packages, like `java.lang.*`, `java.util.*`, `java.io.*`, `java.net.*`, `groovy.lang.*`, `groovy.util.*` and other important packages. Now AST transformation allows groovy developers to typehint annotations at the top of a class and groovy will automatically provide that functionality.
