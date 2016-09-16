@@ -7,6 +7,8 @@ tags:
 ## Better notifications
 Material design includes another interesting component called as a snackbar. They are just like toast messages except they also provide action to interact with. And unlike toast notification which can exist independently of the application(even after the application was closed), snackbar messages feel more tied up with the application's user interface, as they are presented as a small bar sliding from the bottom of the screen. We can even swipe them off to dismiss them.
 
+The are helpful in providing lightweight feedback about an operation. They show a brief message at the bottom of the screen on mobile and lower left on larger devices. They appear above all other elements on screen and only one can be displayed at a time.
+
 <!-- more -->
 
 ## Simple Snackbar
@@ -21,7 +23,7 @@ snackbar.show();
 ```
 
 ## Snackbar with an action
-You can also mention a callback interaction method using `setAction` method. This allows us to take certain action when user interacts with the snackbar action button. The `setAction` method takes two parameters, first one is the name of the action button and the 2nd parameter is an instance of a class that implements the `OnClickListener` functional interface. Since lambda expressions are not yet supported in android we can make use of anonymous classes instead. As you can see below we are creating an object of an anonymous class that implements the `OnClickListener` and overrides the `onClick` method and passing it as the 2nd parameter.
+You can also mention a callback interaction method using `setAction(CharSequence, android.view.View.OnClickListener)` method. This allows us to take certain action when user interacts with the snackbar action button. The `setAction` method takes two parameters, first one is the name of the action button and the 2nd parameter is an instance of a class that implements the `OnClickListener` functional interface. Since lambda expressions are not yet supported in android we can make use of anonymous classes instead. As you can see below we are creating an object of an anonymous class that implements the `OnClickListener` and overrides the `onClick` method and passing it as the 2nd parameter.
 ```java
 Snackbar deletedMessage = Snackbar
         .make(coordinatorLayout, "Message is deleted", Snackbar.LENGTH_LONG)
@@ -57,3 +59,28 @@ TextView textView = (TextView) snackbarView.findViewById(android.support.design.
 textView.setTextColor(Color.BLACK);
 snackbar.show();
 ```
+
+## Snackbar Notifications
+To be notified when a snackbar has been shown or dismissed, you can provide a `Snackbar.Callback` via `setCallback(Callback)` method on the snackbar instance. The `setCallback` method expects an instance of a class that extends the `Callback` class. The `Callback` class is actually a nested public static abstract class of the `Snackbar` class. You pass an instance of a class that extends this abstract class to the `setCallback` method. We essentially set a callback to be called when this the visibility of this Snackbar changes.
+```java
+Snackbar snackbar = Snackbar.make(coordinatorLayout, "Helloworld from Raj Abishek", Snackbar.LENGTH_LONG);
+snackbar.setAction("RETRY", new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+    }
+});
+
+snackbar.setCallback(new Snackbar.Callback() {
+    @Override
+    public void onDismissed(Snackbar snackbar, int event) {
+        Log.v("MainActivity", "The snackbar has been dismissed.");
+    }
+
+    @Override
+    public void onShown(Snackbar snackbar) {
+        Log.v("MainActivity", "The snackbar has been presented.");
+    }
+});
+snackbar.show();
+```
+The abstract `Callback` nested class of `Snackbar` class has empty implementations for both the `onDismissed` and the `onShown` method. Therefore we can override that empty implementations to provide our custom functionality when a snackbar is dismissed or presented on screen. The `onDismissed` method is called when the snackbar moves away from the screen(manually swiping or automatically after the time period.)
