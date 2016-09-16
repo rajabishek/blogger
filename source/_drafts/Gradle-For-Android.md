@@ -54,3 +54,4 @@ class Person {
 	String toString() { "${first} ${last}" }
 }
 ```
+The @ToString annotation will automatically provide a toString method for a class. In our cause since we have manually provided a method groovy will not overwrite it. Groovy will only provide a method if its already not there. But if remove this toString method from the class then groovy will provide a toString method.
