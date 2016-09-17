@@ -199,5 +199,36 @@ nums.collect { it * 2 }
 	.findAll { it%3 == 0 }
 	.sum()
 ```
-The output of the above code is 24. First we find the twice of every number and then filter the elements that is divisible by 3 and they find the sum of those elements.
-
+The output of the above code is 24. First we find the twice of every number and then filter the elements that is divisible by 3 and they find the sum of those elements. We have seen about linear collections so far, now lets take a look at maps or dictionaries.
+```groovy
+def map = [k1:1, k2:2, k3:3]
+println map.getClass().name
+```
+The output we get is `java.util.LinkedHashMap`. As you see above we had to use the getClass() method and not the class property because, in a map the . operator is overloaded for putting and getting values from the map. Therefore if we would have used the class property then the map would have looked for a key called class which does not exist and would have returned null, it woudn't have actually called the getClass method internally. We can put values into the map using the . operator or using the subscript syntax as shown below.
+```groovy
+def map = [k1:1, k2:2, k3:3]
+map.k4 = 1
+map['k5'] = 2
+println map
+```
+To iterate over the map we can use the each function.
+```groovy
+def map = [k1:1, k2:2, k3:3]
+map.each { e -> println "${e.key} maps to ${e.value}" }
+```
+The e.key internally calls the e.getKey() and the e.value calls the e.getValue() method, normal property access calls the methods internally. The each methods also supports a two argument closure that will pass the key and the value to the closure.
+```groovy
+def map = [k1:1, k2:2, k3:3]
+map.each { k,v -> println "$k maps to $v" }
+```
+As you can see above during string interpolation we need not use the {} after the $ if we are just outputting the value and not accessing a property or method. If we use the collect method on the map it transforms it into a list by applying the closure to each element.
+```groovy
+def map = [k1:1, k2:2, k3:3]
+map.collect { k,v -> "$k=$v" }
+```
+The output is [k1=1, k2=2, k3=2]. The list also has a method called join that joins the elements of the list using the separator given.
+```groovy
+def map = [k1:1, k2:2, k3:3]
+map.collect { k,v -> "$k=$v" }.join('&')
+```
+The output is k1=1&k2=2&k3=2. The collect methods transforms the map to a list and the join method on the list combines the elements using the & separator.
