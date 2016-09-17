@@ -171,3 +171,25 @@ def nums = [3, 1, 4, 1, 5, 9]
 println nums
 for(int i=0;i<nums.size();++i) { println nums[i] }
 ```
+As you can see above the normal for loop with the subscript sytax works fine even though the collection is an array list because internally when you use the subscript nums[i] groovy calls the `get` method on the array list collection. Another option to loop through the list is we can use java's foreach operator.
+```groovy
+def nums = [3, 1, 4, 1, 5, 9]
+for(int num : nums) { println num }
+```
+We also have something called as a for in loop in groovy where we can do the following. This is similar to the foreach lopp in java but we need not typehint the datatype of the array element in the index.
+```groovy
+def nums = [3, 1, 4, 1, 5, 9]
+for(num in nums) { println num }
+```
+The another interesting way in which we would do this in groovy would be with the help of clousures. The curly brace is like the curly brace inside a method or a function. It takes one argument by default and it is called as it.
+```groovy
+def nums = [3, 1, 4, 1, 5, 9]
+nums.each { println it }
+nums.each { n -> println n }
+```
+As you can see above if we want to give a different name for the parameter then we can give a different name followed by right arrow. As you can see above doing this, only `n` is available and `it` is not available. The each method also returns the collection itself. One of the trends that has become very popular in computer science is the idea of moving towards functional programming. The benefits of functional programming are many but it especially works with small easily composable functions that can be combines with immutable classes inorder to make something that is easy to parallelize and optimize. Its is a very nice system that can minimize a lot of side effects. Groovy is an object oriented language with the concept of closures it can actually do certain functional things. We also have a collect method on the collection that returns a new collection based on the closure that we provide. It applies the closure to each element and returns a new collection based on that.
+```groovy 
+def nums = [3, 1, 4, 1, 5, 9]
+nums.collect { it * 2 }
+```
+
