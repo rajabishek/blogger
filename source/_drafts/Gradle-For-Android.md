@@ -187,9 +187,17 @@ def nums = [3, 1, 4, 1, 5, 9]
 nums.each { println it }
 nums.each { n -> println n }
 ```
-As you can see above if we want to give a different name for the parameter then we can give a different name followed by right arrow. As you can see above doing this, only `n` is available and `it` is not available. The each method also returns the collection itself. One of the trends that has become very popular in computer science is the idea of moving towards functional programming. The benefits of functional programming are many but it especially works with small easily composable functions that can be combines with immutable classes inorder to make something that is easy to parallelize and optimize. Its is a very nice system that can minimize a lot of side effects. Groovy is an object oriented language with the concept of closures it can actually do certain functional things. We also have a collect method on the collection that returns a new collection based on the closure that we provide. It applies the closure to each element and returns a new collection based on that.
+As you can see above if we want to give a different name for the parameter then we can give a different name followed by right arrow. As you can see above doing this, only `n` is available and `it` is not available. The each method also returns the collection itself. One of the trends that has become very popular in computer science is the idea of moving towards functional programming. The benefits of functional programming are many but it especially works with small easily composable functions that can be combines with immutable classes inorder to make something that is easy to parallelize and optimize. Its is a very nice system that can minimize a lot of side effects. Groovy is an object oriented language with the concept of closures it can actually do certain functional things. We also have a collect method on the collection that returns a new collection based on the closure that we provide. It applies the closure to each element and returns a new collection based on that. This is similar to the map method present in other programming languages.
 ```groovy 
 def nums = [3, 1, 4, 1, 5, 9]
 nums.collect { it * 2 }
 ```
+There is another method called findAll that finds all elements in the collection that satisfies the closure. This is similar to the filter method that is present in other programming languages. The sum method will calculate the sum of all the elements in the collection.
+```groovy
+def nums = [3, 1, 4, 1, 5, 9]
+nums.collect { it * 2 }
+	.findAll { it%3 == 0 }
+	.sum()
+```
+The output of the above code is 24. First we find the twice of every number and then filter the elements that is divisible by 3 and they find the sum of those elements.
 
