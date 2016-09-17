@@ -232,3 +232,16 @@ def map = [k1:1, k2:2, k3:3]
 map.collect { k,v -> "$k=$v" }.join('&')
 ```
 The output is k1=1&k2=2&k3=2. The collect methods transforms the map to a list and the join method on the list combines the elements using the & separator.
+
+## Accessing a RESTFUL web service
+```groovy
+import groovy.json.*
+
+String url = 'http://api.icndb.com/jokes/random?'
+def params = [limitTo:'[nerdy]', firstName: 'Raj', lastName: 'Abishek']
+String queryString = params.collect { k,v -> "$k=$v" }.join('&')
+String jsonTxt = "$url$queryString".toURL().text
+def json = new JsonSlupper().parseText(jsonTxt)
+println json.value.joke
+```
+As you can see in the above example first we store the parameters for the request in the map. Then we convert in unto a query string and append it to the end of the url. Then groovy have a `toURL` method on string object to convert a string to a `java.net.URL` instance and then we access the text property to call the `getText` method on the url instance. This gives us the JSON result as a string which needs to be parsed. To parse the JSON string we create an instance of `JsonSlupper` class from the `groovy.json` package and then call the `parseText` method to convert the JSON string to a map.
