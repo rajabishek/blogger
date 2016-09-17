@@ -5,9 +5,9 @@ tags:
 ## Introduction
 Gradle is used to build android applications. There is a plugin for gradle that allows us to configure android applications. There are various build types available, we could build a release build or a debug build. We could setup an automatic signing configuration, so that we can digitally sign the output apks in preparation for uploading them to the google play store. We can also define additional build types if we want. We will also look at the concept of flavors.
 
-A flavor allows you to essentially build the same app in multiple different ways with slight changes to the look and feel or even changes to the application itself. A combination of a flavour and a build type is known as a variant. We will also look at using our own android library projects as part of a larger android application, so that we can split functionality into reusable components that can be part of other applications as well.
-
 <!-- more -->
+
+A flavor allows you to essentially build the same app in multiple different ways with slight changes to the look and feel or even changes to the application itself. A combination of a flavour and a build type is known as a variant. We will also look at using our own android library projects as part of a larger android application, so that we can split functionality into reusable components that can be part of other applications as well.
 
 When android applications were first created was first created there was no real separate build toll available. At that time build for android was an IDE build, i.e we would build an application in an IDE rather than having some separate execution process for building the application itself. Previously there was a plugin for eclipse called ADT(Android developer tools). Back then once you download the ADT plugin and add it to the eclipse IDE, that would take care about building the project. But this was something that the Java community had moved away from for the last 10-15 years, because doing this way would be difficult to reproduce outside an IDE and for example trying to build something on a CI server becomes something that is very difficult. One of the issues was that we could not build different types of the same application at the same time.
 
@@ -166,3 +166,8 @@ def people = [
 println people
 ```
 First of all since its a set we won't have any duplicates so only one of #1 or #2 will be there. Secondly its will make sure that the list is sorted. It will sort the instances based on the first name and then the last name alphabetically.
+```groovy
+def nums = [3, 1, 4, 1, 5, 9]
+println nums
+for(int i=0;i<nums.size();++i) { println nums[i] }
+```
