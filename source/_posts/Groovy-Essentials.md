@@ -1,7 +1,9 @@
 ---
 title: Groovy Essentials
+date: 2016-09-18 12:49:19
 tags:
 ---
+
 ## Why learn groovy ?
 
 It is easy for anyone who knows Java to pickup groovy. It is a general-purpose programming language which compiles down to Java byte codes. It is an object oriented programming language with functional capabilities.
