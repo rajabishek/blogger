@@ -5,11 +5,11 @@ tags:
 ---
 
 ## Better notifications
-Material design includes another interesting component called as a snackbar. They are just like toast messages except they also provide action to interact with. And unlike toast notification which can exist independently of the application(even after the application was closed), snackbar messages feel more tied up with the application's user interface, as they are presented as a small bar sliding from the bottom of the screen. We can even swipe them off to dismiss them.
-
 The are helpful in providing lightweight feedback about an operation. They show a brief message at the bottom of the screen on mobile and lower left on larger devices. They appear above all other elements on screen and only one can be displayed at a time.
 
 <!-- more -->
+
+Material design includes another interesting component called as a snackbar. They are just like toast messages except they also provide action to interact with. And unlike toast notification which can exist independently of the application(even after the application was closed), snackbar messages feel more tied up with the application's user interface, as they are presented as a small bar sliding from the bottom of the screen. We can even swipe them off to dismiss them.
 
 ## Plain snackbar
 Below is the syntax of a simple snackbar. First step would be to import the `Snackbar` class from the material design package by placing `import android.support.design.widget.Snackbar` at the top of the java file. The `Snackbar` class has a factory method called as `make` that returns us an instance of `Snackbar`. The make method accepts three parameters. A view instance, message to display and the duration of the message.
