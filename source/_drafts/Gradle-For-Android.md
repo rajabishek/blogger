@@ -1,11 +1,14 @@
 ---
-title: Gradle For Android
+title: Groovy Essentials
 tags:
 ---
-## Introduction
-Gradle is used to build android applications. There is a plugin for gradle that allows us to configure android applications. There are various build types available, we could build a release build or a debug build. We could setup an automatic signing configuration, so that we can digitally sign the output apks in preparation for uploading them to the google play store. We can also define additional build types if we want. We will also look at the concept of flavors.
+## Why learn groovy ?
+
+It is easy for anyone who knows Java to pickup groovy. It is a general-purpose programming language which compiles down to Java byte codes. It is an object oriented programming language with functional capabilities. Even if you don't want to write applications with groovy leaning this technonolgy can be helpful while working with gradle. Gradle is a modern open source build tool for continuous delivery for Java, C++, Native android, Python, Hadoop and many more. 
 
 <!-- more -->
+
+The Gradle build files consist largely of a Domain Specific Language, written in Groovy, for builds. In addition to the DSL, any legal Groovy code can be added to the build. In 2013 Google also chose gradle as the go to build tool for android application with internal support in Android Studio. There is a plugin for gradle that allows us to configure android applications. There are various build types available, we could build a release build or a debug build. We could setup an automatic signing configuration, so that we can digitally sign the output apks in preparation for uploading them to the google play store. We can also define additional build types if we want. We will also look at the concept of flavors.
 
 A flavor allows you to essentially build the same app in multiple different ways with slight changes to the look and feel or even changes to the application itself. A combination of a flavour and a build type is known as a variant. We will also look at using our own android library projects as part of a larger android application, so that we can split functionality into reusable components that can be part of other applications as well.
 
