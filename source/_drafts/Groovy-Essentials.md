@@ -4,13 +4,17 @@ tags:
 ---
 ## Why learn groovy ?
 
-It is easy for anyone who knows Java to pickup groovy. It is a general-purpose programming language which compiles down to Java byte codes. It is an object oriented programming language with functional capabilities. Even if you don't want to write applications with groovy leaning this technonolgy can be helpful while working with gradle. Gradle is a modern open source build tool for continuous delivery for Java, C++, Native android, Python, Hadoop and many more. 
+It is easy for anyone who knows Java to pickup groovy. It is a general-purpose programming language which compiles down to Java byte codes. It is an object oriented programming language with functional capabilities.
+
+Even if you don't want to write applications with groovy leaning this technonolgy can be helpful while working with gradle. Gradle is a modern open source build tool for continuous delivery for Java, C++, Native android, Python, Hadoop and many more. 
 
 <!-- more -->
 
 The Gradle build files consist largely of a Domain Specific Language, written in Groovy, for builds. In addition to the DSL, any legal Groovy code can be added to the build. In 2013 Google also chose gradle as the go to build tool for android application with internal support in Android Studio. There is a plugin for gradle that allows us to configure android applications. There are various build types available, we could build a release build or a debug build. We could setup an automatic signing configuration, so that we can digitally sign the output apks in preparation for uploading them to the google play store. We can also define additional build types if we want. We will also look at the concept of flavors.
 
 A flavor allows you to essentially build the same app in multiple different ways with slight changes to the look and feel or even changes to the application itself. A combination of a flavour and a build type is known as a variant. We will also look at using our own android library projects as part of a larger android application, so that we can split functionality into reusable components that can be part of other applications as well.
+
+## A bit of history
 
 When android applications were first created was first created there was no real separate build toll available. At that time build for android was an IDE build, i.e we would build an application in an IDE rather than having some separate execution process for building the application itself. Previously there was a plugin for eclipse called ADT(Android developer tools). Back then once you download the ADT plugin and add it to the eclipse IDE, that would take care about building the project. But this was something that the Java community had moved away from for the last 10-15 years, because doing this way would be difficult to reproduce outside an IDE and for example trying to build something on a CI server becomes something that is very difficult. One of the issues was that we could not build different types of the same application at the same time.
 
@@ -248,6 +252,3 @@ def json = new JsonSlupper().parseText(jsonTxt)
 println json.value.joke
 ```
 As you can see in the above example first we store the parameters for the request in the map. Then we convert in unto a query string and append it to the end of the url. Then groovy have a `toURL` method on string object to convert a string to a `java.net.URL` instance and then we access the text property to call the `getText` method on the url instance. This gives us the JSON result as a string which needs to be parsed. To parse the JSON string we create an instance of `JsonSlupper` class from the `groovy.json` package and then call the `parseText` method to convert the JSON string to a map.
-
-## Gradle basics
-Gradle is an open source project available at http://gradle.org that is supported by a company called Gradle.Inc. Now for our android applications we needn't install Gradle. Gradle will come with Android Studio. Nevertheless you can also install it separately on your hard drive and use it separately. If you are not using Android Studio for android app development, then this is what you will need to do, you will have to install Gradle separately. Installing Gradle is really simple, you must have Java installed on your machine preferably the latest JDK. You need not install Groovy on you machine Gradle installed comes with groovy bundled inside. Gradle ships with its own Groovy library, therefore Groovy doesn't need to be installed separately.
