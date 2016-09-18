@@ -6,7 +6,7 @@ tags:
 
 ## Why learn groovy ?
 
-It is easy for anyone who knows Java to pickup groovy. It is a general-purpose programming language which compiles down to Java byte codes. It is an object oriented programming language with functional capabilities.
+Anyone who is comfortable working in Java can pickup groovy very easily. It is a general-purpose programming language which compiles down to Java byte codes. It is an object oriented programming language with functional capabilities.
 
 Even if you don't want to write applications with groovy leaning this technonolgy can be helpful while working with gradle. Gradle is a modern open source build tool for continuous delivery for Java, C++, Native android, Python, Hadoop and many more. 
 
