@@ -18,11 +18,11 @@ Before we start using git for our projects we need to configure git to suit our 
 - **User** - Configurations at this level apply to a specific user of the system
 - **Project** - Configurations at this level apply to a specific project
 
-The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig`, the project level configurations are stored at `project-root/.git/config`. These configuration files are just plain text files. To change the configurations at any particular level we could very well just go and edit the corresponding file manually, but the issue here is that we should also know the format in which we must write the configurations in these files. To simplify this process git provides us with some commands to add/remove configurations at any level.
+The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig`, the project level configurations are stored at `project-root/.git/config`. These configuration files are just plain text files. To change the configuration at any particular level we could very well just go and edit the corresponding file manually, but the issue here is that we should also know the format in which we must write the configurations. To simplify this process git provides us with some commands to add/remove configurations at any level.
 
 We run the command `git config --system <configuration>` for a system wide configuration, or `git config --global <configuration>` for a user level configuration, and `git config <configuration>` for a project level configuration.
 
-Lets add a few user level configurations to get us started with git. The first thing is, you need to tell git about yourself i.e your name and email address. Because when you are working on a project with multiple team members and when you make a change, git marks that change with your identity. In this way any team member can know the person who was responsible behind writing a particular piece of code. 
+Lets add a few user level configurations to start with. The first thing is, you need to tell git about yourself i.e your name and email address. When you are working on a project with multiple team members and when you make a change, git marks that change with your identity. In this way any team member can know the person who was responsible behind writing/changing a particular piece of code. 
 
 You can also tell git the default text editor that you want it to use. Git uses that text editor to open files when it wants you to enter some message. Along with the text editor we also provide it with 2 options `w` meaning telling unix to wait till we complete entering the message(if we don't do this unix will not wait till we complete writing the message and it will keep going with what it needs to do) and `l1` means put the cursor at line number 1. Another configuration that we can add is to tell git to use colors when outputing things to the command line, if we don't add this configuration it will just give us plain monochromatic text. 
 ```sh
@@ -35,7 +35,7 @@ git config --global user.name #Show's the name
 git config --global user.email #Show's the email address
 ```
 
-After running the above command git will automatically write these configurations to the `~/.gitconfig` file. If you infact look at the contents of the configuration file by running `cat ~/.gitconfig` we can indeed see the configurations added. The contents of the configuration file are show below.
+After running the above command git will automatically write these configurations to the `~/.gitconfig` file. Infact if you look at the contents of the configuration file by running `cat ~/.gitconfig` we can indeed see the configurations added. The contents of the configuration file are show below. As you can see below git expects the configurations in a specific format. Thanks to the `git config` command, we need not worry about any of this.
 
 ```
 [user]
@@ -48,17 +48,17 @@ After running the above command git will automatically write these configuration
 ```
 
 ## Getting help from git
-You can use the `git help` command to get help from git. This will list the commonly used commands that git provides along with a short note on each one of them. To know more about how to use a specific command we can do `git help <command>` to get details about using that git command. It actually brings out the git manual page for that command, the page has the description about that command and the options that we can use along with it. Use can use `f` key to move forward and `b` to move backward in the git man page. 
+You can use the `git help` command to get help from git. This will list the commonly used commands that git provides along with a short note on each one of them. To know more about how to use a specific command we can do `git help <command>`. It actually brings out the git manual page for that command, the page has the description about that command and the options that we can use along with it. Use can use `f` key to move forward and `b` to move backward in the git man page. 
 
 When you are finally done you can hit `q` to come out. Now unix users will recognize that the manual page that was opened looked something similar to the unix man page.  In fact its was the very same thing, you could have also opened it using `man git-log`. Git just gives you an easier way to look at those manual pages through its command line tool.
 
 ## Initializing a repository
 Before we start using git for a project we need to initialize a repository, what I mean is that we need to tell git which is the folder that it needs to keep track of. The first step that we do is we navigate to the project's root folder and run the `git init` command there. This tell git to do the initialization process, i.e we are essentially telling it to start doing what it needs to do, to track this folder. 
 
-What git internally does is that it creates a .git folder in the project's root where it stores all the information for tracking purpose. Its important to note here that this .git folder is the only place where git stores all the information, unlike other version control systems like SVN it doesn't include a tracking file in every single directory down the line ( To remove SVN we would have to go through every sub directory int the project and pull out the tracking file present in it). Since this is the only place where git stores all the information for tracking, in future if we needed to remove version control from our project, all that we need to do is remove this folder by running `sudo rm -rf .git`.
+What git internally does is that it creates a `.git` folder in the project's root where it stores all the information for tracking purpose. Its important to note here that this `.git` folder is the only place where git stores all the information, unlike other version control systems like SVN it doesn't include a tracking file in every single directory down the line (To remove SVN we would have to go through every sub directory in the project and pull out the tracking file present in it). Since this is the only place where git stores all the information for tracking, in future if we needed to remove version control from our project, all that we need to do is remove this folder by running `sudo rm -rf .git`.
 
 ## Basic git workflow
-Now that we have initialized git, the basic work flow that we would follow while using git is shown below.
+Now that we have initialized git, the basic work flow that one would follow is shown below.
 1. Make the changes in files
 1. Add the changes ( Adds the files to the staging area - more on this later )
 1. Commit changes to the repository with a message
