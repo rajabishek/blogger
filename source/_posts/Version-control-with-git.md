@@ -82,7 +82,7 @@ The staging area acts like a workplace where we can arrange and group things tha
 ## How git refers to the change sets ?
 Git generates a checksum for each change set. Checksum algorithms convert data into a simple number called as a checksum. How many ever times you feed in the data to the checksum algorithm, the same data always generates the same checksum. Changing the data would result in a different checksum. Git uses SHA-1 hash algorithm for generating the checksum. It is a 40 character hexadecimal string.
 
-We have seen this checksum before if you remember, when we do a git log we see this checksum that is generated for each commit. Therefore every commit has a meta information attached to it which includes the checksum, the author details and a reference to the checksum of the previous commit(parent). In fact we can use these checksums to searching a particular commit. 
+We have seen this checksum before if you remember, when we do git log we see this checksum that is generated for each commit. Therefore every commit has a meta information attached to it which includes the checksum, the author details and a reference to the checksum of the previous commit(parent). In fact we can use these checksums for searching a particular commit. 
 
 ## Demystifying the HEAD pointer
 We also have something called as the HEAD pointer in git. HEAD always points to the tip of the current branch in the repository. It is the last state of the repository, what was last checked out. Or you can visualize HEAD as a pointer that is pointing to the parent of the next commit, i.e where the writing will start taking place. Its the place where we left off, its the place from where we are going to make any further changes.
