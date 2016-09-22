@@ -16,7 +16,7 @@ Git is the most popular version control tool used today. Before installing git y
 Before we start using git for our projects we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code. Its important to note here that git allows us to provide configuration at 3 different levels.
 - **System** - Configurations at this level apply to all the users of the system
 - **User** - Configurations at this level apply to a specific user of the system
-- **Project** - Configurations at this level apply to a specific project alone
+- **Project** - Configurations at this level apply to a specific project
 
 The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig`, the project level configurations are stored at `project-root/.git/config`. These configuration files are just plain text files. To change the configurations at any particular level we could very well just go and edit the corresponding file manually, but the issue here is that we should also know the format in which we must write the configurations in these files. To simplify this process git provides us with some commands to add/remove configurations at any level.
 
