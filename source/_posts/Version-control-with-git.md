@@ -212,7 +212,7 @@ HEAD^ == HEAD~1 == HEAD~ # refers to the 2nd last commit
 HEAD^ == HEAD~1 == HEAD~ == master^ == master~  == master~1 # if the currently checked out branch is master
 
 HEAD^^ == HEAD~2 # refers # refers to the 3rd last commit
-HEAD^ == HEAD~2 == master^^  == master~1 # if the currently checked out branch is master
+HEAD^ == HEAD~2 == master^^  == master~2 # if the currently checked out branch is master
 ```
 
 ## Exploring the commit tree
