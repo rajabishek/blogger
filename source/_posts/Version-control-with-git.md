@@ -5,7 +5,7 @@ tags:
 ---
 
 ## Why do I need version control?
-Think about the days when we used to have folder names for our projects like project-start, project-final, project-final2, project-last-final etc. We used to duplicate the project folder every time we backup a previous version. Version control solves this problem. It is a system which records and stores every change made to the project thereby allowing us to go back to a previous state at any time. Developers have been using this method for a long time (it exists from the 70s) and it is now unthinkable to write software without this technology.
+Think about the days when we used to have folder names for our projects like project-start, project-final, project-final2, project-last-final etc. We used to duplicate the project folder every time we needed a backup. Version control solves this problem. It is a system which records and stores every change made to the project thereby allowing us to go back to a previous state at any time. Developers have been using this method for a long time (it exists from the 70s) and it is now unthinkable to write software without this technology.
 
 <!-- more -->
 
