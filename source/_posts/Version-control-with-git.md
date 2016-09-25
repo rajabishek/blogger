@@ -21,15 +21,19 @@ Think about the days when we used to have folder names for our projects like pro
 ## Local Version Control Systems
 The technique that developers used back then was to duplicate project folders. This approach is very simple but highly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to. To deal with these problems programmers developed local version control systems that had a simple database that stored the changes made in the files. One of the most popular local version control systems back then was called as RCS.
 
+![Screenshot 1](/img/version-control-git/local-version-control.png)
+
 RCS works by keeping patch sets (i.e the differences between files) in a special format on disk. If you asked RCS for a file at a particular point in time, it would recreate that file by adding up all the patches stored in the database.
 
 ## Centralized Version Control Systems
-Next developers started working with centralized version control systems that allowed them to collaborate with their peers working on other systems. The idea is to have a single server that contains all the versioned files and a number of clients check out files from this central place. Systems such as CVS, Subversion and Perforce were based on this idea. This system was better than local version control system because team members to a certain extent know what others are working on and now administrators have better control over who can do what.
+Next developers started working with centralized version control systems that allowed them to collaborate with their peers working on other systems. The idea is to have a single server that contains all the versioned files and a number of clients check out files from this central place. Systems such as CVS, Subversion and Perforce were based on this idea. This system was better than local version control system because team members to a certain extent know what others are working on and now administrators have better control over who can do what.c
+
+![Screenshot 1](/img/version-control-git/central-version-control.png)
 
 But there are some down sides too. If the server goes down for sometime, then during that period nobody can collaborate and save versioned changes to anything they’re working on. But what if the hard disk on the server gets corrupted ? You absolutely loose everything except for whatever single snapshots people happen to have kept on their local machines. Both local version control system and centralized version control system suffers from this problem. Whenever you have the entire history of the project in a single place you have the risk of losing everything.
 
 ## Distributed Version Control Systems
-In a distributed version control system such as Git, Mercurial, Bazaar or Darcs, the clients fully clone the repository, they don’t just check out the latest snapshot of the files. Every clone is really a full backup of all the data. The clone consists of both the code files and the data about the different versions. Thus if the central server dies any server dies the any of the client repositories can be copied back up to the server to restore it.
+In a distributed version control system such as Git, Mercurial, Bazaar or Darcs, the clients fully clone the repository, they don’t just check out the latest snapshot of the files. Every clone is really a full backup of all the data. Every clone consists of both the latest code files and the information about the different versions and how to generate them. Thus if the central server dies any server dies the any of the client repositories can be copied back up to the server to restore it.
 
 ## Installation
 Git is the most popular version control tool used today. Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git. If you don't have git installed, then you can head over to the downloads section of the [official git website](https://git-scm.com/downloads) and download the git installer based on your operating system. The installation process is pretty simple and the installer will guide you through.
