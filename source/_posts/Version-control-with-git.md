@@ -98,8 +98,6 @@ You can use the `git help` command to get help from git. This will list the comm
 
 When you are finally done you can hit `q` to come out. Now unix users will recognize that the manual page that was opened looked something similar to the unix man page.  In fact its was the very same thing, you could have also opened it using `man git-log`. Git just gives you an easier way to look at those manual pages through its command line tool.
 
-If the manpages isn't enough and if you are looking for in-person help, you can try the #git or #github channel on the Freenode IRC server. These channels are very active and are regularly filled with people who are all very knowledgeable about git and are willing to help others.
-
 ## Initializing a repository
 Before we start using git for a project we need to initialize a repository, what I mean is that we need to tell git which is the folder that it needs to keep track of. The first step that we do is we navigate to the project's root folder and run the `git init` command there. This tell git to do the initialization process, i.e we are essentially telling it to start doing what it needs to do, to track this folder. 
 
