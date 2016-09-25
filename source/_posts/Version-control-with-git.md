@@ -46,21 +46,30 @@ Git is the most popular version control system used today. The history of git is
 
 Git project was completed with the above feature in 2005 and ever since then it has been in widely adopted. It is extremely fast and can handle large projects efficiently. Its branching system which we will look into later provides strong support for non linear development.
 ## Installation
-Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git. If you don't have git installed, then you can head over to the downloads section of the [official git website](https://git-scm.com/downloads) and download the git installer based on your operating system. The installation process is pretty simple and the installer will guide you through.
+Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git.
+If you are on a Linux machine you can use the package manager that comes with your installation. If you’re on Fedora for example, you can use yum:
+```sh
+sudo yum install git-all
+```
+If you’re on a Debian-based distribution like Ubuntu, try apt-get:
+```sh
+sudo apt-get install git-all
+```
+If you are on mac then the easiest way to install git is to install command line tools from Xcode. If you want a more updated version of git then you can head over to the downloads section of the [official git website](https://git-scm.com/downloads) and download the git installer. The installation process is pretty simple and the installer will guide you through.
 
 ## Initial Configuration
-Before we start using git for our projects we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code. Its important to note here that git allows us to provide configuration at 3 different levels.
+Before we start using git for our projects we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code. You should have to do these things only once on any given computer and they’ll even stick around between upgrades. Its important to note here that git allows us to provide configuration at 3 different levels.
 - **System** - Configurations at this level apply to all the users of the system
 - **User** - Configurations at this level apply to a specific user of the system
 - **Project** - Configurations at this level apply to a specific project
 
-The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig`, the project level configurations are stored at `project-root/.git/config`. These configuration files are just plain text files. To change the configuration at any particular level we could very well just go and edit the corresponding file manually, but the issue here is that we should also know the format in which we must write the configurations. To simplify this process git provides us with some commands to add/remove configurations at any level.
+The system level configurations are stored at `/etc/gitconfig`, the user level configurations are stored at `~/.gitconfig` or `~/.config/git/config`, the project level configurations are stored at `project-root/.git/config`. Each level overrides values in the previous level, so values in `.git/config` trump those in `/etc/gitconfig`. These configuration files are just plain text files. To change the configuration at any particular level we could very well just go and edit the corresponding file manually, but the issue here is that we should also know the format in which we must write the configurations. To simplify this process git provides us with some commands to add/remove configurations at any level.
 
 We run the command `git config --system <configuration>` for a system wide configuration, or `git config --global <configuration>` for a user level configuration, and `git config <configuration>` for a project level configuration.
 
 Lets add a few user level configurations to start with. The first thing is, you need to tell git about yourself i.e your name and email address. When you are working on a project with multiple team members and when you make a change, git marks that change with your identity. In this way any team member can know the person who was responsible behind writing/changing a particular piece of code. 
 
-You can also tell git the default text editor that you want it to use. Git uses that text editor to open files when it wants you to enter some message. Along with the text editor we also provide it with 2 options `w` meaning telling unix to wait till we complete entering the message(if we don't do this unix will not wait till we complete writing the message and it will keep going with what it needs to do) and `l1` means put the cursor at line number 1. Another configuration that we can add is to tell git to use colors when outputing things to the command line, if we don't add this configuration it will just give us plain monochromatic text. 
+You can also tell git the default text editor that you want it to use. Git uses that text editor to open files when it wants you to enter some message. If not configured, git uses your system’s default editor. Along with the text editor we also provide it with 2 options `w` meaning telling unix to wait till we complete entering the message(if we don't do this unix will not wait till we complete writing the message and it will keep going with what it needs to do) and `l1` means put the cursor at line number 1. Another configuration that we can add is to tell git to use colors when outputing things to the command line, if we don't add this configuration it will just give us plain monochromatic text. 
 ```sh
 git config --global user.name "Raj Abishek"
 git config --global user.email "rajabishek@hotmail.com"
@@ -82,11 +91,14 @@ After running the above command git will automatically write these configuration
 [color]
         ui = true
 ```
+When you run the `git config --list` command it shows the settings the are applicable for the project. Git starts reading the settings from the system level downwards. As a result you may see keys more than once, because git is reading the same key from different files (/etc/gitconfig and ~/.gitconfig, and then <project-root>/.git/config). First it reads from the system level, then it reads from the user level and then it reads from the project level. Git uses the last value for each unique key it sees. 
 
 ## Getting help from git
-You can use the `git help` command to get help from git. This will list the commonly used commands that git provides along with a short note on each one of them. To know more about how to use a specific command we can do `git help <command>`. It actually brings out the git manual page for that command, the page has the description about that command and the options that we can use along with it. Use can use `f` key to move forward and `b` to move backward in the git man page. 
+You can use the `git help` command to get help from git. This will list the commonly used commands that git provides along with a short note on each one of them. To know more about how to use a specific command we can do `git help <verb>` or `git <verb> --help`. It actually brings out the git manual page for that command, the page has the description about that command and the options that we can use along with it. Use can use `f` key to move forward and `b` to move backward in the git man page. 
 
 When you are finally done you can hit `q` to come out. Now unix users will recognize that the manual page that was opened looked something similar to the unix man page.  In fact its was the very same thing, you could have also opened it using `man git-log`. Git just gives you an easier way to look at those manual pages through its command line tool.
+
+If the manpages isn't enough and if you are looking for in-person help, you can try the #git or #github channel on the Freenode IRC server. These channels are very active and are regularly filled with people who are all very knowledgeable about git and are willing to help others.
 
 ## Initializing a repository
 Before we start using git for a project we need to initialize a repository, what I mean is that we need to tell git which is the folder that it needs to keep track of. The first step that we do is we navigate to the project's root folder and run the `git init` command there. This tell git to do the initialization process, i.e we are essentially telling it to start doing what it needs to do, to track this folder. 
@@ -114,6 +126,8 @@ Git uses a three tree architecture, i.e we have 3 trees the **working copy**, **
 The whole point of having a staging area is to make and get things ready, lets say we have 10 files that haves changes in our project(working copy), now if we don't want to commit all these changes at once as a single change set(a commit), then this is where the staging area comes in handy. We can just add those files to the staging area that we want to be a part of the next commit and commit them alone. Next we can take the remaining changes from the working copy and do the same. 
 
 The staging area acts like a workplace where we can arrange and group things that we want to be a part of one change set. When we commit only the changes present in the staging area will be recorded. Now we also have the option to pull changes from the repository to the staging index, and then from there to the working copy, buts that's not usually the way we work. Whenever we are pulling changes from the repository we pull it directly into the working copy.
+
+The `.git` directory is where git stores the metadata and object database for your project. This is the most important part of git, and it is what is copied when you clone a repository from another computer. The working directory is a single checkout of one version of the project. These files are pulled out of the compressed database from the `.git` directory and placed on disk for you to use or modify. If a particular version of a file is in the `.git` directory, it’s considered committed. If it has been modified and was added to the staging area, it is staged. And if it was changed since it was checked out but has not been staged, it is modified.
 
 ## How git refers to the change sets ?
 Git generates a checksum for each change set. Checksum algorithms convert data into a simple number called as a checksum. How many ever times you feed in the data to the checksum algorithm, the same data always generates the same checksum. Changing the data would result in a different checksum. Git uses SHA-1 hash algorithm for generating the checksum. It is a 40 character hexadecimal string.
