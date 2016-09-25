@@ -18,6 +18,9 @@ It is a system that records changes to a set of files over time so that you can 
 
 Think about the days when we used to have folder names for our projects like project-start, project-final, project-final2, project-last-final etc. We used to duplicate the project folder every time we needed a backup. Version control solves this problem. Developers have been using this method for a long time (it exists from the 70s) and it is now unthinkable to write software without this technology.
 
+## Local version control
+Many people duplicate project folders to backup versions. This approach is very simple but highly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to. To deal with these problems programmers developed local version control systems that had a simple database that stored the changes in the files. So you would essentially have a database that stored the different versions of the project. One of the most popular local version control systems back then was called as RCS. RCS works by keeping patch sets (that is, the differences between files) in a special format on disk. Then if you asked RCS a file from a particular point in time it would recreate that file by adding up all the patches.
+
 ## Installation
 Git is the most popular version control tool used today. Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git. If you don't have git installed, then you can head over to the downloads section of the [official git website](https://git-scm.com/downloads) and download the git installer based on your operating system. The installation process is pretty simple and the installer will guide you through.
 
