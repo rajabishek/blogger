@@ -4,10 +4,19 @@ date: 2016-08-15 09:00:00
 tags:
 ---
 
-## Why do I need version control?
-Think about the days when we used to have folder names for our projects like project-start, project-final, project-final2, project-last-final etc. We used to duplicate the project folder every time we needed a backup. Version control solves this problem. It is a system which records and stores every change made to the project thereby allowing us to go back to a previous state at any time. Developers have been using this method for a long time (it exists from the 70s) and it is now unthinkable to write software without this technology.
+## Why do we need version control ?
+It is a system that records changes to a set of files over time so that you can recall specific versions later. It is essentially a system that records and stores every change made to the project thereby allowing us to go back to a previous state at any time. With a good version control system you get all the below features for a very little overhead.
 
 <!-- more -->
+
+- Revert files back to a previous state.
+- Revert the entire project back to a previous state.
+- Compare changes over time.
+- See who last modified something that might be causing a problem.
+- Who introduced an issue and when.
+- Recover files when you screw up things or lose files
+
+Think about the days when we used to have folder names for our projects like project-start, project-final, project-final2, project-last-final etc. We used to duplicate the project folder every time we needed a backup. Version control solves this problem. Developers have been using this method for a long time (it exists from the 70s) and it is now unthinkable to write software without this technology.
 
 ## Installation
 Git is the most popular version control tool used today. Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git. If you don't have git installed, then you can head over to the downloads section of the [official git website](https://git-scm.com/downloads) and download the git installer based on your operating system. The installation process is pretty simple and the installer will guide you through.
