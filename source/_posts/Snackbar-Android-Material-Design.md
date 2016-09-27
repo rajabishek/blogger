@@ -5,7 +5,7 @@ tags:
 ---
 
 ## Better notifications
-The are helpful in providing lightweight feedback about an operation. They show a brief message at the bottom of the screen on mobile and lower left on larger devices. They appear above all other elements on screen and only one can be displayed at a time.
+Snackbar notifications in Android are helpful in providing lightweight feedback about an operation. They show a brief message at the bottom of the screen on mobile and lower left on larger devices. They appear above all other elements on screen and only one can be displayed at a time.
 
 <!-- more -->
 
