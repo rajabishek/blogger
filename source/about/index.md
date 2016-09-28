@@ -9,7 +9,7 @@ My goal is to combine craft functionality with fine art integrity and the exacti
 
 I interned at [Razorpay](http://razorpay.com) during the winter of 2015 and at [Skcript](http://skcript.com) in summer of 2015. 
 
-I have also worked as an independent contractor for a few months with [Zorioo](http://zorioo.com) to build [Paywall](https://getpaywall.com). A platform allowing publishers to monetize their website or app. I was responsible for development of core products such as Payments, Recursive Billing, Search , Photos, Profile, Web hooks and Applications and played an important role in designing and building core parts of the Paywall engineering infrastructure.
+I have also worked as an independent contractor for a few months with [Zorioo](http://zorioo.com) to build Paywall. A platform allowing publishers to monetize their website or app. I was responsible for development of core products such as Payments, Recursive Billing, Search , Photos, Profile, Web hooks and Applications and played an important role in designing and building core parts of the Paywall engineering infrastructure.
 
 When not working, you can usually find me sketching designs, reorganizing my workspace or hanging out with my friends.
 
