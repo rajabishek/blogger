@@ -50,3 +50,9 @@ Nevertheless, it is often a good idea to indicate function result types explicit
 def greet() = println("Helloworld from Raj Abishek")
 ```
 The above is an example of function declaration the accepts no parameters and returns nothing. The result type of greet function is `Unit`. Scala’s Unit type is similar to Java’s void type. Every `void` returning method in Java is mapped to a `Unit` returning method in Scala.
+
+While executing the Scala file we can pass command line arguments which are in the `args` array. Arrays are zero based and can be positionally indexed with parentheses. So the ith element in a Scala array named data is `data(i-1)`, not `data[0]`, as in Java.
+```Scala
+println("Helloword from " + args(0)) //get the command line argument
+```
+In all of the above shown sample code we never wrapped the code within a main method of a class like how we do it in Java. Thats because even though Scala is designed to help developers build very large-scale systems, it also scales down nicely to scripting. A script is just a sequence of statements in a file that will be executed sequentially.
