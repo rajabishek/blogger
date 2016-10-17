@@ -50,6 +50,7 @@ Nevertheless, it is often a good idea to indicate function result types explicit
 def greet() = println("Helloworld from Raj Abishek")
 ```
 The above is an example of function declaration the accepts no parameters and returns nothing. The result type of greet function is `Unit`. Scala’s Unit type is similar to Java’s void type. Every `void` returning method in Java is mapped to a `Unit` returning method in Scala.
+As we will see later the above greet function is not pure. A pure function is a function where the result value is only determined by its input values, without observable side effects. Its takes input through parameters, processes the input and returns a value. As we will see later a pure function always gives the same output for a given input, it produces no side effects and does not rely on any external state. In simpler term if you think about it a function is impure is if it makes sense to call it without using its return value. Methods with the result type of Unit, therefore, are only executed for their side effects. In the case of greet(), the side effect is a friendly greeting printed to the standard output.
 
 While executing the Scala file we can pass command line arguments which are in the `args` array. Arrays are zero based and can be positionally indexed with parentheses. So the ith element in a Scala array named data is `data(i-1)`, not `data[0]`, as in Java.
 ```Scala
@@ -58,3 +59,24 @@ println("Helloword from " + args(0)) //get the command line argument
 In all of the above shown sample code we never wrapped the code within a main method of a class like how we do it in Java. Thats because even though Scala is designed to help developers build very large-scale systems, it also scales down nicely to scripting. A script is just a sequence of statements in a file that will be executed sequentially.
 
 Just like comments behave the same way in Scala. The Scala compiler will ignore characters between `//` and the next end of line and any characters between `/*` and `*/`.
+
+To loop through the elements of the array using a while loop we do the following.
+```scala
+//Non idiomatic code
+var i = 0
+while (i < args.length) {
+  println(args(i))
+  i += 1
+}
+```
+You should understand here that although while loops are explained here, they do not demonstrate the best Scala style. Later we shall see better approaches that avoid iterating through arrays with indexes. The above code that loops through the array through positional indexing via a while loop is not seen as the natural way of lopping through an array in Scala. Note here that Java’s ++i and i++ don’t work in Scala, to increment in Scala we either do i = i + 1 or i += 1. There is also a `print` function in Scala that prints out a string without a line break. So to print out the command line arguments on the same line we can do the following.
+```scala
+var i = 0
+  while (i < args.length) {
+    if (i != 0)
+      print(" ")
+    print(args(i))
+i += 1 }
+println()
+```
+Like Java, in Scala you must put the boolean expression for a while or an if in parentheses.(You can't do things like if i < 10 as you can in a languages such as Python, Ruby). Another similarity to Java is that if a block has only one statement, you can optionally leave off the curly braces. Also in Scala adding semicolons at the end of a line is optional(Scala won't complain if you prefer adding semicolons). But semicolons are required if you want to write multiple statements on a single line.
