@@ -1,7 +1,9 @@
 ---
 title: Functional Thinking - Scala
+date: 2016-10-17 20:30:49
 tags:
 ---
+
 ## Introduction
 - Stands for **scalable language** - Named so because it was designed to grow with the demands of developers.
 - Can be used for building large systems and frameworks of reusable components.
