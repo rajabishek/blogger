@@ -56,3 +56,5 @@ While executing the Scala file we can pass command line arguments which are in t
 println("Helloword from " + args(0)) //get the command line argument
 ```
 In all of the above shown sample code we never wrapped the code within a main method of a class like how we do it in Java. Thats because even though Scala is designed to help developers build very large-scale systems, it also scales down nicely to scripting. A script is just a sequence of statements in a file that will be executed sequentially.
+
+Just like comments behave the same way in Scala. The Scala compiler will ignore characters between `//` and the next end of line and any characters between `/*` and `*/`.
