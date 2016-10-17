@@ -80,3 +80,23 @@ i += 1 }
 println()
 ```
 Like Java, in Scala you must put the boolean expression for a while or an if in parentheses.(You can't do things like if i < 10 as you can in a languages such as Python, Ruby). Another similarity to Java is that if a block has only one statement, you can optionally leave off the curly braces. Also in Scala adding semicolons at the end of a line is optional(Scala won't complain if you prefer adding semicolons). But semicolons are required if you want to write multiple statements on a single line.
+
+When we wrote the while loops above we were programming in an imperative style. In languages such a Java, C, C++ we give one imperative command at a time, iterate with loops, and often mutate state shared between different functions. One of the main characteristics of a functional language is that functions are first class constructs. Although Scala allows us to program in imperative style as we saw above(positional indexing with while), we will find ourselves using functional style more as we dive deeper into Scala.
+```scala
+args.foreach(arg => println(arg))
+```
+The above code is how we would achieve the same result functionally. We call the `foreach` method on the `args` array and pass in a function. Here we are passing a function literal that takes one parameter names `arg`. The body of the function is the single statement `println(arg)`. The syntax for a function literal is a list of named parameters, in parentheses, a right arrow, and then the body of the function. As you can see above the Scala interpreter infers the type of `arg` as `String`, since `String` is the element type of the array on which we called the foreach.
+But if you would like be verbose we can explicitly type annotate the `arg` parameter as a `String`. And remember to add the parentheses when you explicitly type the parameter.
+```scala
+args.foreach((arg: String) => println(arg))
+```
+If you would like to be concise and not explicit, you can use a shorthand form called as partially applied function. If a function literal consists of one statement that takes a single argument, you need not explicitly name and specify the argument.
+```scala
+args.foreach(println)
+```
+Ok but now you may think, what about the very famous imperative style for loops that we use in Java or C++. In an effort to guide Scala programmers in a functional direction, only a functional relative of the imperative for(called as for expression) is available in Scala.
+```scala
+for (arg <- args)
+    println(arg)
+```
+The `arg` is a val and not a var here. Although `arg` may seem to be a var, it gets a new value on each iteration, it really is a val. `arg` can’t be reassigned inside the body of the for expression. A new `arg` val will be created and initialized to the element value during every iteration.
