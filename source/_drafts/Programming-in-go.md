@@ -49,3 +49,16 @@ Generally, we split numbers into two different kinds integers and floating-point
 
 ## Floating point numbers
 Floating-point numbers are numbers that contain a decimal component. Go has two floating point types `float32` and `float64` (also often referred to as single precision and double precision, respectively). It also has two additional types for representing complex numbers (numbers with imaginary parts) `complex64` and `complex128`. Generally, we should stick with `float64` when working with floating- point numbers.
+
+## Strings
+A string is a sequence of characters with a definite length used to represent text. String literals can be created using double quotes `"Raj Abishek"` or backticks `Raj Abishek`. The difference between these is that double quoted version cannot contain newlines but they allow special escape sequences to be used like `\n` for new line and `\t` for a tab.
+```go
+package main
+import "fmt"
+func main() {
+    fmt.Println(len("Raj Abishek")) // gets the length of the string
+    fmt.Println("Raj Abishek"[0]) // accesses the first character in the string
+    fmt.Println("Raj " + "Abishek") // concatenates the two strings together
+}
+```
+Notice that you see 82 instead of R when you run this program. This is because the character is represented by a byte (remember a byte is an integer).
