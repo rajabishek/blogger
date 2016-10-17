@@ -8,7 +8,6 @@ tags:
 Scala stands for "Scalable Language". Its a language that is meant to grow with its users. It can be used for building large systems and frameworks of reusable components. It runs on the standard Java platform and is interoperable with all Java libraries. It is statically typed with a blend of object-oriented and functional programming.
 
 <!-- more -->
-
 ## Installation
 To get the official Scala installation, you can visit the official [downloads](http://www.scala-lang.org/downloads) page  and follow the directions for your platform. You can also use a Scala plug-in for Eclipse, IntelliJ, or NetBeans. To check if Scala is installed correctly you can run `scala -version` on the command line to check the version installed.
 
