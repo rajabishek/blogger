@@ -43,3 +43,6 @@ To find documentation details about a specific function in a package run the com
 
 ## Data Types
 Go is a statically typed programming language. Variables always have a specific type and that type cannot change. In every programming language you need a way to represent numbers(integers and floating point numbers), strings or characters, and booleans.
+
+### Integers
+Generally, we split numbers into two different kinds integers and floating-point numbers. Go’s integer types are `uint8`, `uint16`, `uint32`, `uint64`, `int8`, `int16`, `int32`, and `int64`. 8, 16, 32, and 64 tell us how many bits each of the types use. uint means "unsigned integer" while int means "signed integer". In addition, there two alias types: `byte` (which is the same as `uint8`) and `rune`(which is the same as `int32`). There are also three machine dependent integer types: `uint`, `int`, and `uintptr`. They are machine dependent because their size depends on the type of architecture you are using. Generally, if you are working with integers, you should just use the int type.
