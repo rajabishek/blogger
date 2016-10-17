@@ -40,3 +40,6 @@ The `package main` at the top is a package declaration. Packages are Go’s way 
 Function definitions in Go start with the `func` keyword followed by the name of the function (main, in this case), a list of zero or more parameters surrounded by parentheses, an optional return type, and a body which is surrounded by curly braces. This function has no parameters, doesn’t return anything, and has only one statement. We had to name the function as `main` because that is the first function that gets called when you execute the program. To print the contents onto the console we do `fmt.Println("Ouput to console")`. We are accessing the Println function inside the fmt package and invoking it using one string argument.
 
 To find documentation details about a specific function in a package run the command `godoc <package-name> <function-name>`.
+
+## Data Types
+Go is a statically typed programming language. Variables always have a specific type and that type cannot change. In every programming language you need a way to represent numbers(integers and floating point numbers), strings or characters, and booleans.
