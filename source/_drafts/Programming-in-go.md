@@ -25,3 +25,14 @@ func main() {
 ```
 You can save the code in a file called code.go and then we can execute the file by running `go run code.go`. Ok so is Go an interpreted language ?
 No, go run command takes the subsequent files (separated by spaces), compiles them into an executable saved in a temporary directory, and then runs the program. If you had made some mistake somewhere while typing the Go compiler will give you hints about where the mistake lies. Like most compilers, the Go compiler is extremely pedantic and has no tolerance for mistakes.
+
+## Understanding Hello world
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello world from Raj Abishek")
+}
+```
