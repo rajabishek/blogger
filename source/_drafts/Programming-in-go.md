@@ -62,3 +62,6 @@ func main() {
 }
 ```
 Notice that you see 82 instead of R when you run this program. This is because the character is represented by a byte (remember a byte is an integer).
+
+## Booleans
+A boolean value (named after George Boole) is a special 1-bit integer type used to represent `true` and `false` (or on and off). Three logical operators are used with boolean values `&&`, `||` and `!`.
