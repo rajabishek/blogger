@@ -30,3 +30,23 @@ As you see above here we have used type annotations to explicitly explicitly the
 var greeting = "Good morning!"
 greeting = "Good evening!" //Perfectly valid since greeting is a var
 ```
+
+We start function definitions with the `def` keyword. The function’s name as shown above is max and it is followed by a comma separated list of parameters in parentheses with type annotations for every parameter. After the close parenthesis of max’s parameter list we type annotate the result type of the function. In Scala the type of value returned from a function is called as result type(In Java we call it return type). Following the function’s result type is an equals sign and pair of curly braces which contains the function body.
+```scala
+def minimum(x: Int, y: Int): Int = {
+  if (x < y)
+    x
+  else
+    y
+}
+```
+Scala’s if expression can result in a value, just like Java’s ternary operator. The `if(x < y) x else y` expression in Scala behaves similarly to `(x < y) ? x : y` in Java. The result type of the function is not always required to be mentioned. If we leave the result type off and the compiler can infer it. But in some cases like recursive functions the Scala compiler will require you to explicitly specify the result type of a function. In Scala if the function consists of just one statement, you can leave off the curly braces.
+```scala
+def minimum(x: Int, y: Int) = if (x < y) x else y
+```
+As you can see above the result type of the function is omitted and the curly brace is removed since function body just has a single if statement.
+Nevertheless, it is often a good idea to indicate function result types explicitly, even when the compiler doesn’t require it. Such type annotations can make the code easier to read. Another developer working on the project need not study the function body to figure out the inferred result type.
+```scala
+def greet() = println("Helloworld from Raj Abishek")
+```
+The above is an example of function declaration the accepts no parameters and returns nothing. The result type of greet function is `Unit`. Scala’s Unit type is similar to Java’s void type. Every `void` returning method in Java is mapped to a `Unit` returning method in Scala.
