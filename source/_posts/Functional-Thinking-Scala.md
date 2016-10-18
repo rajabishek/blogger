@@ -9,7 +9,7 @@ Scala stands for "Scalable Language". Its a language that is meant to grow with 
 
 <!-- more -->
 ## Installation
-To get the official Scala installation, you can visit the official [downloads](http://www.scala-lang.org/downloads) page  and follow the directions for your platform. You can also use a Scala plug-in for Eclipse, IntelliJ, or NetBeans. To check if Scala is installed correctly you can run `scala -version` on the command line to check the version installed.
+To get the official Scala installation, you can visit the official [downloads](http://www.scala-lang.org/downloads) page and follow the directions for your platform. You can also use a Scala plug-in for Eclipse, IntelliJ, or NetBeans. To check if Scala is installed correctly you can run `scala -version` on the command line to check the version installed.
 
 ## Overview
 All of Java’s primitive types have corresponding classes in the `scala` package. For instance `scala.Boolean` corresponds to Java’s boolean. `scala.Float` corresponds to Java’s float. When we compile the Scala code to Java bytecodes, the Scala compiler will use Java’s primitive types where possible to give you the performance benefits of the primitive types.
