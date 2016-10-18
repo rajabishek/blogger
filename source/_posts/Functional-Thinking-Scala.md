@@ -95,7 +95,7 @@ args.foreach(println)
 ```
 Ok but now you may think, what about the very famous imperative style for loops that we use in Java or C++. In an effort to guide Scala programmers in a functional direction, only a functional relative of the imperative for(called as for expression) is available in Scala.
 ```scala
-for (arg <- args)
+for(arg <- args)
     println(arg)
 ```
 The `arg` is a val and not a var here. Although `arg` may seem to be a var, it gets a new value on each iteration, it really is a val. `arg` can’t be reassigned inside the body of the for expression. A new `arg` val will be created and initialized to the element value during every iteration.
