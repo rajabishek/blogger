@@ -29,7 +29,7 @@ var greeting = "Good morning!"
 greeting = "Good evening!" //Perfectly valid since greeting is a var
 ```
 
-We start function definitions with the `def` keyword. The function’s name as shown above is max and it is followed by a comma separated list of parameters in parentheses with type annotations for every parameter. After the close parenthesis of max’s parameter list we type annotate the result type of the function. In Scala the type of value returned from a function is called as result type(In Java we call it return type). Following the function’s result type is an equals sign and pair of curly braces which contains the function body.
+We start function definitions with the `def` keyword. The function’s name as shown below is minimum and it is followed by a comma separated list of parameters in parentheses with type annotations for every parameter. After the close parenthesis of minimum's parameter list we type annotate the result type of the function. In Scala the type of value returned from a function is called as result type(In Java we call it return type). Following the function’s result type is an equals sign and pair of curly braces which contains the function body.
 ```scala
 def minimum(x: Int, y: Int): Int = {
   if (x < y)
@@ -48,7 +48,7 @@ Nevertheless, it is often a good idea to indicate function result types explicit
 def greet() = println("Helloworld from Raj Abishek")
 ```
 The above is an example of function declaration the accepts no parameters and returns nothing. The result type of greet function is `Unit`. Scala’s Unit type is similar to Java’s void type. Every `void` returning method in Java is mapped to a `Unit` returning method in Scala.
-As we will see later the above greet function is not pure. A pure function is a function where the result value is only determined by its input values, without observable side effects. Its takes input through parameters, processes the input and returns a value. As we will see later a pure function always gives the same output for a given input, it produces no side effects and does not rely on any external state. In simpler term if you think about it a function is impure is if it makes sense to call it without using its return value. Methods with the result type of Unit, therefore, are only executed for their side effects. In the case of greet(), the side effect is a friendly greeting printed to the standard output.
+As we will see later the above `greet` function is not pure. A pure function is a function where the result value is only determined by its input values, without observable side effects. Its takes input through parameters, processes the input and returns a value. As we will see later a pure function always gives the same output for a given input, it produces no side effects and does not rely on any external state. In simpler term if you think about it a function is impure is if it makes sense to call it without using its return value. Methods with the result type of Unit, therefore, are only executed for their side effects. In the case of `greet` function, the side effect is a friendly greeting printed to the standard output.
 
 While executing the Scala file we can pass command line arguments which are in the `args` array. Arrays are zero based and can be positionally indexed with parentheses. So the ith element in a Scala array named data is `data(i-1)`, not `data[0]`, as in Java.
 ```Scala
@@ -72,9 +72,10 @@ You should understand here that although while loops are explained here, they do
 var i = 0
   while (i < args.length) {
     if (i != 0)
-      print(" ")
+    print(" ")
     print(args(i))
-i += 1 }
+    i += 1
+  }
 println()
 ```
 Like Java, in Scala you must put the boolean expression for a while or an if in parentheses.(You can't do things like if i < 10 as you can in a languages such as Python, Ruby). Another similarity to Java is that if a block has only one statement, you can optionally leave off the curly braces. Also in Scala adding semicolons at the end of a line is optional(Scala won't complain if you prefer adding semicolons). But semicolons are required if you want to write multiple statements on a single line.
