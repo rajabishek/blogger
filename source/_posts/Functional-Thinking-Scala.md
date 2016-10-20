@@ -114,4 +114,4 @@ messages(3) = " Raj Abishek!\n"
 for(i <- 0 to 3)
   print(messages(i))
 ```
-As you can see above when we parameterize an instance with both a type and a value, the type comes first in its square brackets, followed by the value in parentheses. The type parameterization portion(the type names in square brackets) forms part of the type of the instance, the `message` val created above is of type `Array[String]`. The type of `messages` is `Array[String]`, not `Array[String](4)`.
+As you can see above when we parameterize an instance with both a type and a value, the type comes first in its square brackets, followed by the value in parentheses. The type parameterization portion(the type names in square brackets) forms part of the type of the instance, the `messages` val created above is of type `Array[String]`. The type of `messages` is `Array[String]`, not `Array[String](4)`.
