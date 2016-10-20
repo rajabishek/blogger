@@ -104,3 +104,13 @@ In Scala you can instantiate objects of a class using the `new` keyword. While i
 ```scala
 val bigInteger = new java.math.BigInteger("99637")
 ```
+The above code instantiates a new `java.math.BigInteger` and parameterizes it with the value "99637". In the above case the instantiation process required only a value, but in some cases while instantiating you will have to provide the type also. You parameterize an instance with types by specifying one or more types in square brackets.
+```scala
+val messages = new Array[String](3)
+messages(0) = "Hello"
+messages(1) = " world"
+messages(2) = " from"
+messages(3) = " Raj Abishek!\n"
+for(i <- 0 to 3)
+  print(messages(i))
+```
