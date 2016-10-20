@@ -115,3 +115,11 @@ for(i <- 0 to 3)
   print(messages(i))
 ```
 As you can see above when we parameterize an instance with both a type and a value, the type comes first in its square brackets, followed by the value in parentheses. The type parameterization portion(the type names in square brackets) forms part of the type of the instance, the `messages` val created above is of type `Array[String]`. The type of `messages` is `Array[String]`, not `Array[String](4)`.
+
+When you define a variable with val, the variable can’t be reassigned, but the object to which it refers could potentially still be changed. The below code is perfectly valid. The messages variable cannot be reassigned to a different array, it will always point to the same `Array[String]` instance with which it was initialized, but we can change the elements of that `Array[String]` over time, so the array itself is mutable.
+```scala
+messages(0) = "Bye"
+messages(1) = " change"
+messages(2) = " into"
+messages(3) = " new text!\n"
+```
