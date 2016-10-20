@@ -99,3 +99,8 @@ for(arg <- args)
     println(arg)
 ```
 The `arg` is a val and not a var here. Although `arg` may seem to be a var, it gets a new value on each iteration, it really is a val. `arg` can’t be reassigned inside the body of the for expression. A new `arg` val will be created and initialized to the element value during every iteration.
+
+In Scala you can instantiate objects of a class using the `new` keyword. While instantiating a class you can also configure it with values and types. This is called as **parameterization**.
+```scala
+val bigInteger = new java.math.BigInteger("99637")
+```
