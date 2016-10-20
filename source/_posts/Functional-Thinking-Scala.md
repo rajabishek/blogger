@@ -123,7 +123,7 @@ messages(1) = " change"
 messages(2) = " into"
 messages(3) = " new text!\n"
 ```
-In Scala if a method takes only one parameter, you can call it without a dot or parentheses. This woudn't have been very evident but when we wrote the for expression to loop through the array the code 0 to 3 is transformed into the method call (0).to(3).
+In Scala if a method takes only one parameter, you can call it without a dot or parentheses. This wouldn't have been very evident, but when we wrote the for expression to loop through the array the code 0 to 3 is transformed into the method call (0).to(3).
 ```scala
 for(i <- 0 to 3)
   print(messages(i))
