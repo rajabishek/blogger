@@ -38,7 +38,7 @@ def minimum(x: Int, y: Int): Int = {
     y
 }
 ```
-Scala’s if expression can result in a value, just like Java’s ternary operator. The `if(x < y) x else y` expression in Scala behaves similarly to `(x < y) ? x : y` in Java. The result type of the function is not always required to be mentioned. If we leave the result type off and the compiler can infer it. But in some cases like recursive functions the Scala compiler will require you to explicitly specify the result type of a function. In Scala if the function consists of just one statement, you can leave off the curly braces.
+Scala’s if expression can result in a value, just like Java’s ternary operator. The `if(x < y) x else y` expression in Scala behaves similarly to `(x < y) ? x : y` in Java. The result type of the function is not always required to be mentioned. If we leave the result type off and the compiler can infer it. But in some cases like recursive functions the Scala compiler will require you to explicitly specify the result type of a function. Also in Scala if the function consists of just one statement, you can leave off the curly braces.
 ```scala
 def minimum(x: Int, y: Int) = if (x < y) x else y
 ```
@@ -47,7 +47,7 @@ Nevertheless, it is often a good idea to indicate function result types explicit
 ```scala
 def greet() = println("Helloworld from Raj Abishek")
 ```
-The above is an example of function declaration the accepts no parameters and returns nothing. The result type of greet function is `Unit`. Scala’s Unit type is similar to Java’s void type. Every `void` returning method in Java is mapped to a `Unit` returning method in Scala.
+The above is an example of function declaration the accepts no parameters and returns nothing. The result type of greet function is `Unit`. Scala’s `Unit` type is similar to Java’s void type. Every `void` returning method in Java is mapped to a `Unit` returning method in Scala.
 As we will see later the above `greet` function is not pure. A pure function is a function where the result value is only determined by its input values, without observable side effects. Its takes input through parameters, processes the input and returns a value. As we will see later a pure function always gives the same output for a given input, it produces no side effects and does not rely on any external state. In simpler term if you think about it a function is impure is if it makes sense to call it without using its return value. Methods with the result type of Unit, therefore, are only executed for their side effects. In the case of `greet` function, the side effect is a friendly greeting printed to the standard output.
 
 While executing the Scala file we can pass command line arguments which are in the `args` array. Arrays are zero based and can be positionally indexed with parentheses. So the ith element in a Scala array named data is `data(i-1)`, not `data[0]`, as in Java.
