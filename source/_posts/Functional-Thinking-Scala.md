@@ -18,7 +18,7 @@ Scala has two kinds of variables, vals and vars. A val is like a constant which 
 ```scala
 val message = "Helloworld from Raj Abishek"
 ```
-The type of message is `java.lang.String`, because Scala strings are implemented by Java’s String class. But if you notice above we never mentioned the type while creating message. This is called as type inference. The Scala interpreter (or compiler) can infer types based on the initial value that we assign while declaring the variable. In fact it is often best to let the compiler do so rather than specifying a type explicitly using type annotations.
+The type of message is `java.lang.String`, because Scala strings are implemented by Java’s String class. But if you notice above we never mentioned the type while creating the message val. This is called as type inference. The Scala interpreter(or compiler) can infer types based on the initial value that we assign while declaring the variable. In fact it is often best to let the compiler do so rather than specifying a type explicitly using type annotation.
 ```scala
 val name: java.lang.String = "Raj Abishek"
 val friend: String = "Sailesh Dev" //using the simple name for type annotation
