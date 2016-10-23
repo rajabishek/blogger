@@ -7,6 +7,8 @@ Vim is an extension of the Vi editor. Vi has been in existence since a very long
 
 I use vim for almost everything today, from programming to writing articles, writing notes etc. In fact this blog article was itself written using the vim editor. I must state here very early that vim does have a huge learning curve, but with a little bit of patience and practice you will be able to master this wonderful tool.
 
+<!-- more -->
+
 If you don't like vim, its perfectly fine. After all these tools were discovered only to make us more productive and feel comfortable. If vim is disturbing your workflow and doesn't suit your needs, its absolutely fine.
 
 ## Modes
@@ -22,3 +24,8 @@ When in command mode we can press the `w` key to move from word to word, a perio
 You can press the `$` key to move to the end of the line and you can hit the `^` key to move the 1st non space letter on the line and you can hit the `0` key to move to the real beginning of the line. In vim you can hit `gg` from the command mode to go to the beginning of the line and you can hit `G` to move to the end of the file. You can use the `}` key to move to the next paragraph and `{` key to move to the previous paragraph.
 
 You can press the `f<character>` to move forward to the first occurrence of the character in the line. You can press the `F<character>` to move backward to the first occurrence of the character in the line. You have 3 different way to move to a specific line number in vim. To show the line numbers open the mini buffer in command mode by pressing `:` and type `set number` and press enter. Now to move to a specific line number you can type `n gg` or `n G` from the command mode, or you can open the mini buffer and type `n` and press enter. In fact this applies for all commands you can type a number n followed by the command to repeat the command n times.
+
+## Basic Editing
+From the command mode you can enter into the mini buffer and type `e <filepath>` to open the file in vim. There is a special file called as `.vimrc` in the home folder. The `.vimrc` is a configuration file that persists you preferences for using the vim editor. Any command that you enter in the mini buffer can be put in this `.vimrc` file. For example the configuration `set number` will make sure that vim shows you the line number in the file.
+
+If you press the `x` key from the command mode it will delete the character under the cursor. You can hit `dw` to delete the following word and `db` is used to delete the previous word in vim. You can hit `u` to undo an action in vim. If you type `cw` you will delete the word and enter into insert mode this is helpful for replacing a word in vim.
