@@ -50,6 +50,7 @@ Git is the most popular version control system used today. The history of git is
 - Fully distributed
 
 Git project was completed with the above features in 2005. Since inception it has been in wide adoption. It is extremely fast and can handle large projects efficiently. Its branching system which we will look into later provides strong support for non linear development.
+
 ## Installation
 Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git.
 If you are on a Linux machine you can use the package manager that comes with your installation. If you’re on Fedora for example, you can use yum:
