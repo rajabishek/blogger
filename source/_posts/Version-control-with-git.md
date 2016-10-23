@@ -41,15 +41,15 @@ Both local version control system and centralized version control system suffers
 In a distributed version control system such as Git, Mercurial, Bazaar or Darcs, the clients fully clone the repository, they don’t just check out the latest snapshot of the files. Every clone is really a full backup of all the data. Every clone consists of both the latest code files and the information about the different versions and how to generate them. Thus if the central server dies then any of the client repositories can be copied back to the server to restore it.
 
 ## Little bit of history
-Git is the most popular version control system used today. The history of git is pretty interesting since it started because of a controversy. The Linux kernel is a fairly large open source project. In 2002 the Linux kernel project began using BitKeeper for version control which was a proprietary DVCS. In 2005 the relationship between the commercial company that developer BitKeeper and the community that developed the Linux kernel broke down, and thus no more the Linux kernel community could use the tool free of charge. This provoked the Linux community and especially the creator of Linux kernel(Linus Torvalds) to develop their own version control tool keeping in mind the lessons they learned while using BitKeeper. Some of the goals for designing the new system that they had in mind was:
-- Free and open source
+Git is the most popular version control system used today. The history of git is pretty interesting since it started in a controversy. The Linux kernel is a fairly large open source project. In 2002 the Linux kernel project began using **BitKeeper** for version control which was a proprietary DVCS. In 2005 the relationship between the commercial company that developed BitKeeper and the community that developed the Linux kernel broke down, and thus no more the Linux kernel community could use the tool for free of charge. This provoked the Linux community and especially the creator of Linux kernel(Linus Torvalds) to develop their own version control tool keeping in mind the lessons they had learned while using BitKeeper. Some of the goals for designing the new system that they had in mind was:
+- Free & open source
 - Fast
 - Simple design
 - Efficient with large projects
 - Strong support for non-linear development
 - Fully distributed
 
-Git project was completed with the above feature in 2005 and ever since then it has been in widely adopted. It is extremely fast and can handle large projects efficiently. Its branching system which we will look into later provides strong support for non linear development.
+Git project was completed with the above features in 2005. Since inception it has been in wide adoption. It is extremely fast and can handle large projects efficiently. Its branching system which we will look into later provides strong support for non linear development.
 ## Installation
 Before installing git you might want to check whether git is already installed. You can open the terminal and type `git --version` to check the exact version that you have or you could do `which git` to find the location of git.
 If you are on a Linux machine you can use the package manager that comes with your installation. If you’re on Fedora for example, you can use yum:
