@@ -22,7 +22,7 @@ With a good version control system you should get the below features for a very 
 - Recover files when you screw up things or lose files
 
 ## Local Version Control Systems
-The technique that developers used back then was to duplicate project folders. This approach is very simple but highly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to. To deal with these problems programmers developed local version control systems that had a simple database that stored the changes made in the files. One of the most popular local version control systems back then was called as RCS.
+The technique that developers used back then was to duplicate project folders. This approach is very simple but highly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to. To deal with these problems programmers developed local version control systems that had a simple database that stored the changes made over time. One of the most popular local version control systems back then was a system called RCS.
 
 ![Screenshot 1](/img/version-control-git/local-version-control.png)
 
