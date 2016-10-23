@@ -5,12 +5,14 @@ tags:
 ---
 
 ## What is version control ?
-It is a system that records and stores every change made to the project over time thereby allowing us to go back to a previous state at any time. With a good version control system you get the below features for a very little overhead.
+It is a system that records and stores the changes made to the project over time thereby allowing us to go back to a previous state at any time.
 
 <!-- more -->
 
 ## Why do we need version control ?
 Think about the days when we used to have folder names for our projects like project-start, project-final, project-final2, project-last-final etc. We used to duplicate the project folder every time we needed a backup. Version control solves this problem. Developers have been using this method for a long time (it exists from the 70s) and it is now unthinkable to write software without this technology.
+
+With a good version control system you should get the below features for a very little overhead.
 
 - Revert files back to a previous state.
 - Revert the entire project back to a previous state.
