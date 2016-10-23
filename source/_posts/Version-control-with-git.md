@@ -68,6 +68,11 @@ Other version control systems(CVS, Subversion, Perforce, Bazaar, and so on) stor
 
 Git handles data in a completely different way. Git thinks of its data more like a set of snapshots of a miniature filesystem. Whenever you save the state of your project in Git, it basically takes a snapshot. It takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again, just a link to the previous identical file it has already stored.
 
+## Almost everything is done locally
+Most of the operations done in Git is performed locally, no information is needed from another computer on your network. This is possible because the entire history of the project is right there on the local disk. This is why almost every operation seems instantaneous(no network latency overhead).
+
+For example, to browse the history of the project, Git doesn’t need to go out to the server to get the history and display it for you, it simply reads it directly the your local database.
+
 ## Initial Configuration
 Before we start using git for our projects we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code. You should have to do these things only once on any given computer and they’ll even stick around between upgrades. Its important to note here that git allows us to provide configuration at 3 different levels.
 - **System** - Configurations at this level apply to all the users of the system
