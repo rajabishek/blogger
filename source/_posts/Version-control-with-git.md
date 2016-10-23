@@ -63,6 +63,11 @@ sudo apt-get install git-all
 ```
 If you are on mac then the easiest way to install git is to install command line tools from Xcode. If you want a more updated version of git then you can head over to the downloads section of the [official git website](https://git-scm.com/downloads) and download the git installer. The installation process is pretty simple and the installer will guide you through.
 
+## Snapshots, Not Differences
+Other version control systems(CVS, Subversion, Perforce, Bazaar, and so on) store information as a list of file based changes. The information they keep and store is the changes made to each file over time.
+
+Git handles data in a completely different way. Git thinks of its data more like a set of snapshots of a miniature filesystem. Whenever you save the state of your project in Git, it basically takes a snapshot. It takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again, just a link to the previous identical file it has already stored.
+
 ## Initial Configuration
 Before we start using git for our projects we need to configure git to suit our needs, just like how we would configure a text editor before we start writing code. You should have to do these things only once on any given computer and they’ll even stick around between upgrades. Its important to note here that git allows us to provide configuration at 3 different levels.
 - **System** - Configurations at this level apply to all the users of the system
