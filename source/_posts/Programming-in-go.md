@@ -336,3 +336,14 @@ func main() {
 }
 ```
 As you can see from the above code if you omit the length of the elements inside the square bracket that is the shorthand from for creating a new slice with initial values. `slice1` has `[1, 2, 3]` and `slice2` has `[1, 2, 3, 4, 5]`. The `append` function creates a new slice by taking an existing slice(the first argument) and appending all the following arguments to it.
+
+The `copy` function in Go takes two arguments `dst` and `src`. All of the entries in `src` are copied into `dst` overwriting whatever is there. If the lengths of the two slices are not the same, the smaller of the two will be used.
+```go
+func main() {
+    slice1 := []int{1, 2, 3}
+    slice2 := make([]int, 2)
+    copy(slice2, slice1)
+    fmt.Println(slice1, slice2)
+}
+```
+On running the above program `slice1` has `[1, 2, 3]` and `slice2` has `[1, 2]`. The contents of `slice1` are copied into `slice2`, but because `slice2` has room for only two elements, only the first two elements of `slice1` are copied.
