@@ -1,7 +1,9 @@
 ---
 title: Programming in go
+date: 2016-10-29 16:17:32
 tags:
 ---
+
 ## Introduction
 Go is an open source programming language that makes it easy to build simple, reliable, and efficient software. It is widely available on a number of platforms and has a robust well documented common library and focuses on good software engineering principles.
 
