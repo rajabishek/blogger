@@ -347,3 +347,58 @@ func main() {
 }
 ```
 On running the above program `slice1` has `[1, 2, 3]` and `slice2` has `[1, 2]`. The contents of `slice1` are copied into `slice2`, but because `slice2` has room for only two elements, only the first two elements of `slice1` are copied.
+
+## Maps
+A map is an unordered collection of key value pairs (maps are also sometimes called associative arrays, hash tables, or dictionaries). Maps are used to look up a value by its associated key. Here’s an example of a map in Go. To create a map in Go we have to provide the datatype of both the key and the value.
+```go
+var data map[string]int
+```
+The above code create a map with the type of keys as `string` and the type of values as `int`. Maps have to be initialized before they are used in the program, or else we would get a run time error.
+```go
+data := make(map[string]int)
+data["key"] = 10
+fmt.Println(data["key"])
+```
+The length of a map(found by doing len(data)) can change as we add new items to it. We can use the `delete` function to delete items from a map.
+```go
+delete(data, "key")
+```
+Suppose we tried to look up an element that doesn’t exist then a map returns the zero value for the value type(which for strings is the empty string). The zero value for integer type is 0. Although we could check for the zero value in a condition (data["jsjsjs"] == 0), Go provides a better way.
+```go
+number, ok := data["jsjsjs"]
+fmt.Println(number, ok)
+```
+The first value is the result of the lookup, the second tells us whether or not the lookup was successful. Here since we have no key called `jsjsjs` `number` will be zero and `ok` will be false. In Go programs we would often see code like this.
+```go
+if number, ok := data["jsjsjs"]; ok {
+    fmt.Println(number, ok)
+}
+```
+We try to get the value from the map, if successful then we execute the code block. The shorthand form to create map in Go is like this.
+```go
+numbers := map[int]string{
+    1: "One",
+    2: "Two",
+    3: "Three",
+    4: "Four",
+    5:  "Five",
+}
+```
+Go supports nesting of maps as well. To nest maps we could do the following.
+```go
+func main() {
+    data := map[string]map[string]string{
+        "13bce1106": map[string]string{
+            "name":"Raj Abishek",
+            "state":"Tamil Nadu",
+        },
+        "13bce1118": map[string]string{
+            "name":"Sailesh Dev",
+            "state":"Tamil Nadu",
+        },
+    }
+    if student, ok := data["13bce1106"]; ok {
+        fmt.Println(student["name"], student["state"])
+    }
+}
+```
