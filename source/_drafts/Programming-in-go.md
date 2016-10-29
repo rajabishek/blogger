@@ -55,10 +55,12 @@ To find documentation details about a specific function in a package run the com
 > Create a new Go program that references the fmt library and contains one function called main. That function takes no arguments and doesn’t return anything. It accesses the Println function from the fmt package and invokes it using one string argument.
 
 ## Data Types
-Go is a statically typed programming language. Variables always have a specific type and that type cannot change. In every programming language you need a way to represent numbers(integers and floating point numbers), strings or characters, and booleans.
+Go is a statically typed programming language. Variables always have a specific type and that type cannot change. In every programming language you need some way to represent numbers(integers and floating point numbers), strings or characters, and booleans. Lets see how Go deals with these type of data.
 
 ### Integers
-Generally, we split numbers into two different kinds integers and floating-point numbers. Go’s integer types are `uint8`, `uint16`, `uint32`, `uint64`, `int8`, `int16`, `int32`, and `int64`. The number at the end tells us how many bits each of the types use. uint means "unsigned integer" while int means "signed integer". In addition, there two alias types `byte`(which is the same as `uint8`) and `rune`(which is the same as `int32`). There are also three machine dependent integer types: `uint`, `int`, and `uintptr`. They are machine dependent because their size depends on the type of architecture you are using. Generally, if you are working with integers, you should just use the int type.
+Generally, we split numbers into two different kinds integers and floating-point numbers. Go’s integer types are `uint8`, `uint16`, `uint32`, `uint64`, `int8`, `int16`, `int32`, and `int64`. The number at the end of each type tells us how many bits each of the types use. uint means **unsigned integer** while int means **signed integer**. In addition, there two alias types `byte`(which is the same as `uint8`) and `rune`(which is the same as `int32`).
+
+There are also three machine dependent integer types `uint`, `int`, and `uintptr`. They are machine dependent because their size depends on the type of architecture you are using. Generally, if you are working with integers, you should just use the `int` datatype type.
 
 ## Floating point numbers
 Floating-point numbers are numbers that contain a decimal component. Go has two floating point types `float32` and `float64` (also often referred to as single precision and double precision, respectively). It also has two additional types for representing complex numbers (numbers with imaginary parts) `complex64` and `complex128`. Generally, we should stick with `float64` when working with floating- point numbers.
