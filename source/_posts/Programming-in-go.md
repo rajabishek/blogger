@@ -436,3 +436,32 @@ func main() {
 }
 ```
 Multiple value returning functions are commonly used in code to return the error value along with the result, or sometimes a boolean value to indicate the success of the operation.
+
+## Variadic Parameters
+The last parameter of a function in Go can be a variadic parameter.
+```go
+func add(args ...int) int {
+    total := 0
+    for _, v := range args {
+        total += v
+    }
+    return total
+}
+func main() {
+    fmt.Println(add(1,2,3))
+}
+```
+As you can see in the above code the args parameter is a variadic parameter meaning while calling the functions we can pass multiple arguments zero or more to the `add` function and all of those will be available in the `args` array. The `...` called as ellips is used before the type name of the last parameter to identify it as a variadic parameter.
+
+Do you remember the `Println` function from the `fmt` package we can pass any number of variable to output the values right, internally it uses a variadic parameter. The `Println` function takes any number of values of any type(the special interface{} type). This is precisely how the fmt.Println function is implemented.
+```go
+func Println(a ...interface{}) (n int, err error)
+```
+
+We can also pass a slice followed by ellipsis while calling a function with a variadic parameter as shown below.
+```go
+func main() {
+    data := []int{1, 2, 3}
+    fmt.Println(add(data...))
+}
+```
