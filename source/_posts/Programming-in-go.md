@@ -517,3 +517,37 @@ incrementer := func() int {
 The `incrementer` function doesn’t have any parameters, and yet it refers to `runningTotal` and `amount` from within its function body. It does this by **capturing a reference** to `runningTotal` and `amount` from the surrounding function and using them within its own function body.
 
 Capturing by reference ensures that `runningTotal` and `amount` do not disappear when the call to `makeIncrementer` ends, and also ensures that `runningTotal` is available the next time the `incrementer` function is called. Closure and recursion are powerful programming techniques that form the basis of a paradigm known as **functional programming**.
+
+## Pointers
+When we pass a variable to a function it is passed by copy.
+```go
+package main
+import "fmt"
+
+func sample(a int) {
+    a = 10
+}
+func main() {
+    b := 5
+    sample(b)
+    fmt.Println(b) // b is still 5
+}
+```
+As we can see above even though the sample function will not modify the original b variable in the main function. But what if we wanted to ? One way to accomplish this is through pointers.
+```go
+package main
+import "fmt"
+
+func swap(a *int, b *int) {
+  temp := *a
+  *a = *b
+  *b = temp
+}
+func main() {
+    a := 5
+    b := 10
+    swap(&a, &b)
+    fmt.Println(a, b) // a is 10 and b is 5
+}
+```
+Pointers reference a location in memory where a value is stored rather than the value itself. By using a pointer `*int` the swap function is able to modify the original variables.
