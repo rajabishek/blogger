@@ -466,6 +466,16 @@ func main() {
 }
 ```
 
+Functions can also be defined recursively in Go. Here is one way to compute the factorial of a number.
+```go
+func factorial(x uint) uint {
+    if x== 0 {
+        return 1
+    }
+    return x * factorial(x-1)
+}
+```
+
 ## Closures
 A closure can capture constants and variables from the surrounding context in which it is defined. The closure can then refer to and modify the values of those constants and variables from within its body, even if the original scope that defined the constants and variables no longer exists.
 
@@ -504,4 +514,6 @@ incrementer := func() int {
     return runningTotal
 }
 ```
-The `incrementer` function doesn’t have any parameters, and yet it refers to `runningTotal` and `amount` from within its function body. It does this by **capturing a reference** to `runningTotal` and `amount` from the surrounding function and using them within its own function body. Capturing by reference ensures that `runningTotal` and `amount` do not disappear when the call to `makeIncrementer` ends, and also ensures that `runningTotal` is available the next time the `incrementer` function is called.
+The `incrementer` function doesn’t have any parameters, and yet it refers to `runningTotal` and `amount` from within its function body. It does this by **capturing a reference** to `runningTotal` and `amount` from the surrounding function and using them within its own function body.
+
+Capturing by reference ensures that `runningTotal` and `amount` do not disappear when the call to `makeIncrementer` ends, and also ensures that `runningTotal` is available the next time the `incrementer` function is called. Closure and recursion are powerful programming techniques that form the basis of a paradigm known as **functional programming**.
