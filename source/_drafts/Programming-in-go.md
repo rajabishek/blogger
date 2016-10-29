@@ -51,7 +51,8 @@ We define functions in Go with the `func` keyword followed by the name of the fu
 
 We had to name the function as `main` because that is the first function that gets called when you execute the Go program. To print the contents out to the console we do `fmt.Println("Output to console")`. We are accessing the Println function inside the fmt package and invoking it using one string argument.
 
-To find documentation details about a specific function in a package run the command `godoc <package-name> <function-name>`.
+To find documentation details about a specific function in a package run the command `godoc <package-name> <function-name>`. If we deliberately read out the program that we just wrote out loud, it would go like this.
+> Create a new Go program that references the fmt library and contains one function called main. That function takes no arguments and doesn’t return anything. It accesses the Println function from the fmt package and invokes it using one string argument.
 
 ## Data Types
 Go is a statically typed programming language. Variables always have a specific type and that type cannot change. In every programming language you need a way to represent numbers(integers and floating point numbers), strings or characters, and booleans.
