@@ -63,7 +63,9 @@ Generally, we split numbers into two different kinds integers and floating-point
 There are also three machine dependent integer types `uint`, `int`, and `uintptr`. They are machine dependent because their size depends on the type of architecture you are using. Generally, if you are working with integers, you should just use the `int` datatype type.
 
 ## Floating point numbers
-Floating-point numbers are numbers that contain a decimal component. Go has two floating point types `float32` and `float64` (also often referred to as single precision and double precision, respectively). It also has two additional types for representing complex numbers (numbers with imaginary parts) `complex64` and `complex128`. Generally, we should stick with `float64` when working with floating- point numbers.
+Floating-point numbers are numbers that contain a decimal component. Go has two floating point types `float32` and `float64` (also often referred to as single precision and double precision, respectively).
+
+It also has two additional types for representing complex numbers (numbers with imaginary parts) `complex64` and `complex128`. Generally, we should stick with `float64` when working with floating point numbers.
 
 ## Strings
 A string is a sequence of characters with a definite length used to represent text. String literals can be created using double quotes `"Raj Abishek"` or backticks `Raj Abishek`. The difference between these is that double quoted version cannot contain newlines but they allow special escape sequences to be used like `\n` for new line and `\t` for a tab.
