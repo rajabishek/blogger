@@ -222,3 +222,20 @@ func main() {
     }
 }
 ```
+
+## Switch statement
+To write a program that printed the English names for numbers from 1 to 5 if we used if statements then we would have a clumsy code. We would have a lot of else if statements and the program would like hard to maintain and make it is less readable. Instead we could use the switch statement in Go. We would write the program like this:
+```go
+switch i {
+    case 0: fmt.Println("Zero")
+    case 1: fmt.Println("One")
+    case 2: fmt.Println("Two")
+    case 3: fmt.Println("Three")
+    case 4: fmt.Println("Four")
+    case 5: fmt.Println("Five")
+    default: fmt.Println("Unknown Number")
+}
+```
+Like an if statement, each case is checked top down and the first one to succeed is chosen. A switch also supports a default case that will happen if none of the cases matches the value (similar to how the else works in an if statement).
+
+Go's switch statement is also considerably more powerful than its counterpart in many C-like languages. Because the cases of a switch statement do not fall through to the next case in Go, it avoids common C errors caused by missing break statements.
