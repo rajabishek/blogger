@@ -82,3 +82,27 @@ Notice that in the output for the second print statement you see `82` instead of
 
 ## Booleans
 A boolean value is a special 1-bit integer type used to represent `true` and `false` (or on and off). Three logical operators are used with boolean values `&&`, `||` and `!` which currespond to the boolean operation `AND`, `OR` and `NEGATION` respectively.
+
+## Variable
+A variable is a storage location, with a specific type and an associated name. Variables in Go are created by first using the var keyword, then specifying the variable name(message) and the type(string), and finally, assigning a literal value to the variable.
+```go
+package main
+import "fmt"
+func main() {
+    var message string = "Hello world from Raj Abishek"
+    fmt.Println(message)
+}
+```
+Assigning a value is optional. As shown below we can split into two statements, one that declares the variable and another that assigns a value. Variables can change their value throughout the lifetime of a program.
+```go
+package main
+import "fmt"
+func main() {
+    var message string //Declare a variable called message that can hold string values
+    message = "Hello world" //Assigns a value to the message variable
+    fmt.Println(message)
+
+    message = message + " from Raj Abishek" //Re assign a new value to the message variable
+    fmt.Println(message)
+}
+```
