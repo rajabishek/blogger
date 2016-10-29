@@ -43,9 +43,13 @@ func main() {
 ```
 The `package main` at the top is a package declaration. Packages are Go’s way of organizing and reusing code. For now, just make sure to include this line in any program you write.
 
-Go doesn’t care about whitespace. We use whitespaces to make programs more readable. The `import "fmt"` imports the `fmt` package(short for format). The import keyword is how we include code from other packages to use with our program. The `fmt` package implements formatting for input and output. The `fmt` package’s files would contain `package fmt` at the top of them. It is important to remember here that when we import a package we always provide a string literal. Notice that `fmt` is surrounded by double quotes.
+Go doesn’t care about whitespace. We use whitespaces to make programs more readable. The `import "fmt"` imports the `fmt` package(short for format). The import keyword is how we include code from other packages to use with our program. The `fmt` package implements formatting for input and output. The `fmt` package’s files would contain `package fmt` at the top of them.
 
-We define functions in Go with the `func` keyword followed by the name of the function(main, in this case), a list of zero or more parameters surrounded by parentheses, an optional return type, and a body which is surrounded by curly braces. The main function we defined above has no parameters, doesn’t return anything, and has only one statement. We had to name the function as `main` because that is the first function that gets called when you execute the Go program. To print the contents out to the console we do `fmt.Println("Output to console")`. We are accessing the Println function inside the fmt package and invoking it using one string argument.
+It is important to remember here that when we import a package we always provide a string literal. Notice that `fmt` is surrounded by double quotes. Anything surrounded in double quotes is known as a string literal, which is a type of expression.
+
+We define functions in Go with the `func` keyword followed by the name of the function(main, in this case), a list of zero or more parameters surrounded by parentheses, an optional return type, and a body which is surrounded by curly braces. The main function we defined above has no parameters, doesn’t return anything, and has only one statement.
+
+We had to name the function as `main` because that is the first function that gets called when you execute the Go program. To print the contents out to the console we do `fmt.Println("Output to console")`. We are accessing the Println function inside the fmt package and invoking it using one string argument.
 
 To find documentation details about a specific function in a package run the command `godoc <package-name> <function-name>`.
 
