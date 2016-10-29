@@ -146,3 +146,23 @@ var (
     age = 20
 )
 ```
+
+## Scope
+The range of places where you are allowed to use a variable is called the scope of the variable. Go is **lexically scoped using blocks**. This means that the variable exists within the nearest curly braces ({}), or block, including any nested curly braces (blocks), but not outside of them.
+```go
+package main
+import "fmt"
+
+message := "Hello world"
+
+func main() {
+  name := "Raj Abishek"
+  fmt.Println(name)
+  fmt.Println(message)
+}
+
+func another() {
+    fmt.Println(message)
+    fmt.Println(name) //This statement will result in a compile time error
+}
+```
