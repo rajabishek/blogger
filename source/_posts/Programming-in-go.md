@@ -534,6 +534,8 @@ func main() {
 }
 ```
 As we can see above even though the sample function will not modify the original b variable in the main function. But what if we wanted to ? One way to accomplish this is through pointers.
+
+A **pointer** is a programming object that refers to (or "points to") another value stored elsewhere in the computer memory using its memory address. A pointer references a location in memory. Thus what a pointer actually stores is an address of a memory location. Obtaining the value stored at that location is known as dereferencing the pointer.
 ```go
 package main
 import "fmt"
@@ -551,3 +553,5 @@ func main() {
 }
 ```
 In Go if the parameters of a function are of same data type then we need not mention the data type along with every parameter name, instead we can add the data type at the end of the parameter list as shown above. Pointers reference a location in memory where a value is stored rather than the value itself. By using a pointer `*int` the swap function is able to modify the original variables.
+
+In Go, a pointer is represented using an asterisk followed by the type of the stored value `*type`. As you can see above we have two integer pointer in the `swap` function. An asterisk is also used to dereference pointer variables. Dereferencing a pointer gives us access to the value the pointer points to. We we did `temp := *a` we are saying store the value that the integer pointer a is pointing to in temp variable. We use the `&` operator to find the address of a variable. `&a` returns a `*int` (pointer to an int) because a is an `int`. `&a` in main and `a` in `swap` refer to the same memory location.
