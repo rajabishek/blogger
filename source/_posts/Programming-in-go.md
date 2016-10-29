@@ -571,3 +571,5 @@ func main() {
 }
 ```
 As you can see from the above code the `new` built in function takes a type as an argument and allocates enough memory to fit a value of that type, and returns a pointer to it. We pass this pointer to the `setValue` function which dereferences the pointer to assign a value `10` to the memory location.
+
+We don't have to worry about deallocating memory in Go because like Java the Go programming language has a wonderful garbage collector in which memory is cleaned up automatically. Pointers are rarely used with Go’s built-in types, but they are extremely useful when paired with structs.
