@@ -190,3 +190,35 @@ func main() {
     }
 }
 ```
+
+## The if statement
+We can choose to do different things based on a condition. For that, we use the if statement. The else part is optional like in other programming languages. If the condition in the if evaluates to true, then the block after the condition is run; otherwise, either the block is skipped, or if the else block is present then that block is run.
+```go
+if i % 2 == 0 {
+    // even
+} else {
+    // odd
+}
+```
+If statements can also have else if parts as shown below.
+```go
+if i % 2 == 0 {
+    // divisible by 2
+} else if i % 3 == 0 {
+    // divisible by 3
+} else if i % 4 == 0 {
+    // divisible by 4
+}
+```
+Like in other languages the conditions are checked top down and the first one to result in true will have its associated block executed and none of the other blocks will execute. A sample program to print only the even number from 1 to 10 is shown below.
+```go
+package main
+import "fmt"
+func main() {
+    for i:=1; i <= 10; i++ {
+        if i % 2 == 0 {
+            fmt.Println(i, " ")
+        }
+    }
+}
+```
