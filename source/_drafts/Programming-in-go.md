@@ -63,12 +63,12 @@ Generally, we split numbers into two different kinds integers and floating-point
 There are also three machine dependent integer types `uint`, `int`, and `uintptr`. They are machine dependent because their size depends on the type of architecture you are using. Generally, if you are working with integers, you should just use the `int` datatype type.
 
 ## Floating point numbers
-Floating-point numbers are numbers that contain a decimal component. Go has two floating point types `float32` and `float64` (also often referred to as single precision and double precision, respectively).
+Floating-point numbers are numbers that contain a decimal component. Go has two floating point types `float32` and `float64` (also often referred to as single precision and double precision, respectively). Generally, we should stick with `float64` when working with floating point numbers.
 
-It also has two additional types for representing complex numbers (numbers with imaginary parts) `complex64` and `complex128`. Generally, we should stick with `float64` when working with floating point numbers.
+Go also has two additional types for representing complex numbers(numbers with imaginary parts) `complex64` and `complex128`.
 
 ## Strings
-A string is a sequence of characters with a definite length used to represent text. String literals can be created using double quotes `"Raj Abishek"` or backticks `Raj Abishek`. The difference between these is that double quoted version cannot contain newlines but they allow special escape sequences to be used like `\n` for new line and `\t` for a tab.
+A string is a sequence of characters with a definite length used to represent textual data. String literals can be created using double quotes `"Raj Abishek"` or backticks `Raj Abishek`. The difference between these is that double quoted version cannot contain newlines but they allow special escape sequences to be used like `\n` for new line and `\t` for a tab.
 ```go
 package main
 import "fmt"
@@ -78,7 +78,7 @@ func main() {
     fmt.Println("Raj " + "Abishek") // concatenates the two strings together
 }
 ```
-Notice that you see 82 instead of R when you run this program. This is because the character is represented by a byte (remember a byte is an integer).
+Notice that in the output for the second print statement you see `82` instead of `R`. This is because the character is represented by a byte in Go (byte is an integer).
 
 ## Booleans
-A boolean value (named after George Boole) is a special 1-bit integer type used to represent `true` and `false` (or on and off). Three logical operators are used with boolean values `&&`, `||` and `!`.
+A boolean value is a special 1-bit integer type used to represent `true` and `false` (or on and off). Three logical operators are used with boolean values `&&`, `||` and `!` which currespond to the boolean operation `AND`, `OR` and `NEGATION` respectively.
