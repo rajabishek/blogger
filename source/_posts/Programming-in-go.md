@@ -276,3 +276,20 @@ func main() {
 There are some important observations to make in the above code. Firstly we did not declare the variable using shorthand `total := 0` in the above code because then `total` would have inferred to be of the type `int`. Since we want total to be of type `float64` so that we can add the `data[i]` while totaling and divide by `float64(length)` while computing the average, we explicitly mentioned its type as `float64` using the var statement. If we wrote the code as `total := 0` then  we would get compile time error due to line 1 and line 2 due to mismatched types `int` and `float64`.
 
 But what we can do is `total := 0.0`. In this way the Go compiler would infer the type of total as `float64` since `0.0` literal is seen as a double precision value. Next we have the `len` function that returns the length of the array as an `int`. But since `total` is of type `float64` we cannot directly divide by `length`. Go doesn't allow us to operate between two mismatching data types. We need to convert length into a `float64` which is done by `float64(length)`. This is called as type conversion. In general, to convert between types, you use the type name like a function.
+
+We can also use a special form of a for loop with array in Go.
+```go
+total := 0.0
+for i, value := range data {
+    total += value
+}
+fmt.Println(total / float64(len(data)))
+```
+As you can see above with this variation of the loop `i` and `value` represents the index and the value of each iteration. At every iteration `i` is the index and `value` in data[index]. We use the keyword `range` followed by the name of the variable we want to loop over. But when we compile the above program and run it will result in a compile time error because Go doesn't allow us to create variables that we never use. The `i` was never used inside of the for loop and therefore we have to replace it with a single underscore to tell the compiler that we don’t need this. The modified program would be:
+```go
+total := 0.0
+for _, value := range data {
+    total += value
+}
+fmt.Println(total / float64(len(data)))
+```
