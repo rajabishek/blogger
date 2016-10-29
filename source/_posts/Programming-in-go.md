@@ -570,3 +570,4 @@ func main() {
     fmt.Println(*pointer) // Output is 1
 }
 ```
+As you can see from the above code the `new` built in function takes a type as an argument and allocates enough memory to fit a value of that type, and returns a pointer to it. We pass this pointer to the `setValue` function which dereferences the pointer to assign a value `10` to the memory location.
