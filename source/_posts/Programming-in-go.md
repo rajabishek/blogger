@@ -306,3 +306,17 @@ collection := [4]float64 {
 As you can see above we need not force the declaration on a single line. We can break up into multiple line however the extra trailing `,` after 400 is required by Go. It allows us to easily remove an element from the array by commenting out the line.
 
 As you can see above while declaring the array we have to hardcode the length of the array. We cannot change the size of an array once it is declared. Because of this and other limitations, you rarely see arrays used directly in Go code. Instead we usually use something called as a slice, which is data type build on top of an array.
+
+## Slices
+A slice is a segment of an array. Like arrays, slices are indexable and have a length. Unlike arrays, this length is allowed to change. We declare a slice as follows. We do not put the length or the number of elements inside the square brackets.
+```go
+var data []float64
+```
+As you can see above we have created a slice called data with a length of zero. To create a size with a length we use the built in make function.
+```go
+data := make([]float64, 5)
+```
+As you can see above we have created a slice that is associated with an underlying `float64` array of length `5`. Slices are always associated with some array, and although they can never be longer than the array, they can be smaller. The make function also allows a third parameter that represents the capacity of the underlying array that the slice points to.
+```go
+data := make([]float64, 5, 10)
+```
