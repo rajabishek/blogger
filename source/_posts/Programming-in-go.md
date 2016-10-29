@@ -320,3 +320,9 @@ As you can see above we have created a slice that is associated with an underlyi
 ```go
 data := make([]float64, 5, 10)
 ```
+In the above code we have create a slice of length `5` that is associated with an underlying `float64` array of length `10`. Another way to create slices is to use the ``[low:high]`` expression from an existing array. The `low` is the index of where to start the slice and `high` is the index of where to end it(but not including the index itself). It is similar to slicing sequences in Python except that we don't have negative indexing here.
+```go
+array := [5]float64{ 1, 2, 3, 4, 5 }
+slice := array[0:5]
+```
+When we do `array[0:5]` returns `[1, 2, 3, 4, 5]`, `array[1:4]` returns `[2, 3, 4]`. For convenience, we are also allowed to omit low, high, or even both low and high. `array[0:]` is the same as `array[0:len(array)]`, `array[:n]` is the same as `array[0:n]`, and `array[:]` is the same as `array[0:len(arr)]`. In addition to indexing Go includes two built in functions to assist with slices: `append` and `copy`.
