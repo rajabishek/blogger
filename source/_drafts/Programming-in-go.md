@@ -180,3 +180,13 @@ func main() {
     }
 }
 ```
+The above code prints the numbers from 1 to 10 in ascending order. Other programming languages have a lot of different types of loops (while, do, until, foreach, ...) but Go only has one that can be used in a variety of different ways. The previous program could also have been written like this. This is equivalent to the for loop present in other languages.
+```go
+package main
+import "fmt"
+func main() {
+    for i := 1; i<=10; i++ {
+        fmt.Println(i)
+    }
+}
+```
