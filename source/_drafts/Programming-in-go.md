@@ -148,7 +148,7 @@ var (
 ```
 
 ## Scope
-The range of places where you are allowed to use a variable is called the scope of the variable. Go is **lexically scoped using blocks**. This means that the variable exists within the nearest curly braces ({}), or block, including any nested curly braces (blocks), but not outside of them.
+The range of places where you are allowed to use a variable is called the scope of the variable. Like Java, C and C++, Go is **lexically scoped using blocks**. This means that the variable exists within the nearest curly braces ({}), or block, including any nested curly braces (blocks), but not outside of them.
 ```go
 package main
 import "fmt"
