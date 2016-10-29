@@ -538,7 +538,7 @@ As we can see above even though the sample function will not modify the original
 package main
 import "fmt"
 
-func swap(a *int, b *int) {
+func swap(a, b *int) {
   temp := *a
   *a = *b
   *b = temp
@@ -550,4 +550,4 @@ func main() {
     fmt.Println(a, b) // a is 10 and b is 5
 }
 ```
-Pointers reference a location in memory where a value is stored rather than the value itself. By using a pointer `*int` the swap function is able to modify the original variables.
+In Go if the parameters of a function are of same data type then we need not mention the data type along with every parameter name, instead we can add the data type at the end of the parameter list as shown above. Pointers reference a location in memory where a value is stored rather than the value itself. By using a pointer `*int` the swap function is able to modify the original variables.
