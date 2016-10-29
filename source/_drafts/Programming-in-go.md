@@ -106,3 +106,13 @@ func main() {
     fmt.Println(message)
 }
 ```
+Because creating a new variable with a starting value is so common, Go also supports a shorter statement.
+```go
+message := "Raj Abishek"
+```
+`:` is required before the `=`, this is how Go compiler knows that this is a variable declaration and not an assignment expression. Also observe that no type was specified, the type is not necessary because the Go compiler can infer the type based on the literal value you assign the variable.
+
+Because we are assigning a string literal, message is given the type string. This is called as type inference. This is present in many other modern programming languages like Scala, Swift also. The compiler can also do type inference with the var statement:
+```go
+var message = "Raj Abishek"
+```
