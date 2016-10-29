@@ -168,3 +168,15 @@ func another() {
 ```
 
 ## Iteration & Loops
+The for statement allows us to repeat a list of statements (a block) multiple times. The following is equivalent to while loops present in other programming languages.
+```go
+package main
+import "fmt"
+func main() {
+    i := 1
+    for i <= 10 {
+        fmt.Println(i)
+        i = i + 1
+    }
+}
+```
