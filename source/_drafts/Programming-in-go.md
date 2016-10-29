@@ -116,3 +116,12 @@ Because we are assigning a string literal, message is given the type string. Thi
 ```go
 var message = "Raj Abishek"
 ```
+Generally you should use the `:=` shorter form whenever possible since as it is seen as the idiomatic usage of the language. It is important to remember that type inference will work only if you provide an initial value, because the only way for the compiler to infer the data type in from the initial value. The following Go code is invalid an will not compile.
+```go
+var message
+```
+Variable names must start with a letter and may contain letters, numbers, or the underscore symbol. camelCase is the preferred way to name the variables in Go.
+```go
+name := "Raj Abishek"
+fmt.Println("My name is", name)
+```
