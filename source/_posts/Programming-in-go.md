@@ -243,3 +243,15 @@ switch i {
 Like an if statement, each case is checked top down and the first one to succeed is chosen. A switch also supports a default case that will happen if none of the cases matches the value (similar to how the else works in an if statement).
 
 Go's switch statement is also considerably more powerful than its counterpart in many C-like languages. Because the cases of a switch statement do not fall through to the next case in Go, it avoids common C errors caused by missing break statements.
+
+## Arrays
+An array is a ordered sequence of items of a single type with a fixed length.
+```go
+package main
+import "fmt"
+func main() {
+    var data [5]int //declares an array called data of 5 integers
+    data[4] = 100
+    fmt.Println(data)
+}
+```
