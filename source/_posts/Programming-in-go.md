@@ -293,3 +293,16 @@ for _, value := range data {
 }
 fmt.Println(total / float64(len(data)))
 ```
+As we had a shorthand syntax to create variables with initial values, we can also in a similar way create array variables with initial values.
+```go
+data := [4]float64{ 10, 20, 30, 40 }
+collection := [4]float64 {
+    100,
+    200,
+    300,
+    400,
+}
+```
+As you can see above we need not force the declaration on a single line. We can break up into multiple line however the extra trailing `,` after 400 is required by Go. It allows us to easily remove an element from the array by commenting out the line.
+
+As you can see above while declaring the array we have to hardcode the length of the array. We cannot change the size of an array once it is declared. Because of this and other limitations, you rarely see arrays used directly in Go code. Instead we usually use something called as a slice, which is data type build on top of an array.
