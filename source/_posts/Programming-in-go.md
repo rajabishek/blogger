@@ -402,3 +402,37 @@ func main() {
     }
 }
 ```
+
+## Functions
+Function definition starts with the `func` keyword, followed by the function’s name followed by the parameters followed by the return type. Collectively, the parameters and the return type are known as the function’s signature. The following code defines a function called average that takes takes in a slice of type `float64` and returns one `float64`.
+```go
+func average(data []float64) float64 {
+    total := 0.0
+    for _, value := range data {
+        total += value
+    }
+    return total / float64(len(data))
+}
+
+func main() {
+    slice := []float64{ 1, 2, 3, 4, 5}
+    fmt.Println(average(slice))
+}
+```
+In Go the return type of functions can have names.
+```go
+func sample() (number int) {
+    number = 10
+    return
+}
+```
+In Go we can also return multiple values from a function.
+```go
+func getFullName() (string, string) {
+  return "Raj", "Abishek"
+}
+func main() {
+  firstName, lastName := getFullName()
+}
+```
+Multiple value returning functions are commonly used in code to return the error value along with the result, or sometimes a boolean value to indicate the success of the operation.
