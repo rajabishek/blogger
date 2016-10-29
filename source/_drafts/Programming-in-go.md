@@ -3,7 +3,9 @@ title: Programming in go
 tags:
 ---
 ## Introduction
-Go is an open source general purpose programming language that makes it easy to build simple, reliable, and efficient software. It is a language with advanced features and a clean syntax. It is widely available on a number of platforms and has a robust well documented common library and focuses on good software engineering principles.
+Go is an open source programming language that makes it easy to build simple, reliable, and efficient software. It is widely available on a number of platforms and has a robust well documented common library and focuses on good software engineering principles.
+
+Go was created in 2007 at Google by **Robert Griesemer**, **Rob Pike**, and **Ken Thompson** as an experimental project. Go combines the development speed of working in a dynamic language like Python with the performance and safety of a compiled language like C or C++.
 
 ## Installing Go
 We need to install the Go toolset before we begin working in Go. Before installing the Go toolset lets do some preparation work. The Go toolset uses an environment variable called GOPATH to find Go source code. We can set the GOPATH to anything we want, but to make things a little bit easier let set it to our home directory. If you are on a mac open the terminal and enter the following.
