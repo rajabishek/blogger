@@ -125,3 +125,24 @@ Variable names must start with a letter and may contain letters, numbers, or the
 name := "Raj Abishek"
 fmt.Println("My name is", name)
 ```
+
+## Constants
+Constants are essentially variables whose values cannot be changed later. You use the `const` keyword instead of the `var` keyword for creating them.
+```go
+package main
+import "fmt"
+func main() {
+    const name string = "Raj Abishek"
+    fmt.Println(name)
+}
+```
+If you try to re assign a constant then it results in a compile time error. Constants are a good way to reuse common values in a program without writing out each time. For example, `Pi` in the `math` package is defined as a constant.
+
+Go also has another shorthand when you need to define multiple variables. Use the keyword `var`(or `const`) followed by parentheses with each variable on its own line as shown below.
+```go
+var (
+    name = "Raj Abishek"
+    message = "Hello world"
+    age = 20
+)
+```
