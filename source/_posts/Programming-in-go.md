@@ -255,3 +255,21 @@ func main() {
     fmt.Println(data)
 }
 ```
+You should see the output `[0 0 0 0 100]`. Array elements can be accessed using their indexes. The index starts from zero. To access the nth element we use `data[n-1]`. A sample program to get the average of the elements of an integer array is shown below.
+```go
+package main
+import "fmt"
+func main() {
+    var data [4]float64
+    data[0] = 10
+    data[1] = 20
+    data[2] = 30
+    data[3] = 40
+    var total float64 = 0 //Or we could do total := 0.0
+    length := len(data)
+    for i:=0; i < length; i++ {
+            total += data[i] //#1
+    }
+    fmt.Println(total / float64(length)) //#2
+}
+```
