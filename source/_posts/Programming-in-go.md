@@ -465,3 +465,43 @@ func main() {
     fmt.Println(add(data...))
 }
 ```
+
+## Closures
+A closure can capture constants and variables from the surrounding context in which it is defined. The closure can then refer to and modify the values of those constants and variables from within its body, even if the original scope that defined the constants and variables no longer exists.
+
+In Go, the simplest form of a closure that can capture values is a nested function, written within the body of another function. A nested function can capture any of its outer function’s arguments and can also capture any constants and variables defined within the outer function.
+
+Here’s an example of a function called `makeIncrementer`, which contains a nested function called `incrementer`. The nested `incrementer` function captures two values, `runningTotal` and `amount`, from its surrounding context. After capturing these values, `incrementer` is returned by `makeIncrementer` as a closure that increments `runningTotal` by `amount` each time it is called.
+```go
+package main
+import "fmt"
+
+func makeIncrementer(amount int) func() int {
+    runningTotal := 0
+    incrementer := func() int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
+
+func main() {
+    incrementByTen := makeIncrementer(10)
+    fmt.Println(incrementByTen()) // returns a value of 10
+    fmt.Println(incrementByTen()) // returns a value of 20
+    fmt.Println(incrementByTen()) // returns a value of 30
+
+    incrementBySeven := makeIncrementer(7)
+    fmt.Println(incrementBySeven()) // returns a value of 7
+
+    fmt.Println(incrementByTen()) // returns a value of 40
+}
+```
+The return type of `makeIncrementer` is `func() int`. This means that it returns a function, rather than a simple value. The function it returns has no parameters, and returns an `int` value each time it is called. When considered in isolation, the nested `incrementer` function might seem unusual.
+```Go
+incrementer := func() int {
+    runningTotal += amount
+    return runningTotal
+}
+```
+The `incrementer` function doesn’t have any parameters, and yet it refers to `runningTotal` and `amount` from within its function body. It does this by **capturing a reference** to `runningTotal` and `amount` from the surrounding function and using them within its own function body. Capturing by reference ensures that `runningTotal` and `amount` do not disappear when the call to `makeIncrementer` ends, and also ensures that `runningTotal` is available the next time the `incrementer` function is called.
