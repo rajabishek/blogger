@@ -326,3 +326,13 @@ array := [5]float64{ 1, 2, 3, 4, 5 }
 slice := array[0:5]
 ```
 When we do `array[0:5]` returns `[1, 2, 3, 4, 5]`, `array[1:4]` returns `[2, 3, 4]`. For convenience, we are also allowed to omit low, high, or even both low and high. `array[0:]` is the same as `array[0:len(array)]`, `array[:n]` is the same as `array[0:n]`, and `array[:]` is the same as `array[0:len(arr)]`. In addition to indexing Go includes two built in functions to assist with slices: `append` and `copy`.
+
+To append elements to the end of slice we use the `append` function. If there is space in the underlying array the element is added after the last element and the length of the slice is incremented. If there is no space in the underlying array then a new array is created and the existing elements are copied over to the new array, the new element is added to the end and then the new slice is returned.
+```go
+func main() {
+    slice1 := []int{1, 2, 3} //shorthand form to create a new slice from initial values
+    slice2 := append(slice1, 4, 5)
+    fmt.Println(slice1, slice2)
+}
+```
+As you can see from the above code if you omit the length of the elements inside the square bracket that is the shorthand from for creating a new slice with initial values. `slice1` has `[1, 2, 3]` and `slice2` has `[1, 2, 3, 4, 5]`. The `append` function creates a new slice by taking an existing slice(the first argument) and appending all the following arguments to it.
