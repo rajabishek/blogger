@@ -677,4 +677,26 @@ func main() {
     fmt.Println(strings.Count("test", "t")) //2
 }
 ```
-The signature of the `Count` function is `func Count(s, substr string) int`. The first parameter is the larger string, the second is the smaller string and the function returns the count as `int`.
+The signature of the `Count` function is `func Count(s, substr string) int`. The first parameter is the larger string, the second is the smaller string and the function returns the count as `int`. To determine if a bigger string starts with a smaller string, use the `HasPrefix` function.
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.HasPrefix("test", "te")) //true
+}
+```
+The signature of the `HasPrefix` function is `func HasPrefix(s, prefix string) bool`. The first string is the larger string, the second is the smaller string and the function returns a boolean. Similarly to determine if a bigger string ends with a smaller string, use the `HasSuffix` function.
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.HasSuffix("test", "st")) //true
+}
+```
+The signature of the `HasSuffix` function is `func HasSuffix(s, prefix string) bool`. The first string is the larger string, the second is the smaller string and the function returns a boolean.
