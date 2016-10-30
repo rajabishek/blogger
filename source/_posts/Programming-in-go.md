@@ -596,3 +596,7 @@ We can create an instance of the `Student` in a variety of ways.
 ```go
 var s Student
 ```
+The statement above will create a local `Student` variable that is by default set to zero. For a struct, zero means each of the fields is set to their corresponding zero value (0 for ints, 0.0 for floats, "" for strings, nil for pointers, etc.). We can also use the `new` function to dynamically allocate memory for the `Student` instance.
+```go
+s := new(Student)
+```
