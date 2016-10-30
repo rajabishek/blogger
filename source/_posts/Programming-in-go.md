@@ -596,19 +596,23 @@ We can create an instance of the `Student` in a variety of ways.
 ```go
 var s Student
 ```
-The statement above will create a local `Student` variable that is by default set to zero. For a struct, zero means each of the fields is set to their corresponding zero value (0 for ints, 0.0 for floats, "" for strings, nil for pointers, etc.). We can also use the `new` function to dynamically allocate memory for the `Student` instance.
+The statement above will create a local `Student` variable that is by default set to zero. The above statement allocates memory for the struct instance on the stack(where all local variables go). There is generally less memory available for the stack. If you allocate too many objects, there is a risk of stack overflow. For a struct, zero means each of the fields is set to their corresponding zero value (0 for ints, 0.0 for floats, "" for strings, nil for pointers, etc.).
+
+We can also use the `new` function to dynamically allocate memory for the `Student` instance. This allocates memory for the object on the free store(also called as heap).
 ```go
-s := new(Student)
+s := new(Student) //s is of type *Student
 ```
-This allocates memory for all the fields, sets each of them to their zero value, and returns a pointer to the struct `*Student`. Pointers are often used with structs so that functions can modify their contents. But typically this is not the way we instantiate a struct because we usually provide initial values for the fields in the struct.
+This allocates memory for all the fields, sets each of them to their zero value, and returns a pointer to the struct `*Student`.
+
+Pointers are often used with structs so that functions can modify their contents. But typically this is not the way we instantiate a struct because we usually provide initial values for the fields in the struct.
 ```go
-s := Student{rollno: "13bce1106", name: "Raj Abishek", age: 20, marks: 70.4}
+s := Student{rollno: "13bce1106", name: "Raj Abishek", age: 20, marks: 70.4} //s is of type Student
 ```
-We can leave off the field names if we know the order they were defined.
+We can leave off the field names and provide the values in the same order as we defined them.
 ```go
-s := Student{"13bce1106", "Raj Abishek", 20, 70.4}
+s := Student{"13bce1106", "Raj Abishek", 20, 70.4} //s is of type Student
 ```
-If we instead wanted a pointer to the struct then we should use `&`.
+If we instead wanted to dynamically create a struct instance and initialize it at the same time then we can use the following method. We should use the `&` operator as shown below.
 ```go
-s := &Student{"13bce1106", "Raj Abishek", 20, 70.4} // here s is of type *Student
+s := &Student{"13bce1106", "Raj Abishek", 20, 70.4} //here s is of type *Student
 ```
