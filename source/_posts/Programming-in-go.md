@@ -540,6 +540,7 @@ A **pointer** is a programming object that refers to (or "points to") another va
 package main
 import "fmt"
 
+//(a *int, b *int) is the same as (a, b *int)
 func swap(a, b *int) {
   temp := *a
   *a = *b
@@ -552,7 +553,7 @@ func main() {
     fmt.Println(a, b) // a is 10 and b is 5
 }
 ```
-In Go if the parameters of a function are of same data type then we need not mention the data type along with every parameter name, instead we can add the data type at the end of the parameter list as shown above. Pointers reference a location in memory where a value is stored rather than the value itself. By using a pointer `*int` the swap function is able to modify the original variables.
+In Go when two or more consecutive named function parameters share a type, you can omit the type from all but the last as shown above. Pointers reference a location in memory where a value is stored rather than the value itself. By using a pointer `*int` the swap function is able to modify the original variables.
 
 In Go, a pointer is represented using an asterisk followed by the type of the stored value `*type`. As you can see above we have two integer pointer in the `swap` function. An asterisk is also used to dereference pointer variables. Dereferencing a pointer gives us access to the value the pointer points to. We we did `temp := *a` we are saying store the value that the integer pointer a is pointing to in temp variable. We use the `&` operator to find the address of a variable. `&a` returns a `*int` (pointer to an int) because a is an `int`. `&a` in main and `a` in `swap` refer to the same memory location.
 
