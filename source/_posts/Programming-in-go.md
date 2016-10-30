@@ -644,7 +644,9 @@ func main() {
 As you can see above when we call `s.getFirstName()` from main we no longer need the & operator (Go automatically knows to pass a pointer to the student for this method), and because this function can only be used with Students.
 
 ## Packages
-An important part of high-quality software is code reuse. Its is best to stick with the *Don’t Repeat Yourself* principle. As we saw earlier functions are one way in which we can reuse code. Packages provide another mechanism for reusing code. If you remember in almost every program we included the fmt package using `import "fmt"`.
+Every Go program is made up of packages. Programs start running in package `main`. An important part of high-quality software is code reuse. Its is best to stick with the *Don’t Repeat Yourself* principle. As we saw earlier functions are one way in which we can reuse code. Packages provide another mechanism for reusing code.
+
+If you remember in almost every program we included the fmt package using `import "fmt"`. By convention, the package name is the same as the last element of the import path. For instance, the `math/rand` package comprises files that begin with the statement `package rand`.
 
 `fmt` is the name of a package that includes a variety of functions related to formatting
 and output to the screen. Bundling such related code and functions as a part of a package gives us the following benefits.
@@ -666,7 +668,14 @@ func main() {
     fmt.Println(strings.Contains("test", "es")) //true
 }
 ```
-The signature of the `Contains` function is `func Contains(s, substr string) bool`. The first parameter is the larger string, second is the string to search for and the function returns a boolean. As you can see from the above code we can import multiple packages by placing the packages inside the parenthesis. To count the number of times a smaller string occurs in a bigger string we use the `Count` function.
+The signature of the `Contains` function is `func Contains(s, substr string) bool`. The first parameter is the larger string, second is the string to search for and the function returns a boolean.
+
+As you can see from the above code we can import multiple packages by placing the packages inside parenthesis. This is called as a **factored import statement**. It is good style to use the factored import statement over writing multiple import statements like.
+```go
+import "fmt"
+import "strings"
+```
+To count the number of times a smaller string occurs in a bigger string we use the `Count` function.
 ```go
 package main
 import (
