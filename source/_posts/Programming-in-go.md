@@ -340,7 +340,7 @@ func main() {
 ```
 There are some important observations to make in the above code. Firstly we did not declare the variable using shorthand `total := 0` in the above code because then `total` would have inferred to be of the type `int`. Since we want total to be of type `float64` so that we can add the `data[i]` while totaling and divide by `float64(length)` while computing the average, we explicitly mentioned its type as `float64` using the var statement. If we wrote the code as `total := 0` then  we would get compile time error due to line 1 and line 2 due to mismatched types `int` and `float64`.
 
-But what we can do is `total := 0.0`. In this way the Go compiler would infer the type of total as `float64` since `0.0` literal is seen as a double precision value. Next we have the `len` function that returns the length of the array as an `int`. But since `total` is of type `float64` we cannot directly divide by `length`. Go doesn't allow us to operate between two mismatching data types. We need to convert length into a `float64` which is done by `float64(length)`. This is called as type conversion. Unlike in C, in Go assignment between items of different type requires an explicit conversion. In general, to convert between types, you use the type name like a function. The expression `T(v)`` converts the value `v` to the type `T`.
+But what we can do is `total := 0.0`. In this way the Go compiler would infer the type of total as `float64` since `0.0` literal is seen as a double precision value. Next we have the `len` function that returns the length of the array as an `int`. But since `total` is of type `float64` we cannot directly divide by `length`. Go doesn't allow us to operate between two mismatching data types. We need to convert length into a `float64` which is done by `float64(length)`. This is called as type conversion. Unlike in C, in Go assignment between items of different type requires an explicit conversion. In general, to convert between types, you use the type name like a function. The expression `T(v)` converts the value `v` to the type `T`.
 
 We can also use a special form of a for loop with array in Go.
 ```go
@@ -358,6 +358,12 @@ for _, value := range data {
 }
 fmt.Println(total / float64(len(data)))
 ```
+If you only want the index, drop the ", value" entirely.
+```go
+for index := range data {
+    fmt.Println("The index is: ", index)
+}
+```
 As we had a shorthand syntax to create variables with initial values, we can also in a similar way create array variables with initial values.
 ```go
 data := [4]float64{ 10, 20, 30, 40 }
@@ -370,10 +376,12 @@ collection := [4]float64 {
 ```
 As you can see above we need not force the declaration on a single line. We can break up into multiple line however the extra trailing `,` after 400 is required by Go. It allows us to easily remove an element from the array by commenting out the line.
 
-As you can see above while declaring the array we have to hardcode the length of the array. We cannot change the size of an array once it is declared. Because of this and other limitations, you rarely see arrays used directly in Go code. Instead we usually use something called as a slice, which is data type build on top of an array.
+As you can see above while declaring the array we have to hardcode the length of the array. An array's length is part of its type, so arrays cannot be resized. Because of this and other limitations, you rarely see arrays used directly in Go code. Instead we usually use something called as a slice, which is data type build on top of an array.
 
 ## Slices
-A slice is a segment of an array. Like arrays, slices are indexable and have a length. Unlike arrays, this length is allowed to change. We declare a slice as follows. We do not put the length or the number of elements inside the square brackets.
+A slice is a segment of an array. Like arrays, slices are indexable and have a length. Unlike arrays, this length is allowed to change. We declare a slice as follows. We do not put the length or the number of elements inside the square brackets. The type `[]T` is a slice with elements of type `T`. Whenever we create a slice internally first the underlying array is created and then Go builds a slice that references it.
+
+A slice has both a **length** and a **capacity**. The length of a slice is the number of elements it contains. The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice. The length and capacity of a slice `s` can be obtained using the expressions `len(s)` and `cap(s)`. The zero value of a slice is nil. A nil slice has a length and capacity of 0 and has no underlying array.
 ```go
 var data []float64
 ```
@@ -385,14 +393,36 @@ As you can see above we have created a slice that is associated with an underlyi
 ```go
 data := make([]float64, 5, 10)
 ```
-In the above code we have create a slice of length `5` that is associated with an underlying `float64` array of length `10`. Another way to create slices is to use the ``[low:high]`` expression from an existing array. The `low` is the index of where to start the slice and `high` is the index of where to end it(but not including the index itself). It is similar to slicing sequences in Python except that we don't have negative indexing here.
+In the above code we have create a slice of length `5` that is associated with an underlying `float64` array of length `10`. Another way to create slices is to use the `[low:high]` expression from an existing array. The `low` is the index of where to start the slice and `high` is the index of where to end it(but not including the index itself). It is similar to slicing sequences in Python except that we don't have negative indexing here.
 ```go
 array := [5]float64{ 1, 2, 3, 4, 5 }
 slice := array[0:5]
 ```
-When we do `array[0:5]` returns `[1, 2, 3, 4, 5]`, `array[1:4]` returns `[2, 3, 4]`. For convenience, we are also allowed to omit low, high, or even both low and high. `array[0:]` is the same as `array[0:len(array)]`, `array[:n]` is the same as `array[0:n]`, and `array[:]` is the same as `array[0:len(arr)]`. In addition to indexing Go includes two built in functions to assist with slices: `append` and `copy`.
+When we do `array[0:5]` returns `[1, 2, 3, 4, 5]`, `array[1:4]` returns `[2, 3, 4]`. For convenience, we are also allowed to omit low, high, or even both low and high. `array[0:]` is the same as `array[0:len(array)]`, `array[:n]` is the same as `array[0:n]`, and `array[:]` is the same as `array[0:len(arr)]`.
 
-To append elements to the end of slice we use the `append` function. If there is space in the underlying array the element is added after the last element and the length of the slice is incremented. If there is no space in the underlying array then a new array is created and the existing elements are copied over to the new array, the new element is added to the end and then the new slice is returned.
+A slice does not store any data, it just describes a section of an underlying array. Changing the elements of a slice modifies the corresponding elements of its underlying array. Other slices that share the same underlying array will see those changes.
+```go
+package main
+import "fmt"
+
+func main() {
+    names := [4]string{
+		    "Raj",
+		    "Sailesh",
+		    "Dev",
+		    "Kani",
+	  }
+    fmt.Println(names) //[Raj Sailesh Dev Kani]
+    a := names[0:2]
+    b := names[1:3]
+    fmt.Println(a, b) //[Raj Sailesh Sailesh Dev]
+
+    b[0] = "new"
+    fmt.Println(a, b) //[Raj new new Dev]
+    fmt.Println(names) //[Raj new Dev Kani]
+}
+```
+In addition to indexing Go includes two built in functions to assist with slices: `append` and `copy`. To append elements to the end of slice we use the `append` function. If there is space in the underlying array the element is added after the last element and the length of the slice is incremented. If there is no space in the underlying array then a new array is created and the existing elements are copied over to the new array, the new element is added to the end and then the new slice is returned.
 ```go
 func main() {
     slice1 := []int{1, 2, 3} //shorthand form to create a new slice from initial values
@@ -418,10 +448,10 @@ A map is an unordered collection of key value pairs (maps are also sometimes cal
 ```go
 var data map[string]int
 ```
-The above code create a map with the type of keys as `string` and the type of values as `int`. Maps have to be initialized before they are used in the program, or else we would get a run time error.
+The above code create a map with the type of keys as `string` and the type of values as `int`. Maps have to be initialized before they are used in the program, or else we would get a run time error, because the zero value of a map is `nil`. A nil map has no keys, nor can keys be added. The `make` function returns a map of the given type, initialized and ready for use.
 ```go
 data := make(map[string]int)
-data["key"] = 10
+data["key"] = 10 // This is how we insert or update an element in map
 fmt.Println(data["key"])
 ```
 The length of a map(found by doing len(data)) can change as we add new items to it. We can use the `delete` function to delete items from a map.
@@ -580,11 +610,15 @@ func factorial(x uint) uint {
 ```
 
 ## Closures
-A closure can capture constants and variables from the surrounding context in which it is defined. The closure can then refer to and modify the values of those constants and variables from within its body, even if the original scope that defined the constants and variables no longer exists.
+Functions are values too. They can be passed around just like other values. Function values may be used as function arguments and return values. Go functions may be closures.
+
+A closure is a function value that references variables from outside its body. It can capture constants and variables from the surrounding context in which it is defined. The closure can then refer to and modify the values of those constants and variables from within its body, even if the original scope that defined the constants and variables no longer exists.
 
 In Go, the simplest form of a closure that can capture values is a nested function, written within the body of another function. A nested function can capture any of its outer function’s arguments and can also capture any constants and variables defined within the outer function.
 
 Here’s an example of a function called `makeIncrementer`, which contains a nested function called `incrementer`. The nested `incrementer` function captures two values, `runningTotal` and `amount`, from its surrounding context. After capturing these values, `incrementer` is returned by `makeIncrementer` as a closure that increments `runningTotal` by `amount` each time it is called.
+
+As you can see below the `makeIncrementer` function returns a closure. Each closure is bound to its own `runningTotal` variable.
 ```go
 package main
 import "fmt"
@@ -636,9 +670,13 @@ func main() {
     fmt.Println(b) // b is still 5
 }
 ```
-As we can see above even though the sample function will not modify the original b variable in the main function. But what if we wanted to ? One way to accomplish this is through pointers.
-
-A **pointer** is a programming object that refers to (or "points to") another value stored elsewhere in the computer memory using its memory address. A pointer references a location in memory. Thus what a pointer actually stores is an address of a memory location. Obtaining the value stored at that location is known as dereferencing the pointer.
+As we can see above even though the sample function will not modify the original b variable in the main function. But what if we wanted to ? One way to accomplish this is through pointers. A pointer holds the memory address of a variable. The type `*T` is a pointer to a `T` value. Its zero value is `nil`. The statement `var pointer *int` declares an integer pointer will `nil` value. The `&` operator generates a pointer to its operand.
+```go
+var pointer *int
+integer := 42
+pointer = &integer
+```
+When we precede `&` before a variable name we get the address of the variable in memory that we can store using a pointer. To give you a formal definition a **pointer** is a programming object that refers to (or "points to") another value stored elsewhere in the computer memory using its memory address. A pointer references a location in memory. Thus what a pointer actually stores is an address of a memory location. Obtaining the value stored at that location is known as **dereferencing** or **indirecting** the pointer. Unlike C, Go has no pointer arithmetic.
 ```go
 package main
 import "fmt"
@@ -679,7 +717,7 @@ As you can see from the above code the `new` built in function takes a type as a
 We don't have to worry about deallocating memory in Go because like Java the Go programming language has a wonderful garbage collector in which memory is cleaned up automatically. Pointers are rarely used with Go’s built-in types, but they are extremely useful when paired with structs.
 
 ## Structs
-A struct is a type that contains named fields.
+A struct is a collection of fields.
 ```go
 type Student struct {
     rollno string
@@ -720,11 +758,17 @@ If we instead wanted to dynamically create a struct instance and initialize it a
 ```go
 s := &Student{"13bce1106", "Raj Abishek", 20, 70.4} //here s is of type *Student
 ```
-We can access the fields using the `.` operator as shown below. The `s` variable can be of type `Student` or `*Student`, in both the cases the `.` operator can be used to access the fields.
+We can access the fields using the `.` operator as shown below.
 ```go
+s := Student{"13bce1106", "Raj Abishek", 20, 70.4} //s is of type Student
+p := &s
 fmt.Println(s.rollno, s.number, s.age, s.marks)
+fmt.Println(p.rollno, p.number, p.age, p.marks)
 ```
-In Go we can define special type of functions known as a methods for structs. In between the keyword `func` and the name of the function, we’ve added a **receiver**. The receiver is like a parameter—it has a name and a type—but by creating the function in this way, it allows us to call the function using the `.` operator.
+To access the field `X` of a struct when we have the struct pointer `p` we could write `(*p).X`. However, that notation is cumbersome, so the language permits us instead to write just `p.X` as shown above, without the explicit dereference.
+
+## Methods
+Go does not have classes. However, you can define methods on types. A method is a function with a special **receiver argument**. The receiver appears in its own argument list between the `func` keyword and the method name. The receiver is like a parameter, it has a name and a type but by creating the function in this way, it allows us to call the function using the `.` operator from an instance of the type.
 ```go
 package main
 import "strings"
@@ -746,6 +790,31 @@ func main() {
 }
 ```
 As you can see above when we call `s.getFirstName()` from main we no longer need the & operator (Go automatically knows to pass a pointer to the student for this method), and because this function can only be used with Students.
+
+We can declare a method on non struct types too. You can only declare a method with a receiver whose type is defined in the same package as the method. You cannot declare a method with a receiver whose type is defined in another package (which includes the built in types such as `int`).
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f < 0 {
+		    return float64(-f)
+	  }
+	  return float64(f)
+}
+
+func main() {
+    f := MyFloat(-math.Sqrt2)
+	  fmt.Println(f.Abs())
+}
+```
+The output of the above program is `1.4142135623730951`. We have defined a type called `MyFloat` which is a `float64`. Since `MyFloat` is declared in this package we can declare a method called `Abs` that computes the absolute value of the number.
 
 ## Packages
 Every Go program is made up of packages. Programs start running in package `main`. An important part of high-quality software is code reuse. Its is best to stick with the *Don’t Repeat Yourself* principle. As we saw earlier functions are one way in which we can reuse code. Packages provide another mechanism for reusing code.
