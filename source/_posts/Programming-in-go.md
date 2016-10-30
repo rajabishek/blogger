@@ -592,3 +592,7 @@ type Student struct {
     marks float64
 }
 ```
+We can create an instance of the `Student` in a variety of ways.
+```go
+var s Student
+```
