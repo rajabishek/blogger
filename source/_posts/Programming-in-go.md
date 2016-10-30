@@ -616,8 +616,29 @@ If we instead wanted to dynamically create a struct instance and initialize it a
 ```go
 s := &Student{"13bce1106", "Raj Abishek", 20, 70.4} //here s is of type *Student
 ```
-## Fields
-We can access the fields using the `.` operator as shown below. The `s` variable can be of type `Student` or `Student*`, in both the cases the `.` operator can be used to access the fields.
+We can access the fields using the `.` operator as shown below. The `s` variable can be of type `Student` or `*Student`, in both the cases the `.` operator can be used to access the fields.
 ```go
 fmt.Println(s.rollno, s.number, s.age, s.marks)
 ```
+In Go we can define special type of functions known as a methods for structs. In between the keyword `func` and the name of the function, we’ve added a **receiver**. The receiver is like a parameter—it has a name and a type—but by creating the function in this way, it allows us to call the function using the `.` operator.
+```go
+package main
+import "strings"
+import "fmt"
+
+type Student struct {
+    rollno, name string
+    age int
+    marks float64
+}
+
+func (s *Student) getFirstName() string {
+    return strings.Split(s.name, " ")[0]
+}
+
+func main() {
+    s := Student{"13bce1106", "Raj Abishek", 20, 70.4}
+    fmt.Println(s.getFirstName())
+}
+```
+As you can see above when we call `s.getFirstName()` from main we no longer need the & operator (Go automatically knows to pass a pointer to the circle for this method), and because this function can only be used with Students.
