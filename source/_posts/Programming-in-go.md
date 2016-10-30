@@ -600,3 +600,11 @@ The statement above will create a local `Student` variable that is by default se
 ```go
 s := new(Student)
 ```
+This allocates memory for all the fields, sets each of them to their zero value, and returns a pointer to the struct `*Student`. Pointers are often used with structs so that functions can modify their contents. But typically this is not the way we instantiate a struct because we usually provide initial values for the fields in the struct.
+```go
+s := Student{rollno: "13bce1106", name: "Raj Abishek", age: 20, marks: 70.4}
+```
+We can leave off the field names if we know the order they were defined.
+```go
+s := Student{"13bce1106", "Raj Abishek", 20, 70.4}
+```
