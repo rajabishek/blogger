@@ -419,22 +419,6 @@ func main() {
     fmt.Println(average(slice))
 }
 ```
-Go's return values may be named. If so, they are treated as variables defined at the top of the function. These names should be used to document the meaning of the return values. A return statement without arguments returns the named return values. This is known as a **naked return**. Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions.
-```go
-package main
-
-import "fmt"
-
-func split(sum int) (x, y int) {
-	x = sum * 4 / 9
-	y = sum - x
-	return
-}
-
-func main() {
-	fmt.Println(split(17))
-}
-```
 In Go we can also return multiple values from a function.
 ```go
 func getFullName() (string, string) {
@@ -445,6 +429,25 @@ func main() {
 }
 ```
 Multiple value returning functions are commonly used in code to return the error value along with the result, or sometimes a boolean value to indicate the success of the operation.
+
+Go's return values may be named. If so, they are treated as variables defined at the top of the function. These names should be used to document the meaning of the return values. A return statement without arguments returns the named return values. This is known as a **naked return**. Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions.
+```go
+package main
+
+import "fmt"
+
+func split(sum int) (x, y int) {
+  //as though x and y variables are declared here
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
+func main() {
+	fmt.Println(split(17))
+}
+```
+As you can see above `x` and `y` are treated as variables that we defined at the start of the `split` function. When we do `return` Go returns the named return values, it is as though we do `return x, y`.
 
 ## Variadic Parameters
 The last parameter of a function in Go can be a variadic parameter.
