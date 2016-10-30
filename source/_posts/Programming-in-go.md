@@ -663,7 +663,18 @@ import (
     "strings"
 )
 func main() {
-    fmt.Println(strings.Contains("test", "es")) // => true
+    fmt.Println(strings.Contains("test", "es")) //true
 }
 ```
-The signature of the `Contains` function is `Contains(s, substr string) bool`. The first parameter is the larger string, second is the string to search for and the function returns a boolean. As you can see from the above code we can import multiple packages by placing the packages inside the parenthesis.
+The signature of the `Contains` function is `func Contains(s, substr string) bool`. The first parameter is the larger string, second is the string to search for and the function returns a boolean. As you can see from the above code we can import multiple packages by placing the packages inside the parenthesis. To count the number of times a smaller string occurs in a bigger string we use the `Count` function.
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.Count("test", "t")) //2
+}
+```
+The signature of the `Count` function is `func Count(s, substr string) int`. The first parameter is the larger string, the second is the smaller string and the function returns the count as `int`.
