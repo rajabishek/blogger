@@ -654,6 +654,22 @@ and output to the screen. Bundling such related code and functions as a part of 
 - Organizes code - Easier to find code for reuse
 - Speeds up compiler - Eg. every time we compiler the fmt package need not be compiled
 
+## Exported Names
+In Go, a name is exported if it begins with a capital letter. For example, `Pizza` is an exported name, as is `Pi`, which is exported from the `math` package. `pizza` and `pi` do not start with a capital letter, so they are not exported. When importing a package, you can refer only to its exported names. Any unexported names are not accessible from outside the package.
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	fmt.Println(math.Pi)
+}
+```
+The above program works because we have a exported name called `Pi` in the `math` package. If we had some programming object in the `math` package that starts with a lowercase then that will not be accessible from outside of the package.
+
 ## Strings Package
 Instead of writing out everything from scratch it is better if we can interface with existing libraries. Lets look at some of the commonly used packages in the Go language.
 
