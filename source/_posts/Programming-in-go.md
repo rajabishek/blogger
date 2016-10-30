@@ -641,4 +641,4 @@ func main() {
     fmt.Println(s.getFirstName())
 }
 ```
-As you can see above when we call `s.getFirstName()` from main we no longer need the & operator (Go automatically knows to pass a pointer to the circle for this method), and because this function can only be used with Students.
+As you can see above when we call `s.getFirstName()` from main we no longer need the & operator (Go automatically knows to pass a pointer to the student for this method), and because this function can only be used with Students.
