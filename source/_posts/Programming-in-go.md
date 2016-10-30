@@ -88,10 +88,13 @@ Notice that in the output for the second print statement you see `82` instead of
 A boolean value is a special 1-bit integer type used to represent `true` and `false` (or on and off). Three logical operators are used with boolean values `&&`, `||` and `!` which currespond to the boolean operation `AND`, `OR` and `NEGATION` respectively.
 
 ## Variables
-A variable is a storage location, with a specific type and an associated name. Variables in Go are created by first using the var keyword, then specifying the variable name(message) and the type(string), and finally, assigning a literal value to the variable.
+A variable is a storage location, with a specific type and an associated name. Variables in Go are created by first using the var keyword, then specifying the variable name(message) and the type(string), and finally, assigning a literal value to the variable. A var statement can be at package or function level.
 ```go
 package main
 import "fmt"
+
+var i, j int = 1, 2
+
 func main() {
     var message string = "Hello world from Raj Abishek"
     fmt.Println(message)
@@ -113,6 +116,7 @@ func main() {
 Because creating a new variable with a starting value is so common, Go also supports a shorter statement.
 ```go
 message := "Raj Abishek"
+age, name, isActive := 20, "Raj Abishek", true
 ```
 `:` is required before the `=`, this is how Go compiler knows that this is a variable declaration and not an assignment expression. Also observe that no type was specified, the type is not necessary because the Go compiler can infer the type based on the literal value you assign the variable.
 
@@ -130,6 +134,21 @@ name := "Raj Abishek"
 fmt.Println("My name is", name)
 ```
 
+## Zero Values
+Variables declared without an explicit initial value are given their zero value. The zero value is `0` for numeric types, `false` for the boolean type, and `""`(the empty string) for strings.
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var integer int
+	var floating float64
+	var boolean bool
+	var text string
+	fmt.Println(integer, floating, boolean, text)
+}
+```
 ## Constants
 Constants are essentially variables whose values cannot be changed later. You use the `const` keyword instead of the `var` keyword for creating them.
 ```go
