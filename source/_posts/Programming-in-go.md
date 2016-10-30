@@ -573,3 +573,22 @@ func main() {
 As you can see from the above code the `new` built in function takes a type as an argument and allocates enough memory to fit a value of that type, and returns a pointer to it. We pass this pointer to the `setValue` function which dereferences the pointer to assign a value `10` to the memory location.
 
 We don't have to worry about deallocating memory in Go because like Java the Go programming language has a wonderful garbage collector in which memory is cleaned up automatically. Pointers are rarely used with Go’s built-in types, but they are extremely useful when paired with structs.
+
+## Structs
+A struct is a type that contains named fields.
+```go
+type Student struct {
+    rollno string
+    name string
+    age int
+    marks float64
+}
+```
+We are defining a new data type called `Student` which is a struct that encapsulates 4 fields. Fields are like a set of grouped variables. Each field has a name and a type and is stored adjacent to the other fields in the struct. Like with functions, we can collapse fields that have the same type:
+```go
+type Student struct {
+    rollno, name string
+    age int
+    marks float64
+}
+```
