@@ -651,3 +651,19 @@ and output to the screen. Bundling such related code and functions as a part of 
 - Avoids overlapping names - keeping functions names short and succinct
 - Organizes code - Easier to find code for reuse
 - Speeds up compiler - Eg. every time we compiler the fmt package need not be compiled
+
+## Core Packages
+Instead of writing out everything from scratch it is better if we can interface with existing libraries. Lets look at some of the commonly used packages in the Go language.
+
+Go includes a large number of functions to work with strings in the `strings` package. To search for a smaller string in a bigger string, use the Contains function.
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.Contains("test", "es")) // => true
+}
+```
+The signature of the `Contains` function is `Contains(s, substr string) bool`. The first parameter is the larger string, second is the string to search for and the function returns a boolean. As you can see from the above code we can import multiple packages by placing the packages inside the parenthesis.
