@@ -799,12 +799,10 @@ func Average(xs []float64) float64 {
 From the change directory into the `math` folder you just created and run go install. This will compile the `math.go` program and create a linkable object file: ~/pkg/os_arch/code/program/math.a (where os is something like windows and arch is something like amd64). Now change back into the `program` folder and run `go run main.go`.
 
 ## Testing
-Writing tests for our code is a good way to ensure quality and improve reliability. Go includes a special program that makes writing tests easier `go test`. The Go compiler knows to ignore code in any files that end with `_test.go`, so the code defined in this file is only used by go test (and not go install or go build).
+Writing tests for our code is a good way to ensure quality and improve reliability. Go includes a special program that makes writing tests easier `go test`. The Go compiler knows to ignore code in any files that end with `_test.go`, so the code defined in this file is only used by go test (and not go install or go build). In the `program/math` folder, create a new file called `math_test.go` and add the following code.
 ```go
 package math
 import "testing"
-
-
 
 func TestAverage(t *testing.T) {
     v := Average([]float64{1,2})
@@ -813,4 +811,4 @@ func TestAverage(t *testing.T) {
     }
 }
 ```
-We import the special testing package and define a function that starts with the word Test (case matters) followed by whatever we want to name our test.
+We import the special testing package and define a function that starts with the word Test (case matters) followed by whatever we want to name our test. To actually run the test, run the following in the same directory `go test`. The go test command will look for any tests in any of the files in the current folder and run them. Tests are identified by starting a function with the word Test and taking one argument of type ``*testing.T`.
