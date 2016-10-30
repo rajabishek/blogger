@@ -652,7 +652,7 @@ and output to the screen. Bundling such related code and functions as a part of 
 - Organizes code - Easier to find code for reuse
 - Speeds up compiler - Eg. every time we compiler the fmt package need not be compiled
 
-## Core Packages
+## Strings Package
 Instead of writing out everything from scratch it is better if we can interface with existing libraries. Lets look at some of the commonly used packages in the Go language.
 
 Go includes a large number of functions to work with strings in the `strings` package. To search for a smaller string in a bigger string, use the Contains function.
@@ -711,4 +711,64 @@ func main() {
     fmt.Println(strings.Index("test", "s")) //2
 }
 ```
-The signature of the `Index` function is `func Index(s, sep string) int`. The first string is the larger string, the second is the smaller string and the function returns a `int` the index of the smaller string in the larger string.
+The signature of the `Index` function is `func Index(s, sep string) int`. The first string is the larger string, the second is the smaller string and the function returns a `int` the index of the smaller string in the larger string. To take a list of strings and join them together in a single string separated by another string (e.g., a comma), use the Join function.
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.Join([]string{"a","b"}, "-")) //"a-b"
+}
+```
+The signature of the `Join` function is `func Join(a []string, sep string) string`. To repeat a string, use the Repeat function.
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.Repeat("a", 5)) //"aaaaa"
+}
+```
+The signature of the `Repeat` function is `func Repeat(s string, count int) string`. To replace a smaller string in a bigger string with some other string, use the Replace function. In Go, Replace also takes a number indicating how many times to do the replacement (pass -1 to do it as many times as possible).
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.Replace("aaaa", "a", "b", 2)) //"bbaa"
+}
+```
+The signature of the `Replace` function is `func Replace(s, old, new string, n int) string`. To split a string into a list of strings by a separating string (e.g., a comma), use the Split function (Split is the reverse of Join).
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.Split("a-b-c-d-e", "-"))) //[]string{"a","b","c","d","e"}
+}
+```
+The signature of the `Split` function is `func Split(s, sep string) []string`. To convert a string to all lowercase letters, use the ToLower function and to convert a string to all uppercase letters, use the ToUpper function.
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    fmt.Println(strings.ToUpper("test")) //"TEST"
+    fmt.Println(strings.ToLower("TEST")) //"test"
+}
+```
+The signature of the `ToUpper` function is `func ToUpper(s string) string`. The signature of the `ToLower` function is `func ToLower(s string) string`. Sometimes we need to work with strings as binary data. To convert a string to a slice of bytes (and vice versa), do this.
+```go
+arr := []byte("test")
+str := string([]byte{'t','e','s','t'})
+```
