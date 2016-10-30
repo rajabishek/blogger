@@ -772,3 +772,28 @@ The signature of the `ToUpper` function is `func ToUpper(s string) string`. The 
 arr := []byte("test")
 str := string([]byte{'t','e','s','t'})
 ```
+
+## Creating packages
+Create a folder in ~/src/code called program. Inside that folder, create a file called `main.go` using the following code.
+```go
+package main import "fmt"
+import "code/program/math"
+func main() {
+    xs := []float64{1,2,3,4}
+    avg := math.Average(xs)
+    fmt.Println(avg)
+}
+```
+Now create another folder inside of the `program` folder called `math`. Inside of this folder, create a file called `math.go` that contains this.
+```go
+package math
+
+func Average(xs []float64) float64 {
+    total := float64(0)
+    for _, x := range xs {
+        total += x
+    }
+    return total / float64(len(xs))
+}
+```
+From the change directory into the `math` folder you just created and run go install. This will compile the `math.go` program and create a linkable object file: ~/pkg/os_arch/code/program/math.a (where os is something like windows and arch is something like amd64). Now change back into the `program` folder and run `go run main.go`.
