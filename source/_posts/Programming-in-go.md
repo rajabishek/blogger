@@ -616,3 +616,8 @@ If we instead wanted to dynamically create a struct instance and initialize it a
 ```go
 s := &Student{"13bce1106", "Raj Abishek", 20, 70.4} //here s is of type *Student
 ```
+## Fields
+We can access the fields using the `.` operator as shown below.
+```go
+fmt.Println(s.rollno, s.number, s.age, s.marks)
+```
