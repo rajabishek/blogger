@@ -122,7 +122,10 @@ age, name, isActive := 20, "Raj Abishek", true
 
 Because we are assigning a string literal, message is given the type string. This is called as type inference. This is present in many other modern programming languages like Scala, Swift also. The compiler can also do type inference with the var statement:
 ```go
-var message = "Raj Abishek"
+message := "Raj Abishek" //message is infered as a string
+integer := 42 //integer is infered as an int
+floating := 3.142 //floating is infered as a float64
+complex := 0.867 + 0.5i // complex is infered as a complex128
 ```
 Generally you should use the `:=` shorter form whenever possible since as it is seen as the idiomatic usage of the language. It is important to remember that type inference will work only if you provide an initial value, because the only way for the compiler to infer the data type in from the initial value. The following Go code is invalid an will not compile.
 ```go
@@ -195,6 +198,7 @@ The for statement allows us to repeat a list of statements (a block) multiple ti
 ```go
 package main
 import "fmt"
+
 func main() {
     i := 1
     for i <= 10 {
@@ -207,10 +211,34 @@ The above code prints the numbers from 1 to 10 in ascending order. Other program
 ```go
 package main
 import "fmt"
+
 func main() {
     for i := 1; i<=10; i++ {
         fmt.Println(i)
     }
+}
+```
+The init and post statement are optional as shown below.
+```go
+package main
+import "fmt"
+
+func main() {
+    sum := 1
+    for ; sum < 1000; {
+		    sum += sum
+	  }
+    fmt.Println(sum)
+}
+```
+If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
+```go
+package main
+
+func main() {
+    for {
+        //infinite loop
+	  }
 }
 ```
 
@@ -223,7 +251,27 @@ if i % 2 == 0 {
     // odd
 }
 ```
-If statements can also have else if parts as shown below.
+The if statement can start with a **short statement** to execute before the condition. Variables declared by the statement are only in scope until the end of the if.
+```go
+package main
+import "fmt"
+
+func getGreetingMessage(fullname string) string {
+    if firstName := strings.Split(fullname, " ")[0]; firstName == "Raj" {
+        return "Hello world from " + firstName
+	  } else {
+        return "Another hello world from " + firstName
+    }
+    // return firstName - this will result in a compile time error
+	  return "Hello world"
+}
+
+func main() {
+    message := getGreetingMessage("Raj Abishek")
+    fmt.Println(message)
+}
+```
+As you can see above the `firstName` variable is only available inside of the if statement. If statements can also have else if parts as shown below. As you can see above variables declared inside an if short statement are also available inside any of the else blocks.
 ```go
 if i % 2 == 0 {
     // divisible by 2
@@ -259,9 +307,7 @@ switch i {
     default: fmt.Println("Unknown Number")
 }
 ```
-Like an if statement, each case is checked top down and the first one to succeed is chosen. A switch also supports a default case that will happen if none of the cases matches the value (similar to how the else works in an if statement).
-
-Go's switch statement is also considerably more powerful than its counterpart in many C-like languages. Because the cases of a switch statement do not fall through to the next case in Go, it avoids common C errors caused by missing break statements.
+Like an if statement, each case is checked top down and the first one to succeed is chosen. A switch also supports a default case that will happen if none of the cases matches the value (similar to how the else works in an if statement). A case body breaks automatically, unless it ends with a `fallthrough` statement. A switch statement can also start with a short statement to execute before the condition.
 
 ## Arrays
 An array is a ordered sequence of items of a single type with a fixed length.
@@ -294,7 +340,7 @@ func main() {
 ```
 There are some important observations to make in the above code. Firstly we did not declare the variable using shorthand `total := 0` in the above code because then `total` would have inferred to be of the type `int`. Since we want total to be of type `float64` so that we can add the `data[i]` while totaling and divide by `float64(length)` while computing the average, we explicitly mentioned its type as `float64` using the var statement. If we wrote the code as `total := 0` then  we would get compile time error due to line 1 and line 2 due to mismatched types `int` and `float64`.
 
-But what we can do is `total := 0.0`. In this way the Go compiler would infer the type of total as `float64` since `0.0` literal is seen as a double precision value. Next we have the `len` function that returns the length of the array as an `int`. But since `total` is of type `float64` we cannot directly divide by `length`. Go doesn't allow us to operate between two mismatching data types. We need to convert length into a `float64` which is done by `float64(length)`. This is called as type conversion. In general, to convert between types, you use the type name like a function.
+But what we can do is `total := 0.0`. In this way the Go compiler would infer the type of total as `float64` since `0.0` literal is seen as a double precision value. Next we have the `len` function that returns the length of the array as an `int`. But since `total` is of type `float64` we cannot directly divide by `length`. Go doesn't allow us to operate between two mismatching data types. We need to convert length into a `float64` which is done by `float64(length)`. This is called as type conversion. Unlike in C, in Go assignment between items of different type requires an explicit conversion. In general, to convert between types, you use the type name like a function. The expression `T(v)`` converts the value `v` to the type `T`.
 
 We can also use a special form of a for loop with array in Go.
 ```go
@@ -467,6 +513,32 @@ func main() {
 }
 ```
 As you can see above `x` and `y` are treated as variables that we defined at the start of the `split` function. When we do `return` Go returns the named return values, it is as though we do `return x, y`.
+
+## Defer
+A defer statement defers the execution of a function until the surrounding function returns. The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns. The following code gives hello world as the output.
+```go
+package main
+import "fmt"
+
+func main() {
+    defer fmt.Println("world")
+	  fmt.Println("hello")
+}
+```
+Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
+```go
+package main
+import "fmt"
+
+func main() {
+    fmt.Print("counting", " ")
+	  for i := 1; i <= 10; i++ {
+		    defer fmt.Print(i, " ")
+	  }
+    fmt.Print("done", " ")
+}
+```
+The above code will produce the output `counting done 10 9 8 7 6 5 4 3 2 1`.
 
 ## Variadic Parameters
 The last parameter of a function in Go can be a variadic parameter.
