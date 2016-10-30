@@ -608,3 +608,7 @@ We can leave off the field names if we know the order they were defined.
 ```go
 s := Student{"13bce1106", "Raj Abishek", 20, 70.4}
 ```
+If we instead wanted a pointer to the struct then we should use `&`.
+```go
+s := &Student{"13bce1106", "Raj Abishek", 20, 70.4} // here s is of type *Student
+```
