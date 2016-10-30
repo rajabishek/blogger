@@ -642,3 +642,12 @@ func main() {
 }
 ```
 As you can see above when we call `s.getFirstName()` from main we no longer need the & operator (Go automatically knows to pass a pointer to the student for this method), and because this function can only be used with Students.
+
+## Packages
+An important part of high-quality software is code reuse. Its is best to stick with the *Don’t Repeat Yourself* principle. As we saw earlier functions are one way in which we can reuse code. Packages provide another mechanism for reusing code. If you remember in almost every program we included the fmt package using `import "fmt"`.
+
+`fmt` is the name of a package that includes a variety of functions related to formatting
+and output to the screen. Bundling such related code and functions as a part of a package gives us the following benefits.
+- Avoids overlapping names - keeping functions names short and succinct
+- Organizes code - Easier to find code for reuse
+- Speeds up compiler - Eg. every time we compiler the fmt package need not be compiled
