@@ -699,4 +699,16 @@ func main() {
     fmt.Println(strings.HasSuffix("test", "st")) //true
 }
 ```
-The signature of the `HasSuffix` function is `func HasSuffix(s, prefix string) bool`. The first string is the larger string, the second is the smaller string and the function returns a boolean.
+The signature of the `HasSuffix` function is `func HasSuffix(s, prefix string) bool`. The first string is the larger string, the second is the smaller string and the function returns a boolean. To find the position of a smaller string in a bigger string, use the `Index` function (it returns -1 if not found).
+```go
+package main
+import (
+    "fmt"
+    "strings"
+)
+func main() {
+    // func Index(s, sep string) int
+    fmt.Println(strings.Index("test", "s")) //2
+}
+```
+The signature of the `Index` function is `func Index(s, sep string) int`. The first string is the larger string, the second is the smaller string and the function returns a `int` the index of the smaller string in the larger string.
