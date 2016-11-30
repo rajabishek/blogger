@@ -16,3 +16,9 @@ As we all know NPM was introduced to solve dependency management for JavaScript 
 - The npm package manager does not provide **offline installation** from any local cache.
 
 ## Meet Yarn
+The yarn package manager was designed with keeping these 3 principles in mind.
+1. Speed
+1. Security
+1. Reliability
+
+The yarn package manager is 2 to 7x faster when compared to npm. This good performance comes from an interesting cache implementation. Whenever we install a package through yarn it caches it, so anytime we request for an installation of a package, it will first try to install it from its cache. It also executes the package downloads in parallel threads to make the best use of resources.
