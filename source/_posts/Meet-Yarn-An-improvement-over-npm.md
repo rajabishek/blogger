@@ -1,7 +1,9 @@
 ---
 title: Meet Yarn - improvement over npm
+date: 2016-11-30 19:50:35
 tags:
 ---
+
 ## Whats the problem with npm ?
 It seems like almost every other week there is a new JavaScript library taking the web community by storm. The community is increasingly vibrant, diverse and is moving rapidly on multiple fronts.
 
