@@ -48,4 +48,26 @@ The babel-cli package is downloaded in the `node_modules` directory and saved to
 - `npm update --save` === `yarn upgrade`
 The package version number moves up and an upgrade is happening. Its good that yarn called it `upgrade` instead of `update` since that is what is happening.
 - `npm install babel-cli --global` === `yarn global add babel-cli`
-This installs the package globally. Infact you can use yarn to manage itself globally by running `yarn global add yarn` from the console.
+This installs the package globally. Infact you can use yarn to manage itself globally by running `yarn global add yarn` from the console. For following commands, if you know NPM you are ready to go.
+```
+npm init        → yarn init
+npm link        → yarn link
+npm outdated    → yarn outdated
+npm publish     → yarn publish
+npm run         → yarn run
+npm cache clean → yarn cache clean
+npm login       → yarn login
+npm logout      → yarn logout
+npm test        → yarn test
+```
+
+## New features
+Yarn has some great new features that NPM doesn’t have. You can check the licenses of your dependencies and you can also generate your license dependencies using the following commands.
+```
+yarn licenses 
+yarn licenses generate
+```
+From the console you can also run `yarn why <package-name>` to identify why this package is installed and which other packages are dependent on it. If you have some time, thank [Oliver Combe](https://github.com/ocombe) for this feature.
+```
+yarn why babel-cli
+```
