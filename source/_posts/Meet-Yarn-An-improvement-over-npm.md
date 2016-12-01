@@ -75,4 +75,4 @@ yarn why babel-cli
 ```
 
 ## Conclusion
-Yarn in its infancy has already brought significant improvements in the way JavaScript packages are fetched from global registries into local environments, especially with regard to speed and security. As far as I worked with yarn it looks amazing and I have no complaints. Moreover the project being backed by big tech giants like Google and Facebook make me feel positive that it can become the official npm package manager soon.
+Yarn in its infancy has already brought significant improvements in the way JavaScript packages are fetched from global registries into local environments, especially with regard to speed and security. As far as I have worked with yarn it looks amazing and I have no complaints. Moreover the project being backed by big tech giants like Google and Facebook makes me feel positive that it can become the official npm package manager soon.
