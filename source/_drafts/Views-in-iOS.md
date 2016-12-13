@@ -5,6 +5,9 @@ tags:
 
 ## Superview & Subview
 You can never tell the view hierarchy by just looking at the views in an iOS application. Apple has revised the view architecture from OS X 10.5 and ever since then when dealing with views one must remember the following 2 points.
+
+<!-- more -->
+
 - Some or all of a subview can appear outside its superview.
 - A view can overlap another view and can be drawn partially or totally in front of it without being its subview.
 
