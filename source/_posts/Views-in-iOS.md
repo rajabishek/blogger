@@ -1,7 +1,9 @@
 ---
 title: UIView Fundamentals
+date: 2016-12-13 12:21:19
 tags:
 ---
+
 
 ## Superview & Subview
 You can never tell the view hierarchy by just looking at the views in an iOS application. Apple has revised the view architecture from OS X 10.5 and ever since then when dealing with views one must remember the following 2 points.
