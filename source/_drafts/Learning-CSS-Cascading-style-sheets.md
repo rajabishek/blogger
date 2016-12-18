@@ -20,3 +20,23 @@ We also have something called as inline rules which are typically used to group 
 ```css
 /* This is a comment */
 ```
+
+## Units of measurement
+There are two broad categories one is **absolute** and the other one is **relative**. Absolute values are well suited for devices with a known output size(like printer). Some examples of absolute values are as follows:
+- in - inches
+- cm - centimeters
+- mm - millimeters
+- pt - points
+- pc - picas
+
+Relative values are well suited for devices like screens, where the device size and resolution is not known or could change.
+- em - ems
+- ex - exes
+- px - pixels
+- gd - grids
+- rem - rootems
+- vw - viewport width
+- vh - viewport height
+- vm - viewport minimum
+- ch - character
+The units gd, vw, vh, vm are brand new in CSS3. gd is widely used in east asian typography. vw, vh, vm allows us to size elements based on the browser size. Now lets discuss a bit about the ems unit of measurement.
