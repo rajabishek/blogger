@@ -39,4 +39,30 @@ Relative values are well suited for devices like screens, where the device size 
 - vh - viewport height
 - vm - viewport minimum
 - ch - character
-The units gd, vw, vh, vm are brand new in CSS3. gd is widely used in east asian typography. vw, vh, vm allows us to size elements based on the browser size. Now lets discuss a bit about the ems unit of measurement.
+The units gd, vw, vh, vm are brand new in CSS3. gd is widely used in east asian typography. vw, vh, vm allows us to size elements based on the browser size. Now lets discuss a bit about the ems unit of measurement. The way how measurement works depends on where the value is used. When used with the font-size property lets say its is set a x ems, then the font size is x times the font size of the parent element. Look at the following HTML markup.
+```html
+<body>
+	<h1>This is main heading</h1>
+	<h2>This is the sub heading</h2>
+	<h3>This is another sub heading</h3>
+	<p>This is a paragraph</p>
+</body>
+```
+Now consider the following CSS rules for the above markup.
+```css
+body { font-size: 100%; } //Font size is default font size of the device
+h1 { font-size: 1.6em; } //Font size is 1.6 times font size of body
+h2 { font-size: 1.4em; } //Font size is 1.4 times font size of body
+h3 { font-size: 1.2em; } //Font size is 1.2 times font size of body
+p { font-size: 1em; } //Font size is 1 times font size of body
+```
+If ems are used anywhere else other than the `font-size` property then its value is equal to the computed size of the text of that element. For example look at the following CSS declaration.
+```css
+h1 {
+	font-size: 2em; //Font size of 2 times the font size of the parent element let the value be y
+	margin-bottom: 3em; // The bottom margin value is 3 times y
+}
+```
+So as you can see above the font size of h1 is 2 times the font size of the parent. Lets say the parent element is body and no font-size property is set on the body tag, then the font size of body is the default font size of the device. The ex unit os measurement is similar to ems, they are based on the x-height of a font. Root ems are also like ems, only that they are relative to the root element like body or html rather than the element's immediate parent. 
+
+Lets also look at percentages, another unit of measurement thats not exactly considered as length. Percentage values are calculated relative to their parent element. A div with a width of 80% would use 80% of its parent element's width. While a paragraph with its font-size set to 80% would size the text at 80% of the size of its parents text.
