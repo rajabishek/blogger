@@ -99,3 +99,4 @@ There is also another way to link external styles instead of the link tag as sho
 	</style>
 </head>
 ```
+The following [CSS Reference](http://reference.sitepoint.com/css) is very useful for referring to CSS formatting rules. You can also look at [Can I use](http://caniuse.com) which talks about the compatibility of CSS rules across multiple browsers. Also you may find it interesting to look at [Position is everything](http://positioniseverything.net) website which talks about the browser quirks and bugs.
