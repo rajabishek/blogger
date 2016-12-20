@@ -66,3 +66,36 @@ h1 {
 So as you can see above the font size of h1 is 2 times the font size of the parent. Lets say the parent element is body and no font-size property is set on the body tag, then the font size of body is the default font size of the device. The ex unit os measurement is similar to ems, they are based on the x-height of a font. Root ems are also like ems, only that they are relative to the root element like body or html rather than the element's immediate parent. 
 
 Lets also look at percentages, another unit of measurement thats not exactly considered as length. Percentage values are calculated relative to their parent element. A div with a width of 80% would use 80% of its parent element's width. While a paragraph with its font-size set to 80% would size the text at 80% of the size of its parents text.
+
+Styles can be defined at three different levels in css, these are inline, embedded and external styles. Inline styles override embedded styles which in turn override external styles. The inline styles are written in the html markup itself using the style attribute on the html element as shown below.
+```html
+<p style="color:black; font-size: 14px;">This is a paragraph</p>
+```
+Embedded styles are written in the head of the document inside the `<style>` tags as shown below.
+```html
+<head>
+	<style>
+		p {
+			font-size: 14px;
+			font-weight: 200;
+			color: black;
+		}
+
+		body {
+			background: yellow;
+		}
+	</style>
+</head>
+```
+With external styles the CSS is written in a separate css file and is linked to the markup document using the link tag as shown below.
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+There is also another way to link external styles instead of the link tag as shown below. This is not however recommended and not so widely used.
+```html
+<head>
+	<style type="text/css">
+		@import url("css/style.css");
+	</style>
+</head>
+```
