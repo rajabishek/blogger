@@ -104,3 +104,139 @@ The following [CSS Reference](http://reference.sitepoint.com/css) is very useful
 Browser specific code designed to combat an error is called as a hack. Fixing a bug in one browser can occasionally lead to an error in another. At minimum hacks add weight to your code and make them harder to maintain. Hacks often break in future browser versions. We should avoid hacks whenever possible and also try to avoid conditions that trigger the browser error.
 
 Place all IE specific code fixes in a separate style sheet and these style sheets can be served through conditional comments. Your sites will not look the same in all browser accept it. Always try your best to design according to the existing web standards to support large number of possible browsers.
+
+Use meaningful tags to write the html. Focus on using clear, semantic code. Express the content in a semantic way. Structure your code consistently throughout your site. Simplify your code whenever possible and avoid non semantic markup. Lets look at some of the selectors that are available in CSS.
+```css
+p {
+	...
+	...
+}
+``
+As you can see above we are targeting every single paragraph element. This is called as an element selector. We also have something called as class selectors as shown below. This targets all elements with a class of `class-name`. 
+```css
+.class-name {
+	...
+	...
+}
+```
+We can also target elements based on the value of the id attribute. The following CSS declaration targets an element with is value as id-value.
+```css
+#id-value {
+	...
+	...	
+}
+```
+When a class and id selector conflict with each other, the id selector styling will be used in favor of the class because it is more specific. id and classes are not just for adding styles they also add meaning to the markup. We can also mention the element before the class or the id selector in this way only the specified element with the class or id will be targeted, other elements will not be taken into account.
+```css
+h1#id-name {
+	...
+	...
+}
+
+h2.class-name {
+	...
+	...
+}
+```
+Even of other elements had this id or class name then these formatting rules won't apply. These are called as element specific selectors. We can also style every single element on the page by using the universal selector. It is as though you apply the formatting rules individually to every single element on the page. The syntax of a universal selector is shown below.
+```css
+* {
+	...
+	...
+}
+```
+```css
+p {
+	color:black;
+	marging-bottom:10px;
+}
+
+h1 {
+	color:black;
+	marging-bottom:10px;
+}
+```
+If we notice ourselves writing the same CSS formatting rules for multiple elements was shown above then we can combine the declaration by grouping the selectors as shown below.
+```css
+p, h1 {
+	color:black;
+	marging-bottom:10px;
+}
+```
+Next lets take a look at descendant selectors. This targets an element that is a descendant of another html element.
+```css
+div p {
+	...
+	...
+}
+
+.outer div p {
+	...
+	...
+}
+```
+As you can see above the first declaration targets any paragraph element that is nested inside of a div element. The second targets any paragraph element which is nested inside a div and that div being nested inside of an element with a class as outer. One thing to remember here is that the descendant need not be the immediate child. But there is a css selector that can used to target elements based being an immediate child of its parent. This is called as a child selector. The following CSS rules targets a h2 element which is a immediate child of an article tag.
+```css
+article > h2 {
+	...
+	...
+}
+
+aside ol > li {
+	...
+	...
+}
+```
+We can also combine descendant selectors and child selectors. The second declaration shown above targets all li elements that are direct children of a ol element which are descendants of some article tag. We can also target elements based on an element following an another using an adjacent selector. The following CSS rule targets all paragraph elements that immediately follows a h2 element and both have the same parent.
+```css
+h2 + p {
+	...
+	...
+}
+
+h1 + h2 + p {
+	...
+	...
+}
+```
+Target p that immediately comes after h2, which immediately comes after h1. h1, h2 and p have the same parent. Similarly we can also target elements based on an attribute. The following css declaration targets any element that has a title attribute.
+```css
+a[title] {
+	...
+	...
+}
+
+a[title="visit google"] {
+	...
+	...
+}
+```
+The second declaration targets an anchor element that has a title attribute with a value of `visit google`. When targeting elements based on the attribute value we can also use pattern matching.
+```css
+p[class~="red"] {
+	...
+	...
+}
+```
+The above CSS declaration targets elements in which red occurs as the class value in a whitespace word separated list. For example elements having the following class values would succeed - "red white blue", "yellow red green" etc. We can also traget elements with a beginning attribute value as shown below.
+```css
+a[href^="http://"] {
+	...
+	...
+}
+```
+We can also target elements ending in a attribute value. The following declaration targets a anchor tag where the href attribute value ends in .com.
+```css
+a[href$=".com"] {
+	...
+	...
+}
+```
+We can also target elements with an attribute containing a specific value as shown below.
+```css
+a[href*="google"] {
+	...
+	...
+}
+```
+The above CSS declaration targets anchor elements with href attribute containing the value google in them.
