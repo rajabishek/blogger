@@ -100,3 +100,7 @@ There is also another way to link external styles instead of the link tag as sho
 </head>
 ```
 The following [CSS Reference](http://reference.sitepoint.com/css) is very useful for referring to CSS formatting rules. You can also look at [Can I use](http://caniuse.com) which talks about the compatibility of CSS rules across multiple browsers. Also you may find it interesting to look at [Position is everything](http://positioniseverything.net) website which talks about the browser quirks and bugs.
+
+Browser specific code designed to combat an error is called as a hack. Fixing a bug in one browser can occasionally lead to an error in another. At minimum hacks add weight to your code and make them harder to maintain. Hacks often break in future browser versions. We should avoid hacks whenever possible and also try to avoid conditions that trigger the browser error.
+
+Place all IE specific code fixes in a separate style sheet and these style sheets can be served through conditional comments. Your sites will not look the same in all browser accept it. Always try your best to design according to the existing web standards to support large number of possible browsers.
