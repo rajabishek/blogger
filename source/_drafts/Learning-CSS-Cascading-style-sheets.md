@@ -67,6 +67,7 @@ So as you can see above the font size of h1 is 2 times the font size of the pare
 
 Lets also look at percentages, another unit of measurement thats not exactly considered as length. Percentage values are calculated relative to their parent element. A div with a width of 80% would use 80% of its parent element's width. While a paragraph with its font-size set to 80% would size the text at 80% of the size of its parents text.
 
+## Types of styles
 Styles can be defined at three different levels in css, these are inline, embedded and external styles. Inline styles override embedded styles which in turn override external styles. The inline styles are written in the html markup itself using the style attribute on the html element as shown below.
 ```html
 <p style="color:black; font-size: 14px;">This is a paragraph</p>
@@ -99,12 +100,15 @@ There is also another way to link external styles instead of the link tag as sho
 	</style>
 </head>
 ```
+
+## Quirks and bugs
 The following [CSS Reference](http://reference.sitepoint.com/css) is very useful for referring to CSS formatting rules. You can also look at [Can I use](http://caniuse.com) which talks about the compatibility of CSS rules across multiple browsers. Also you may find it interesting to look at [Position is everything](http://positioniseverything.net) website which talks about the browser quirks and bugs.
 
 Browser specific code designed to combat an error is called as a hack. Fixing a bug in one browser can occasionally lead to an error in another. At minimum hacks add weight to your code and make them harder to maintain. Hacks often break in future browser versions. We should avoid hacks whenever possible and also try to avoid conditions that trigger the browser error.
 
 Place all IE specific code fixes in a separate style sheet and these style sheets can be served through conditional comments. Your sites will not look the same in all browser accept it. Always try your best to design according to the existing web standards to support large number of possible browsers.
 
+## CSS Selectors
 Use meaningful tags to write the html. Focus on using clear, semantic code. Express the content in a semantic way. Structure your code consistently throughout your site. Simplify your code whenever possible and avoid non semantic markup. Lets look at some of the selectors that are available in CSS.
 ```css
 p {
@@ -239,4 +243,12 @@ a[href*="google"] {
 	...
 }
 ```
-The above CSS declaration targets anchor elements with href attribute containing the value google in them.
+
+## Pseudo class selectors
+The above CSS declaration targets anchor elements with href attribute containing the value google in them. There are times however when the DOM alone cannot help you target elements such a hovering over an element or focusing on a form input element etc. This is where pseudo class selectors help us in. Pseudo class selectors allow us to target elements or instances that lie outside of the DOM or are too specific for simple selectors to target. Pseudo class selectors can be classified into 4 categories. These are ui element state, structural, dynamic and others.
+
+ui element state selectors target specific user interface elements in regards to whether or not they are currently enabled. Dynamic selectors target elements based on something other than attributes, content or element type. Usually refers to something that can change over time or that is based on user interaction for example user hovering over an element.
+
+Structural pseudo class selectors target elements based on specialized information within the DOM that simple selectors cannot target. This can be pattern matching, child-parent relationships or other structural information. Eg n-th child selector.
+
+Other pseudo class selectors exist that can't really be grouped into any one category. These selectors give you even more specific targeting capabilities based on things like language or URL targeting.
