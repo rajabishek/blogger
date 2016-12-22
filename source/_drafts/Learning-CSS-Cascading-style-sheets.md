@@ -324,3 +324,5 @@ a::after {
 As you can see in the first declaration it tells the content to generate and place it after the anchor element. The second declaration declares the content to generate and also has rules for styling the generated content. The third declaration pulls the content values dynamically based on the value of the href attribute and the 4th declaration as you can see adds -- as the prefix and suffix to the attribute value.
 
 When you have multiple rules targeting the same element you have conflicting styles. Whenever they disagree with each other the last rule applied wins and the non conflicting rules are cumulated.
+
+## Text formatting
