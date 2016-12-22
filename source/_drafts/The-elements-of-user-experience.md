@@ -60,3 +60,8 @@ The placement of interface elements on the page. The arrangements of these eleme
 - Product objectives - What do the site owners want to get out of it.
 - User needs - what do the users want to get out it.
 
+## Why this way?
+- By diving into these 5 planes and building the product from bottom up, the issues that we might deal with at each plane becomes less abstract and little more concrete. 
+- As we move up the decisions we have to make become a little more specific and involve finer details. Each plane depends on the plane at the lower level. 
+- The choices you make on each plane affect the choices available to you on the next plane above it.
+- Requiring work on each plane to finish before work on the next can start leads to unsatisfactory results for you and your users. A better approach is to have work on each plane finish before work on the next can finish.
