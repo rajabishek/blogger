@@ -3,6 +3,12 @@ title: The elements of user experience
 date: 2016-12-22 16:08:11
 tags:
 ---
+## Introduction
+This articles introduces the elements of user experience. It is a strategic approach that product designers can use while designing products. By diving the process into 5 planes and building the product from bottom up, it helps designers to focus on specific decisions at each level. It also encourages designer to take a user centered approach while designing thereby ensuring that any decision taken is done consciously.
+
+<!-- more -->
+
+A more detailed explanation into the process can be found in this [book](https://g.co/kgs/mBGw61). In this article I will just be taking you through as to what I have understood and I highly encourage anyone learning UX design seriously to read this book completely. I take no credit in the content, you can consider the following as my notes.
 
 ## Why It matters?
 - Most of the problems that we face today are because of poorly designed products.
