@@ -389,3 +389,11 @@ The font that you are dealing with has a lot to do with the capabilities for wha
 There is also a property called as font-variant. The possible values for the property are inherit, small-caps, normal. With the small-caps values the word will be displayed in small caps, normal will just display the font normally. In terms of font variant if the font itself doesn't include the small caps variant then setting the value as small-caps may not look good as you would like it to be since in these instances the browser goes and scales the font down.
 
 There is another property called a text-decoration which is used to add decorative effects to the text. The possible values for the property are blink, inherit, line-through, none, overline and underline. The blink value make the text blink on the page, line-through values draws a line through the center of the text like striking it. none is helpful is removing a decoration effect that is set by default for example links have a default decoration of underline and setting the text-decoration as none removes the underline. overline value draws a line over the text and underline value draws a line below the text.
+
+The color property is used to set the color of the text. The color values could be a reserved keyword like red, green etc or it can be hexadecimal notation or a RGB value or HSL value, we can even use transparency while defining the color. Some of the syntax options in CSS are just designer to make save your time. Shorthand notations are designed just to do that. Saving your time instead of needing to write multiple property declarations. Using the font shorthand notation we can set the following font properties using a single declaration. While we don't have to explicitly set each one every time however we are required to define the font-family and font-size each time we use it.
+- font-style
+- font-variant
+- font-weight
+- font-size
+- line-height
+- font-family
