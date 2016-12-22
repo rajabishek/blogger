@@ -350,3 +350,8 @@ body {
   font-family: "Open Sans", Helvetica, sans-serif;
 }
 ```
+## Web fonts
+We can use the inline @font-face rule to define an external font as a font family to use withing a page. The font reference is an external resource which the browser requests to use within the page. The @font-face declaration is pretty complex, so it is better to copy and paste from the font service provider. Different browsers require different types of font formats so usually in the @font-face declaration we define and provide resource link to all the font formats. You place the @font-face declaration for every type of the same font. The order is important here and you should write it in Normal, Italic, Bold, Bold Italic. Not following this order results in buggy behavior in certain browsers. You can look at the new bullet proof @font-face syntax, a nice article written by Font Spring.
+
+You might want to look at [Font Squirrel](http://fontsquirrel.com) where ton of free fonts are available for commercial usage. It also fives @font-face kits which will give you a download that gives fonts + license + css with syntax already written using the bullet proof syntax. If you use the fonts provided by font squirrel then you have download them, host it on your website and use them, however websites like google fonts and adobe's typekit, fonts.com provides font hosting option also.
+
