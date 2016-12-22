@@ -2,10 +2,11 @@
 title: The elements of user experience
 tags:
 ---
-## User Experience & Why It matters?
-Why is this important?
+## Why It matters?
 - Most of the problems that we face today are because of poorly designed products.
 - Every product/service that we use is made by someone else like us to whom the credit should go for good design or be blamed for bad products.
+
+<!-- more -->
 
 ## What is user experience?
 - User experience is how a product works on the outside rather than the inner workings or what the product does, it essentially answers the question what it’s like to use the product or service?
@@ -40,24 +41,24 @@ The design process should be such that no aspect of the user’s experience with
 
 ### Skeleton plane
 The placement of interface elements on the page. The arrangements of these elements should result in greater efficiency.
-- Information design describes the presentation of information in a way that facilitates understanding (both sides).
-- Interface design involves arranging interface elements to enable users to interact with the functionality of the system (functionality side).
-- Navigation design describes the set of screen elements that allow the user to move through the information architecture (information side).
+- **Information design** describes the presentation of information in a way that facilitates understanding (both sides).
+- **Interface design** involves arranging interface elements to enable users to interact with the functionality of the system (functionality side).
+- **Navigation design** describes the set of screen elements that allow the user to move through the information architecture (information side).
 
 ### Structure plane
 - Defines the way in which different features and functions of the site fit together. 
 - It defines how users get to a page and where could they go once they finish there. 
 - The skeleton might define the arrangement of navigational elements allowing users to browse through.
-- Interaction design defines how the system behaves in response to the user (functionality side).
-- Information architecture is about the arrangement of content elements to facilitate human understanding (information side).
+- **Interaction design** defines how the system behaves in response to the user (functionality side).
+- **Information architecture**is about the arrangement of content elements to facilitate human understanding (information side).
 
 ### Scope plane 
-- Functional specifications provide a detailed description of the "feature set" of the product i.e. the features and functions the product/service provides (functionality side).
-- Content requirements provides a description of the various content elements that will be required (information side).
+- **Functional specifications** provide a detailed description of the "feature set" of the product i.e. the features and functions the product/service provides (functionality side).
+- **Content requirements** provides a description of the various content elements that will be required (information side).
 
 ### Strategy plane
-- Product objectives - What do the site owners want to get out of it.
-- User needs - what do the users want to get out it.
+- **Product objectives** - What do the site owners want to get out of it.
+- **User needs** - what do the users want to get out it.
 
 ## Why this way?
 - By diving into these 5 planes and building the product from bottom up, the issues that we might deal with at each plane becomes less abstract and little more concrete. 
