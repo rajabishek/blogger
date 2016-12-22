@@ -293,3 +293,34 @@ li:nth-child(-1n+5),li:nth-last-child(-1n+5) {
   color:red;
 }
 ```
+
+## Pseudo element selectors
+```css
+p::first-line {
+  color: red;
+}
+In CSS2 pseudo element selectors also used a single colon `p:first-line`, but starting from CSS3 pseudo element selectors use a `::` instead of `:` to differentiate from pseudo class selectors. So which one should we use for pseudo element selectors? The CSS3 syntax is the one that W3C would like to use going forward(`::` for pseudo element selectors), but the problem is that it is not supported in older browsers like IE8 as it doesn't recognize this syntax. So if you want to make sure that older browsers recognize and render this correctly you might want to just use `:`. The above CSS declaration targets the first line in every paragraph. Similarly we can also style the first letter in every paragraph element using `p:first-letter { ... }`.
+
+Now lets also look at before and after pseudo elements. This is used to specify the style and location of the generated content. It will take the generated element you created and place it before or after the element you are targeting. This generated content is not observable by the DOM(document object model). It does not show up in the document object tree.
+```css
+a::after {
+  content:"(outside link)";
+}
+
+a::after {
+  content: "-by Raj Abishek";
+  color: red;
+  font-size: 0.9em;
+}
+
+a::after {
+  content: attr(href);
+}
+
+a::after {
+  content: "--" attr(href) "--"
+}
+```
+As you can see in the first declaration it tells the content to generate and place it after the anchor element. The second declaration declares the content to generate and also has rules for styling the generated content. The third declaration pulls the content values dynamically based on the value of the href attribute and the 4th declaration as you can see adds -- as the prefix and suffix to the attribute value.
+
+When you have multiple rules targeting the same element you have conflicting styles. Whenever they disagree with each other the last rule applied wins and the non conflicting rules are cumulated.
