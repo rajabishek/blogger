@@ -355,3 +355,28 @@ We can use the inline @font-face rule to define an external font as a font famil
 
 You might want to look at [Font Squirrel](http://fontsquirrel.com) where ton of free fonts are available for commercial usage. It also fives @font-face kits which will give you a download that gives fonts + license + css with syntax already written using the bullet proof syntax. If you use the fonts provided by font squirrel then you have download them, host it on your website and use them, however websites like google fonts and adobe's typekit, fonts.com provides font hosting option also.
 
+## Text formatting properties
+To control the size of fonts you use the font-size property.
+```css
+h1 {
+  font-size:16px;
+}
+
+h2 {
+  font-size: xx-large;
+}
+```
+As you can see above you can use pixels to set the font size or you can also use keywords xx-small,x-small,small,medium,large,x-large,xx-large also for setting the font size. We can also set a value between 1 to 7, there is a little correspondence between these numbers and the reserved keywords. When you use a number or a reserved keyword for the font-size property then it is up to the user agents to determine what size to make these, so don't expect them to be the same size in every single browser. Lets also look at some relative measurement values.
+
+As we had already seen when ems are used for font-size they are parent on the font-size of the parent element. Another thing to remember is that when no font-size is set on the body element then its font-size is the default font-size of the user agent. But if font size was declared on the body element as shown below.
+```css
+body {
+  font-size: 2em;
+}
+
+body {
+  font-size:120%;
+}
+```
+In the first case the font size of body is 2 time the default font size of the browser and in the second case the font size of the body element is 1.2 times the default font size of the user agent. The advantage of using such relative unit of measurement is that the sizes of the elements are relative to one another, therefore there would not be a visual difference when viewed on a higher resolution or a lower resolution screen, whether mobile device or desktop browser the relation between elements size wise is the same.
+
