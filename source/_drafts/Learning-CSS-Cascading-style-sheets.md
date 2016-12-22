@@ -325,4 +325,28 @@ As you can see in the first declaration it tells the content to generate and pla
 
 When you have multiple rules targeting the same element you have conflicting styles. Whenever they disagree with each other the last rule applied wins and the non conflicting rules are cumulated.
 
-## Text formatting
+## System fonts
+To set the font we use the `font-family` property. The syntax id shown below.
+```css
+p {
+  font-family: Arial;
+}
+```
+As you can see above the browser is requesting from the client machine for an Arial font. One of the problems for using a system font is that we are relying on the client machine for the availability of the font. If the page is previewed on a machine which does not have the requested font the browser does ahead and uses the default font for displaying that page. But what if the default font is way different that Arial in style. So there are a few things that we can do while defining the font-family. As you can see below we have defined a font stack. If the first font is not available then the second font is used, if the second font is also not available then we use the third font and so on. Thus by separating the fonts listed by a comma, we can create a nice fallback mechanism as shown below.
+```css
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+```
+Usually at the end of the font stack we pass in a generic font family which would give the default font of the generic font family requested. As you can see above `sans-serif` is the generic font family. The generic font families that we have are as follows.
+- serif - There are details at the end of the letter.
+- sans-serif - There are not much details at the end of the letter.
+- monospace - This font family is particularly useful for representing code.
+- cursive - The letters are cursive in nature
+- fantasy - This is useful for heading and text for banner elements
+Every operating system will atleast have one font from each of the above font family, there making the fallback mechanism 100% complete. Whenver you have a font name that has multiple words then you wrap them in double quotes separated by a space as shown below.
+```css
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+```
