@@ -32,3 +32,31 @@ Why is this important?
 - Conversion rates are very helpful in measuring e-commerce websites. There is huge potential to convert casual browsers into active buyers by delivering satisfactory user experience.
 - Sales can suffer because of poor marketing but measuring success through conversion rates tracks how successful you are in getting those who visit to spend some money.
 
+## The elements
+The design process should be such that no aspect of the user’s experience with your product happens without your conscious, explicit intent. Taking note of every possibility of every action the user is likely to take. Understanding the user’s expectations at every step of the way.
+
+### Surface plane
+- Concrete details on the appearance of the product like the color, typography and other aesthetic details of how the product looks.
+- Concerned with the sensory experience created by the finished product.
+
+### Skeleton plane
+The placement of interface elements on the page. The arrangements of these elements should result in greater efficiency.
+- Information design describes the presentation of information in a way that facilitates understanding (both sides).
+- Interface design involves arranging interface elements to enable users to interact with the functionality of the system (functionality side).
+- Navigation design describes the set of screen elements that allow the user to move through the information architecture (information side).
+
+### Structure plane
+- Defines the way in which different features and functions of the site fit together. 
+- It defines how users get to a page and where could they go once they finish there. 
+- The skeleton might define the arrangement of navigational elements allowing users to browse through.
+- Interaction design defines how the system behaves in response to the user (functionality side).
+- Information architecture is about the arrangement of content elements to facilitate human understanding (information side).
+
+### Scope plane 
+- Functional specifications provide a detailed description of the "feature set" of the product i.e. the features and functions the product/service provides (functionality side).
+- Content requirements provides a description of the various content elements that will be required (information side).
+
+### Strategy plane
+- Product objectives - What do the site owners want to get out of it.
+- User needs - what do the users want to get out it.
+
