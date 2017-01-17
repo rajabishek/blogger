@@ -4,7 +4,7 @@ date: 2016-12-22 16:08:11
 tags:
 ---
 ## Introduction
-This articles introduces the elements of user experience. It is a strategic approach that product designers can use while designing products. By diving the process into 5 planes and building the product from bottom up, it helps designers to focus on specific decisions at each level. It also encourages designer to take a user centered approach while designing thereby ensuring that any decision taken is done consciously.
+This articles introduces the elements of user experience. It is a strategic approach that product designers can use while designing products. By dividing the process into 5 planes and building the product from bottom up, it helps designers to focus on specific decisions at each level. It also encourages designer to take a user centered approach while designing thereby ensuring that any decision taken is done consciously.
 
 <!-- more -->
 
