@@ -31,7 +31,7 @@ There were 2 designers who were assigned for redesigning the careers page. As we
 Great innovation is built on existing ideas, re purposed with vision. In remix and improve we begin searching for existing ideas, gather useful components and then convert them to something original and new. This activity is done individually by each sprint participant to generate ideas. It is important to look for similar problems faced by organizations from other domains.
 ![Screenshot 1](/img/sprint-techniques/1.jpg)
 
-##Lightning demos
+## Lightning demos
 During lightning demos sprint participants will take turns giving 5 minute tours of their favorite solutions. This exercise is about finding raw materials not copying competitors. It is important to capture big ideas as you go. One person should take the responsibility of asking the presenter to explain the big idea and then make a quick drawing of that inspiring component.
 ![Screenshot 1](/img/sprint-techniques/2.jpg)
 
