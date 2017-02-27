@@ -4,7 +4,11 @@ date: 2017-02-27 15:39:08
 tags:
 ---
 ## Traditional design process
-The traditional design process is a waterfall approach. Designers spend weeks of time for up front user research to understand and empathize with the user. This delays product development and creates a hindrance to learning. But one valuable thing that we learned from our design projects is that even after spending so much effort and time on this up front research, the useful data and feedback came from the first user tests and not the research. The user research helped to empathize with users while designing and prototyping but true feedback and reactions were captured during the user tests. Nothing comes close to the learning by actually seeing your users interact and use the product.
+The traditional design process is a waterfall approach. Designers spend weeks of time for up front user research to understand and empathize with the user. This delays product development and creates a hindrance to learning. 
+
+<!-- more -->
+
+But one valuable thing that we learned from our design projects is that even after spending so much effort and time on this up front research, the useful data and feedback came from the first user tests and not the research. The user research helped to empathize with users while designing and prototyping but true feedback and reactions were captured during the user tests. Nothing comes close to the learning by actually seeing your users interact and use the product.
 
 ## Extensive user research is an overkill
 Let's be honest, user research takes a lot of time. It starts with creating proto-personas, recruiting and interviewing people, refining personas, creating user journeys, creating user journeys, making empathy maps etc. The list goes on. If you browse for user research techniques, there are around 20 well know techniques in the industry. The saddest part here is that we are building up assumptions from what we think the user might like instead of making assumptions from observing and testing the product with the user. This is a very unhealthy approach towards product design. We never really know what our users will understand, like, dislike and how they will respond until we see them using the product. Then why spend weeks of time for extensive user research instead of building a prototype and testing it quickly to lean faster.
