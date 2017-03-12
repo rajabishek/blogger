@@ -1,11 +1,13 @@
 ---
 title: User research methods and techniques
-date: 2017-03-12 23:42:14
+date: 2017-01-09 23:42:14
 tags:
 ---
 
 ## Why and what is user research ?
 User research focuses on understanding user needs, wishes, goals, motivations and behaviors through observation techniques, task analysis, and other feedback methodologies. Conducting user researches helps the team make design decisions based on real data. Everyone on the team(including product managers, designers & engineers) should be encouraged to conduct user research if possible to justify their decisions.
+
+<!-- more -->
 
 Having the entire team involved in user research turns out really helpful for the team to make informed decisions and also ensures that everyone is on the same page and are included in the process. Conducting user research increases the empathy that the entire team has for the end users. 
 
