@@ -7,6 +7,8 @@ tags:
 ## Introduction
 In a heuristic evaluation, usability experts review the product's interface multiple times and compare it against an accepted set of usability principles. This analysis is helpful in listing down the potential usability issues in the product. These principles or thumb rules are sometimes revised by the usability engineers to accommodate more findings.
 
+<!-- more -->
+
 ## When should heuristic evaluation be done ?
 The best way to find out usability issues and test the user experience is by testing the product with actual users. But conducting user tests is expensive and consumes more resources. User feedbacks are pricey and interpreting them is also time consuming process. In such cases using heuristic evaluation helps in identifying and minimizing usability problems with a much lower consumption of your limited resources.
 
@@ -73,4 +75,4 @@ User should be provided with appropriate help documents both on line and off lin
 ![Screenshot 9](/img/heuristic-evaluation/documentation.png)
 
 ## Summary
-Though Heuristics can never replace the conventional user testing methods it still could deliver a lot about a product’s broken usability and experience. Not every product manager/designer can afford the time, money or effort to perform user testing and Heuristic evaluations could be the faster yet effective way to solve them.
+Though heuristics can never replace the conventional user testing methods it still could deliver a lot about a product’s broken usability and experience. Not every product manager/designer can afford the time, money or effort to perform user testing and heuristic evaluations could be the faster yet effective way to solve them.
