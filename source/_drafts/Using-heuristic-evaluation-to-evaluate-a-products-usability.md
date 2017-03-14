@@ -3,57 +3,60 @@ title: Using heuristic evaluation to evaluate a product’s usability
 tags:
 ---
 ## Introduction
-Heuristic Evaluation is a technique derived by the [Nielson Norman group](https://www.nngroup.com/articles/ten-usability-heuristics/) to assess the usability of a digital product. This is usually performed by a set of usability experts who reviews a product against the set of thumb rules derived the Norman group. These thumb rules at sometimes are revised by the usability engineers to accommodate more findings
+In a heuristic evaluation, usability experts review the product's interface multiple times and compare it against an accepted set of usability principles. This analysis is helpful in listing down the potential usability issues in the product. These principles or thumb rules are sometimes revised by the usability engineers to accommodate more findings.
 
-## Why Heuristic Evaluation ?
-The finest way to grade a product’s user experience or usability is by user testing it, which although consumes more resource produce the best results. User feedbacks are pricey and interpreting them is also time-consuming and not all user centered products have such freedom to these resources. At such cases Heuristic Evaluation of your product helps in minimizing the usability problems with a much lower consumption of your limited resources.
-Studies also show how effective can these thumb rules actually be at discovering the usability issues. A team of four usability experts would be able to discover 77% of the problems during an evaluation process. Although it’s important to remember the fact that such percentage of success is possible only when the evaluation is performed by the experts and decreases as per the evaluators expertise and experience.
+## When should heuristic evaluation be done ?
+The best way to find out usability issues and test the user experience is by testing the product with actual users. But conducting user tests is expensive and consumes more resources. User feedbacks are pricey and interpreting them is also time consuming process. In such cases using heuristic evaluation helps in identifying and minimizing usability problems with a much lower consumption of your limited resources.
+
+Research also shows that a team of four usability experts would be able to discover 77% of the problems during an evaluation process. It is important to note here that this percentage of success is achievable only when evaluation is performed by experts and decreases with decrease in expertise and experience of the evaluators.
+
+It is important to understand that a heuristic evaluation should not replace usability testing. This is because the issues identified in a heuristic evaluation are different than those found in a usability test. Instead it should be seen as a way for getting early feedback in the design process.
 
 ## How to perform Heuristic Evaluation ?
 The basic needs to perform a Heuristic Evaluation includes
-- 3–5 Evaluators with different but related expertise in building digital products
-- Expert users to assist the evaluators
-- 10 usability Heuristics to evaluate
+- 3 to 5 expert evaluators
+- Usability heuristics to evaluate
+- Observers who can assist the evaluators
+- Evaluation manager (When there are no observers)
 
-It’s is important that the evaluators perform the process individually and all of their findings would be correlated at the final to remove duplication. Each evaluator would analyze the whole product multiple times to grade the key elements of the system like,
-- Information Architecture
-- Visual Design
-- Navigation
+It is certainly true that some usability problems are so easy to find that they are found by almost everybody, but there are also some problems that are found by very few evaluators. Therefore it is highly recommended for evaluators to perform the evaluation process individually and correlate the data at the end to remove duplication. Working individually also makes sure that the evaluators are independent and evaluations are unbiased.
+
+The evaluators should analyze the product multiple times to grade the key elements of the system with respect to the following parameters:
 - Functionality
-- Interaction Design
 - Content
+- Information Architecture
+- Navigation
+- Interaction design
+- Aesthetics and visual design
 
-The findings are listed based on their level of impact it would cause on the system’s user experience (High, Medium, Low).
+As the evaluators review the product they can verbalize their comments to an observer as they go through the interface. Or in the absence of observers the evaluators can record their observations as written reports. After the evaluation these written reports needs to be read and aggregated by an evaluation manager. Using an observer adds to the overhead of each evaluation session, but reduces the workload on the evaluators.
+
+The observer can also assist the evaluators in operating the interface in case of problems. As we all know prototypes are only close to real products, there might be some dead ends or unstable conditions in prototypes. In certain cases when the evaluators have limited domain expertise and need to have certain aspects of the interface explained observers can help them with the interface.
 
 ## What are the Heuristic Principles ?
+One of the well accepted usability principles is given by the [Nielson Norman group](https://www.nngroup.com/articles/ten-usability-heuristics/). Nielsen refined the list originally developed in 1990 by himself and Rolf Molich.
 
 ### Visibility of system status
-The user should always be made aware of the system’s status at all times with efficient feedback interactions
-Ex: Load state of a web page presented with a progress bar
+The user must always be kept informed about the status of the system at all times with efficient feedback interactions. Appropriate feedback must be given within reasonable time to keep the users informed about what is going on with the product. For example after the user enter their credit card information a progress or loading indicator must be present to let them know that the website is processing the credit card details rather than just making them wait for minutes on a blank screen, making them wonder if their card details are being processed or if the website is down.
 
 ### Match between system and the real world
-The system’s communication with the user must be familiar to the user. The user should be able relate it with their real world equivalent
-Ex: A cart system reflecting the same shopping experience for the user
+The system’s communication with the user must be familiar to the user. The user should be able relate it with their real world equivalent. This might be regarded as one of the obsolete techniques, but still with the majority of population being unfamiliar with technology, it is important to give this principle a thought. For example a shopping cart system on a e-commerce website reflects the same shopping experience users have when they buy something from their local store.
 
 ### User control and freedom
-User should have the control to revert back their actions with the freedom to exit the system when they wish to, at all times.
-Ex: Undo and Redo actions with quick exit option on the menu bar
+User should have the control to revert back their actions with the freedom to exit the system when they wish to, at all times. Control and freedom also includes easy navigation as the users use the product. They should be able to find their way through the site, be it to find a page or product, or to find the way back if they accidentally clicked on the wrong button or link. For example if you take Google Docs you always have the option to revert back to a previous version of the file and also quit the application whenever you like. On top of being able to quit the application at any time they have also made sure that you can quit without thinking about whether the document would have been saved or not, by making sure that the file is periodically saved.
 
 ### Consistency and standards
-The system must follow standard interface conventions with user familiar terminologies that accommodates same meaning all over the system
-Ex: Inconsistent labels over buttons with same meaning
+The system must follow standard interface conventions with user familiar terminologies that accommodates same meaning all over the system.
+Fro example the application should avoid having inconsistent labels over buttons with same meaning. Lets say we have 2 pages from where the user can log out of the website, on one page if it says Sign Out on the other page the button must not use some other term like "Log Off" or "Shut Down". This inconsistency in design can cause confusion in users about what a particular call of action will actually do.
 
 ### Error prevention
-Humans are bound to make errors, and the system should support the user in eliminating them.
-Ex: Example of user error prevention with alternative suggestions
+Humans are bound to make errors, the system should support the user in eliminating them. For example the auto suggestions menu in a search bar will prevent the user from making mistakes.
 
 ### Recognition rather than recall
-User assistance must be provided by the system to reduce the user’s memory load.
-Ex: System helps the user in categorizing their favorites/most used
+The application shouldn't expect the users to remember everything. It must provide assistance wherever possible to reduce the user's memory load. Example the system can help the user in categorizing their favorites/most used items instead of expecting them to remember how they did something last time.
 
 ### Flexibility and efficiency of use
-The system’s must prove efficient for both the novice and experienced users. Accelerators/ Shortcut commands for the Experienced and obvious alternatives for the novice users.
-Ex: Accelerators for Experts and Buttons for Novice users
+The system must prove to be useful and efficient for both novice and advanced users. For example Adobe products have shortcuts for professional users and have obvious alternatives for new users also. This helps in making sure that the system is designed in such a way that it proves to be efficient for both kinds of users.
 
 ### Aesthetic and minimalist design
 User should be presented only with relevant data. More the relevant data more easy it is for the system to acquire user focus.
