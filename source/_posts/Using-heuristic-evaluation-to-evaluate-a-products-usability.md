@@ -1,7 +1,9 @@
 ---
 title: Using heuristic evaluation to evaluate a product’s usability
+date: 2017-03-14 20:40:03
 tags:
 ---
+
 ## Introduction
 In a heuristic evaluation, usability experts review the product's interface multiple times and compare it against an accepted set of usability principles. This analysis is helpful in listing down the potential usability issues in the product. These principles or thumb rules are sometimes revised by the usability engineers to accommodate more findings.
 
