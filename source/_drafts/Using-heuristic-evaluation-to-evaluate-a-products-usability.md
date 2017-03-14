@@ -43,26 +43,28 @@ User should have the control to revert back their actions with the freedom to ex
 ### Consistency and standards
 The system must follow standard interface conventions with user familiar terminologies that accommodates same meaning all over the system.
 Fro example the application should avoid having inconsistent labels over buttons with same meaning. Lets say we have 2 pages from where the user can log out of the website, on one page if it says Sign Out on the other page the button must not use some other term like "Log Off" or "Shut Down". This inconsistency in design can cause confusion in users about what a particular call of action will actually do.
-![Screenshot 4](/img/heuristic-evaluation/inconsistent.png)
+![Screenshot 4](/img/heuristic-evaluation/products.png)
+![Screenshot 5](/img/heuristic-evaluation/cart.png)
 
 ### Error prevention
 Humans are bound to make errors, the system should support the user in eliminating them. For example the auto suggestions menu in a search bar will prevent the user from making mistakes.
-![Screenshot 5](/img/heuristic-evaluation/error-prevention.png)
+![Screenshot 6](/img/heuristic-evaluation/error-prevention.png)
 
 ### Recognition rather than recall
 The application shouldn't expect the users to remember everything. It must provide assistance wherever possible to reduce the user's memory load. Example the system can help the user in categorizing their favorites/most used items instead of expecting them to remember how they did something last time.
-![Screenshot 6](/img/heuristic-evaluation/recognition.png)
+![Screenshot 7](/img/heuristic-evaluation/recognition.png)
 
 ### Flexibility and efficiency of use
 The system must prove to be useful and efficient for both novice and advanced users. For example Adobe products have shortcuts for professional users and have obvious alternatives for new users also. This helps in making sure that the system is designed in such a way that it proves to be efficient for both kinds of users.
-![Screenshot 7](/img/heuristic-evaluation/novice.png)
+![Screenshot 8](/img/heuristic-evaluation/novice.png)
 
 ### Aesthetic and minimalist design
 User should be presented only with relevant data. More the relevant data more easy it is for the system to acquire user focus.
 
 ### Help users recognize, diagnose, and recover from errors
 The system must help the user in recovering from errors. Error messages should be constructed with empathy. For example the error message that are presented to the users can be recognizable and constructive in nature.
-![Screenshot 8](/img/heuristic-evaluation/friendly-errors.png)
+![Screenshot 9](/img/heuristic-evaluation/bad-error.png)
+![Screenshot 9](/img/heuristic-evaluation/friendly-error.png)
 
 ### Help and documentation
 User should be provided with appropriate help documents both on line and off line about the system. The documentation must deliver effective steps for the users to accomplish their goals.
