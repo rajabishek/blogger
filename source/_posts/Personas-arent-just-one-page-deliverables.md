@@ -1,7 +1,9 @@
 ---
 title: Personas aren't just one-page deliverables
+date: 2017-03-15 18:24:01
 tags:
 ---
+
 
 ## What is a persona
 It is a imaginary yet detailed and realistic descriptions of the users of your product. In UCD personas are created after the user research. Whereas in Lean UX methods personas are originally created based on assumptions(proto-personas) brainstorming session with the team. Later these proto-personas are checked against real data to refine them. Personas help designers in transforming **the user** into concrete people.
