@@ -6,7 +6,10 @@
     .post-title {
         margin: 0.65em 0;
         color: #2c3e50;
-        font-size: 1.5em;
+        font-size: 2.6em;
+        line-height: 1.2;
+        font-family: "tiempos","utopia-std",serif;
+        color: $pearl-black;
     }
 
     .post-info {
@@ -27,18 +30,13 @@
 }
 
 .post-content {
+    font-size: 19px;
+    color: $bayoux-blue;
     h2, h3, h4, h5, h6 {
+        font-family: "tiempos","utopia-std",serif;
         position: relative;
-        margin: 1em 0;
-        &:before {
-            content: "#";
-            color: #42b983;
-            position: absolute;
-            left: -0.7em;
-            top: -4px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
+        margin: 1.8em 0 0 0;
+        color: $pearl-black;
     }
     h4, h5, h6 {
         &:before {
@@ -47,20 +45,20 @@
     }
 
     h2, h3 {
-        font-size: 22px;
+        font-size: 28px;
     }
 
     h4, h5, h6 {
-        font-size: 18px;
+        font-size: 22px;
     }
     a {
-        color: #42b983;
+        color: $true-blue;
         word-break: break-all;
     }
     blockquote {
         margin: 2em 0;
         padding-left: 20px;
-        border-left: 4px solid #42b983;
+        border-left: 4px solid $true-blue;
     }
     img {
         display: block;
@@ -202,7 +200,7 @@ pre {
     .symbol .string,
     .value,
     .regexp {
-        color: #42b983;
+        color: $true-blue;
     }
     .title {
         color: #83B917;
@@ -231,7 +229,7 @@ pre {
     .apache .cbracket,
     .tex .command,
     .prompt {
-        color: #42b983;
+        color: $true-blue;
     }
     .comment,
     .java .annotation,

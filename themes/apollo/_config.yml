@@ -1,9 +1,8 @@
 menu:
     About: /about/
-    Blog: /
-    Archive: /archives/
+    Blog: /archives
     Dribbble: https://dribbble.com/rajabishek
-    Behance: https://behance.net/rajabishek
+    LinkedIn: https://in.linkedin.com/in/rajabishek
     Rss: /atom.xml
 
 favicon: /logo.png
