@@ -6,6 +6,7 @@ deployment:
       - git config --global user.email "rajabishek@hotmail.com"
       - sed -i'' "s~https://github.com/rajabishek/rajabishek.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/rajabishek/rajabishek.github.io.git~" _config.yml
       - rm -rf .deploy_git/
+      - npm install hexo-cli -g
       - hexo clean
       - hexo generate
       - hexo deploy
