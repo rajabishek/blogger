@@ -1,5 +1,5 @@
 ---
-title: What I Wish Someone Told Me Before Becoming a Product Manager
+title: Learnings as a product manager
 date: 2017-09-09 23:31:22
 tags:
 ---
